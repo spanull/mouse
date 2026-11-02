@@ -86,7 +86,7 @@ test("静态模式与动画资源失败仍能进入双店，切换不积累画�
   await page.emulateMedia({ reducedMotion: "reduce" }); await page.goto("/");
   const canvas = page.locator("canvas[data-scene=mouse]"); await expect(canvas).toBeVisible();
   const before = await canvas.screenshot(); await page.getByRole("button", { name: "和鼠鼠打招呼" }).click(); await page.getByRole("button", { name: "关闭问候" }).click(); expect(await canvas.screenshot()).toEqual(before);
-  await page.route("**/rat-idle.png", route => route.abort()); await page.reload(); await expect(page.getByRole("button", { name: "重试角色动画" })).toBeVisible();
-  await page.getByRole("link", { name: "进入餐厅" }).click(); await expect(page.locator(".restaurant-stage")).toBeVisible(); await page.unroute("**/rat-idle.png");
+  await page.route("**/rat-idle-home-v3.png", route => route.abort()); await page.reload(); await expect(page.getByRole("button", { name: "重试角色动画" })).toBeVisible();
+  await page.getByRole("link", { name: "进入餐厅" }).click(); await expect(page.locator(".restaurant-stage")).toBeVisible(); await page.unroute("**/rat-idle-home-v3.png");
   for (let i = 0; i < 3; i++) { await page.goto("/"); await expect(canvas).toHaveCount(1); await page.getByRole("link", { name: "进入树洞酒吧" }).click(); await expect(page.locator(".bartender canvas")).toHaveCount(1); await expect(canvas).toHaveCount(3); }
 });

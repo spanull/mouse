@@ -118,6 +118,10 @@ def generate(asset, key):
             print("SKIP " + asset + ": 已有成功产物", flush=True)
             return
     prompt, size = task_prompt(asset)
+    # 所有类别统一注入制作约束；历史成功原图保持原始记录，不倒填为使用过新提示词。
+    contract_path = ROOT / "art-source/generation-constraints.json"
+    contract = json.loads(contract_path.read_text(encoding="utf-8"))
+    prompt += "\n\n" + contract["prompt"]
     reference_data = base64.b64encode(REFERENCE.read_bytes()).decode("ascii")
     payload = {"model": "gpt-image-2.5", "prompt": prompt, "image": ["data:image/png;base64," + reference_data], "size": size, "quality": "medium", "n": 1, "output_format": "png"}
     reference_files = [REFERENCE.relative_to(ROOT).as_posix()]

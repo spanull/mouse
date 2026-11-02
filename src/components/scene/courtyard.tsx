@@ -211,7 +211,7 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
 
   return <div className="mouse-actor" data-pose={action?.pose ?? "idle"}>
     <div ref={hostRef} className={`pixi-host ${failed ? "is-hidden" : ""}`} />
-    {!ready && <img className="actor-fallback" src={`/assets/natural/${asset}-static.png`} alt="" />}
+    {!ready && <img className="actor-fallback" src={`/assets/natural/${asset}-static${["rat", "hamster", "field", "chinchilla", "dormouse"].includes(asset) ? "-home-v3" : ""}.png`} alt="" />}
     {!decorative && <button className="actor-touch" onClick={greet} aria-label={label} />}
     {failed && <button className="actor-retry" onClick={() => setAttempt(value => value + 1)} aria-label="重试角色动画"><RefreshCw size={14} /></button>}
   </div>;

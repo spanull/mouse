@@ -1,0 +1,38 @@
+{
+  "scope": "仅首页：取消动态叶片灯光、重做环境松鼠、修正五鼠种动作尺寸。",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "acceptedSources": [
+    "rat-leisure-v3",
+    "hamster-leisure-v3",
+    "field-leisure-v3",
+    "chinchilla-leisure-v3",
+    "dormouse-leisure-v3",
+    "squirrel-home-v4"
+  ],
+  "rejected": [
+    {
+      "source": "squirrel-home-v3",
+      "reason": "第4帧右侧枝叶贴边，细节较平滑，不能直接接入；v4缩小占幅、强化细像素和四边留白。"
+    }
+  ],
+  "errors": [
+    "curl: (56) schannel: server closed abruptly (missing close_notify)",
+    "Expecting value: line 1 column 1 (char 0)"
+  ],
+  "attempts": {
+    "rat-leisure-v3": 1,
+    "hamster-leisure-v3": 2,
+    "field-leisure-v3": 2,
+    "chinchilla-leisure-v3": 1,
+    "dormouse-leisure-v3": 1,
+    "squirrel-home-v3": 1,
+    "squirrel-home-v4": 1
+  },
+  "exportNotes": [
+    "初次导出睡鼠尾巴超出共同画布，统一全部动作身高为150px，非单帧缩放。",
+    "Windows开发服务器读取旧文件时覆盖出现UNKNOWN open及sharp write error，改版本化新文件后成功；历史运行原图已恢复。",
+    "最近邻缩小导致两帧实际脚底178而非179，按缩小后的实际alpha边界校准纵向锚点后通过。"
+  ],
+  "status": "visual-transitions-and-browser-reviewed"
+}

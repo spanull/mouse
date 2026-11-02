@@ -14,7 +14,7 @@ const CHARACTER_KEYS = ["rat", "hamster", "field", "chinchilla", "dormouse"];
 /** 将访客选择映射为独立鼠种资源；形象变化不会改变匿名身份或消费记录。 */
 function characterKey(avatar: Avatar) { return CHARACTER_KEYS[AVATARS.indexOf(avatar)] ?? "rat"; }
 /** 为纯静态头像和可交互主角使用同一资源命名，确保角色选择在所有场景生效。 */
-function Portrait({ avatar, className = "" }: { avatar: Avatar; className?: string }) { return <img className={`portrait ${className}`} src={`/assets/natural/${characterKey(avatar)}-static.png`} alt={avatar} />; }
+function Portrait({ avatar, className = "" }: { avatar: Avatar; className?: string }) { return <img className={`portrait ${className}`} src={`/assets/natural/${characterKey(avatar)}-static-home-v3.png`} alt={avatar} />; }
 /** 给不同菜品确定一张原创菜碟图，不把内容类型等同于真实食物。 */
 function dishImage(id: string) { return `/assets/world/dish-${[...id].reduce((sum, char) => sum + char.charCodeAt(0), 0) % 6}.png`; }
 /** 根据视口方向选择独立生成的构图，浏览器只做等比例 cover；主体和热区独立于背景裁切。 */

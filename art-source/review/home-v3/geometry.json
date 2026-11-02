@@ -1,0 +1,1252 @@
+{
+  "version": 3,
+  "status": "visual-transitions-and-browser-reviewed",
+  "method": "每组固定缩放、脚底中点对齐，不按外轮廓居中或逐帧缩放",
+  "actors": {
+    "rat": {
+      "targetHeight": 157,
+      "baseline": 179,
+      "footCenter": 96,
+      "groups": {
+        "idle": {
+          "source": "art-source/generated/rat-natural.png",
+          "fixedScale": 0.6254980079681275,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 158,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "pressed": {
+          "source": "art-source/generated/rat-natural.png",
+          "fixedScale": 0.6254980079681275,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 157,
+              "left": 31,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 157,
+              "left": 33,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 158,
+              "left": 33,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "leisure": {
+          "source": "art-source/generated/rat-leisure-v3.png",
+          "fixedScale": 0.548951048951049,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 157,
+              "left": 34,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 157,
+              "left": 35,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 157,
+              "left": 35,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 157,
+              "left": 35,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 156,
+              "left": 34,
+              "top": 24,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 157,
+              "left": 35,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 158,
+              "left": 35,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 156,
+              "left": 35,
+              "top": 24,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 8,
+              "height": 158,
+              "left": 35,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 9,
+              "height": 157,
+              "left": 35,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 10,
+              "height": 158,
+              "left": 35,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 11,
+              "height": 156,
+              "left": 34,
+              "top": 24,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        }
+      }
+    },
+    "hamster": {
+      "targetHeight": 166,
+      "baseline": 179,
+      "footCenter": 96,
+      "groups": {
+        "idle": {
+          "source": "art-source/generated/hamster-natural.png",
+          "fixedScale": 0.6311787072243346,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 166,
+              "left": 24,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 166,
+              "left": 24,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 166,
+              "left": 24,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 166,
+              "left": 25,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 167,
+              "left": 24,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 167,
+              "left": 24,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 167,
+              "left": 24,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 167,
+              "left": 25,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "pressed": {
+          "source": "art-source/generated/hamster-natural.png",
+          "fixedScale": 0.6311787072243346,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 168,
+              "left": 24,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 168,
+              "left": 25,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 168,
+              "left": 24,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 168,
+              "left": 25,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 169,
+              "left": 24,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 168,
+              "left": 24,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 168,
+              "left": 24,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 168,
+              "left": 25,
+              "top": 12,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "leisure": {
+          "source": "art-source/generated/hamster-leisure-v3.png",
+          "fixedScale": 0.5551839464882943,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 166,
+              "left": 26,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 166,
+              "left": 25,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 166,
+              "left": 25,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 166,
+              "left": 26,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 166,
+              "left": 26,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 167,
+              "left": 26,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 166,
+              "left": 26,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 166,
+              "left": 26,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 8,
+              "height": 167,
+              "left": 26,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 9,
+              "height": 167,
+              "left": 26,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 10,
+              "height": 167,
+              "left": 26,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 11,
+              "height": 167,
+              "left": 27,
+              "top": 13,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        }
+      }
+    },
+    "field": {
+      "targetHeight": 158,
+      "baseline": 179,
+      "footCenter": 96,
+      "groups": {
+        "idle": {
+          "source": "art-source/generated/field-natural.png",
+          "fixedScale": 0.6448979591836734,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 158,
+              "left": 26,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "pressed": {
+          "source": "art-source/generated/field-natural.png",
+          "fixedScale": 0.6448979591836734,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 158,
+              "left": 26,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 158,
+              "left": 26,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "leisure": {
+          "source": "art-source/generated/field-leisure-v3.png",
+          "fixedScale": 0.5486111111111112,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 158,
+              "left": 27,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 158,
+              "left": 23,
+              "top": 22,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 157,
+              "left": 24,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 157,
+              "left": 24,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 157,
+              "left": 25,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 157,
+              "left": 23,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 157,
+              "left": 24,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 157,
+              "left": 24,
+              "top": 23,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 8,
+              "height": 160,
+              "left": 25,
+              "top": 20,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 9,
+              "height": 160,
+              "left": 22,
+              "top": 20,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 10,
+              "height": 160,
+              "left": 23,
+              "top": 20,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 11,
+              "height": 160,
+              "left": 24,
+              "top": 20,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        }
+      }
+    },
+    "chinchilla": {
+      "targetHeight": 163,
+      "baseline": 179,
+      "footCenter": 96,
+      "groups": {
+        "idle": {
+          "source": "art-source/generated/chinchilla-natural.png",
+          "fixedScale": 0.6626016260162602,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 163,
+              "left": 27,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 163,
+              "left": 27,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 163,
+              "left": 27,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 164,
+              "left": 27,
+              "top": 16,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 163,
+              "left": 28,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 163,
+              "left": 27,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 163,
+              "left": 27,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 162,
+              "left": 26,
+              "top": 18,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "pressed": {
+          "source": "art-source/generated/chinchilla-natural.png",
+          "fixedScale": 0.6626016260162602,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 164,
+              "left": 28,
+              "top": 16,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 164,
+              "left": 27,
+              "top": 16,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 164,
+              "left": 27,
+              "top": 16,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 165,
+              "left": 23,
+              "top": 15,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 166,
+              "left": 27,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 166,
+              "left": 27,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 165,
+              "left": 28,
+              "top": 15,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 166,
+              "left": 27,
+              "top": 14,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "leisure": {
+          "source": "art-source/generated/chinchilla-leisure-v3.png",
+          "fixedScale": 0.5780141843971631,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 163,
+              "left": 29,
+              "top": 17,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 8,
+              "height": 162,
+              "left": 29,
+              "top": 18,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 9,
+              "height": 162,
+              "left": 29,
+              "top": 18,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 10,
+              "height": 162,
+              "left": 29,
+              "top": 18,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 11,
+              "height": 162,
+              "left": 29,
+              "top": 18,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        }
+      }
+    },
+    "dormouse": {
+      "targetHeight": 150,
+      "baseline": 179,
+      "footCenter": 96,
+      "groups": {
+        "idle": {
+          "source": "art-source/generated/dormouse-natural.png",
+          "fixedScale": 0.5535055350553506,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 150,
+              "left": 36,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 150,
+              "left": 36,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 150,
+              "left": 36,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "pressed": {
+          "source": "art-source/generated/dormouse-natural.png",
+          "fixedScale": 0.5535055350553506,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 149,
+              "left": 34,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 150,
+              "left": 33,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 149,
+              "left": 34,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 149,
+              "left": 34,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        },
+        "leisure": {
+          "source": "art-source/generated/dormouse-leisure-v3.png",
+          "fixedScale": 0.4983388704318937,
+          "measurements": [
+            {
+              "frame": 0,
+              "height": 150,
+              "left": 38,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 1,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 2,
+              "height": 149,
+              "left": 34,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 3,
+              "height": 149,
+              "left": 35,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 4,
+              "height": 149,
+              "left": 36,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 5,
+              "height": 149,
+              "left": 35,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 6,
+              "height": 149,
+              "left": 34,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 7,
+              "height": 149,
+              "left": 35,
+              "top": 31,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 8,
+              "height": 150,
+              "left": 37,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 9,
+              "height": 150,
+              "left": 37,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 10,
+              "height": 150,
+              "left": 35,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            },
+            {
+              "frame": 11,
+              "height": 150,
+              "left": 36,
+              "top": 30,
+              "footCenter": 96,
+              "baseline": 179
+            }
+          ]
+        }
+      }
+    }
+  }
+}

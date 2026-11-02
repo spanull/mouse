@@ -1,4 +1,35 @@
 import { expect, test } from "@playwright/test";
+import sharp from "sharp";
+
+test("首页五鼠种实际像素尺寸和脚底稳定，静态降级与待机首帧一致", async ({ request }) => {
+  const manifest = await (await request.get("/assets/natural/manifest.json")).json();
+  for (const key of ["rat", "hamster", "field", "chinchilla", "dormouse"]) {
+    const actor = manifest.actors[key];
+    const heights: number[] = [];
+    for (const pose of ["idle", "pressed", "leisure"]) {
+      const spec = actor.poses[pose];
+      const sheet = await (await request.get(spec.file)).body();
+      const { data, info } = await sharp(sheet).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+      expect(info.width).toBe(192 * spec.frameCount);
+      for (let frame = 0; frame < spec.frameCount; frame++) {
+        let top = 192, bottom = -1, footLeft = 192, footRight = -1;
+        for (let y = 0; y < 192; y++) for (let x = 0; x < 192; x++) {
+          if (data[(y * info.width + frame * 192 + x) * 4 + 3] <= 128) continue;
+          top = Math.min(top, y); bottom = Math.max(bottom, y);
+          if (y >= 174) { footLeft = Math.min(footLeft, x); footRight = Math.max(footRight, x); }
+        }
+        heights.push(bottom - top + 1);
+        expect(bottom, `${key}/${pose}/${frame}脚底`).toBe(179);
+        expect(Math.abs((footLeft + footRight) / 2 - 96), `${key}/${pose}/${frame}脚掌中点`).toBeLessThanOrEqual(2);
+      }
+      if (pose === "idle") {
+        const fallback = await (await request.get(actor.fallback)).body();
+        expect(await sharp(fallback).ensureAlpha().raw().toBuffer()).toEqual(await sharp(sheet).extract({ left: 0, top: 0, width: 192, height: 192 }).ensureAlpha().raw().toBuffer());
+      }
+    }
+    expect(Math.max(...heights) - Math.min(...heights), `${key}跨动作身高差`).toBeLessThanOrEqual(4);
+  }
+});
 
 test("慢素材不跳过调酒，后台保留动作帧，恢复后按顺序送达", async ({ page }) => {
   test.setTimeout(40000);
@@ -60,11 +91,13 @@ test("调酒中切换系统静态偏好不倒退，素材失败仍可收好饮�
 test("环境序列帧变化、松鼠离场及减少动态效果保持静态", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await expect(page.locator('[data-ambient="leaves"], [data-ambient="lantern"]')).toHaveCount(0);
   const squirrel = page.locator('[data-ambient="squirrel"]');
   await expect.poll(() => squirrel.evaluate(el => el.getAnimations().length)).toBe(1);
   const seated = await squirrel.screenshot();
   await squirrel.evaluate(el => { const animation = el.getAnimations()[0]; animation.pause(); animation.currentTime = 6000; });
   expect(await squirrel.screenshot()).not.toEqual(seated);
+  await page.goto("/restaurant");
   const lamp = page.locator('[data-ambient="lantern"]');
   const frame = await lamp.evaluate(el => getComputedStyle(el).backgroundPosition);
   await expect.poll(() => lamp.evaluate(el => getComputedStyle(el).backgroundPosition)).not.toBe(frame);

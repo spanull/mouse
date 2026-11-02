@@ -76,3 +76,6 @@
 .ambient-restaurant .ambient-light{top:13%}.ambient-bar .ambient-light{top:20%}
 @media(min-aspect-ratio:1/1){.restaurant-world{--scene-bg:url('/assets/natural/restaurant-wide.png')}.bar-world{--scene-bg:url('/assets/natural/bar-wide.png')}.seated-0{left:32%}.seated-1{left:68%}.ambient-visitor{right:12%;top:23%}.ambient-foliage{right:3%;top:0}.ambient-light{left:18%;top:18%}}
 @media(max-height:500px) and (min-aspect-ratio:1/1){.chef-mouse{--actor-size:170px;top:67%}.seated-mouse{--guest-size:95px}.empty-bar-stool{width:50px;height:50px}.ambient-foliage{width:95px}.ambient-visitor{width:100px;top:22%}.ambient-steam{top:calc(67% - 107px)}}
+
+/* 首页小访客遵循背景的世界坐标和像素密度，贴近右侧植被，不再悬浮大块树干。 */
+.ambient-home .ambient-visitor{--visitor-size:clamp(90px,15cqh,150px);width:var(--visitor-size);left:clamp(50px,calc(var(--image-x,0px) + var(--image-width,100cqw)*.8),calc(100% - 55px));right:auto;top:calc(var(--image-y,0px) + var(--image-height,100cqh)*.31 - var(--visitor-size)*.5);transform:translateX(-50%)}

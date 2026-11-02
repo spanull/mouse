@@ -58,8 +58,8 @@ export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" })
     return () => { cancelled = true; animations.forEach(animation => animation.cancel()); document.removeEventListener("visibilitychange", sync); media.removeEventListener("change", sync); };
   }, [scene, reducedMotion]);
   return <div ref={ref} className={`ambient-life ambient-${scene}`} aria-hidden="true">
-    <div className="ambient-sprite ambient-foliage" data-ambient="leaves" />
-    <div className="ambient-sprite ambient-light" data-ambient="lantern" />
+    {scene !== "home" && <div className="ambient-sprite ambient-foliage" data-ambient="leaves" />}
+    {scene !== "home" && <div className="ambient-sprite ambient-light" data-ambient="lantern" />}
     {scene === "home" && <div className="ambient-sprite ambient-visitor" data-ambient="squirrel" />}
     {scene === "restaurant" && <div className="ambient-sprite ambient-steam" data-ambient="steam" />}
   </div>;
