@@ -34,9 +34,12 @@ export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" })
           if (!spec) continue;
           element.style.backgroundImage = `url('${spec.file}')`;
           element.style.backgroundSize = `${spec.frameCount * 100}% 100%`;
-          const duration = spec.durations.reduce((sum, value) => sum + value, 0);
+          // 每轮在自然首姿停留，叶片等风、灯火与蒸汽短歇；只调整播放节奏，不复制图片凑帧。
+          const rest = key === "leaves" ? 1800 : key === "lantern" ? 500 : key === "steam" ? 900 : 0;
+          const durations = spec.durations.map((time, i) => time + (i === 0 ? rest : 0));
+          const duration = durations.reduce((sum, value) => sum + value, 0);
           let elapsed = 0;
-          const frames: Keyframe[] = spec.durations.map((time, i) => {
+          const frames: Keyframe[] = durations.map((time, i) => {
             const frame = { backgroundPosition: `${i / (spec.frameCount - 1) * 100}% 0`, offset: elapsed / duration, easing: "steps(1, end)" };
             elapsed += time;
             return frame;

@@ -7,17 +7,20 @@ import type { AnimatedSprite, Application, Texture } from "pixi.js";
 
 export type MousePose = "idle" | "pressed" | "success" | "welcome" | "listen" | "polish" | "shake" | "pour" | "serve" | "comfort" | "leisure";
 type Pose = MousePose;
+type ActorAction = { pose: MousePose; token: number; once?: boolean };
 type PoseSpec = { file: string; frameCount: number; durations: number[]; loop: boolean };
 type ActorSpec = { frameSize: number; fallback: string; poses: Partial<Record<Pose, PoseSpec>> };
 type NaturalManifest = { actors: Record<string, ActorSpec> };
 type Controller = { play: (pose: Pose) => void; setReduced: (value: boolean) => void };
 
 /** 渲染独立鼠鼠精灵；画布只处理动作，HTML 按钮负责可访问的问候交互。 */
-export function MouseActor({ character = "rat", celebrate = 0, action, decorative = false, label = "和鼠鼠打招呼", onGreet }: { character?: string; celebrate?: number; action?: { pose: MousePose; token: number }; decorative?: boolean; label?: string; onGreet?: () => void }) {
+export function MouseActor({ character = "rat", celebrate = 0, action, decorative = false, label = "和鼠鼠打招呼", onGreet, onActionComplete, onPlaybackError }: { character?: string; celebrate?: number; action?: ActorAction; decorative?: boolean; label?: string; onGreet?: () => void; onActionComplete?: (action: ActorAction) => void; onPlaybackError?: () => void }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const controllerRef = useRef<Controller | null>(null);
   const celebrateRef = useRef(celebrate);
   const actionRef = useRef(action);
+  const completeRef = useRef(onActionComplete);
+  const errorRef = useRef(onPlaybackError);
   const reducedRef = useRef(false);
   const { reducedMotion } = useDemo();
   const [systemReduced, setSystemReduced] = useState(false);
@@ -26,10 +29,12 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
   const [attempt, setAttempt] = useState(0);
   const asset = ["rat", "hamster", "field", "chinchilla", "dormouse", "mole", "chef", "patron-dormouse", "patron-hamster"].includes(character) ? character : "rat";
 
+  useEffect(() => { completeRef.current = onActionComplete; errorRef.current = onPlaybackError; }, [onActionComplete, onPlaybackError]);
+
   useEffect(() => {
     actionRef.current = action;
     controllerRef.current?.play(action?.pose ?? "idle");
-  }, [action?.pose, action?.token]);
+  }, [action?.pose, action?.token, action?.once]);
 
   useEffect(() => {
     const media = matchMedia("(prefers-reduced-motion: reduce)");
@@ -104,12 +109,14 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
         if (!spec?.poses.idle) throw new Error("缺少角色待机配置");
         const frames = {} as Record<Pose, Texture[]>;
         const poses = Object.keys(spec.poses) as Pose[];
-        for (const pose of poses) {
+        const loaded = await Promise.allSettled(poses.map(async pose => {
           const poseSpec = spec.poses[pose]!;
           const sheet = await loadTexture(poseSpec.file);
+          if (cancelled) return;
           frames[pose] = Array.from({ length: poseSpec.frameCount }, (_, index) => new Texture({ source: sheet.source, frame: new Rectangle(index * spec.frameSize, 0, spec.frameSize, spec.frameSize) }));
           textures.push(...frames[pose]);
-        }
+        }));
+        if (loaded.some(result => result.status === "rejected")) throw new Error("角色动作加载未完成");
         if (cancelled) { dispose(); return; }
         actor = new AnimatedSprite({ textures: frames.idle, autoUpdate: false });
         actor.anchor.set(.5, (spec.frameSize - 12) / spec.frameSize);
@@ -139,22 +146,35 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
           const poseSpec = spec.poses[pose]!;
           actor.textures = frames[pose].map((texture, i) => ({ texture, time: poseSpec.durations[i] }));
           actor.animationSpeed = 1;
-          actor.loop = poseSpec.loop;
+          const requested = actionRef.current;
+          const controlled = requested?.once && requested.pose === pose ? requested : undefined;
+          actor.loop = controlled ? false : poseSpec.loop;
           if (app) { app.canvas.dataset.pose = pose; app.canvas.dataset.frames = String(poseSpec.frameCount); }
-          actor.onComplete = () => { if (!cancelled && activePose === pose) play("idle"); };
-          if (reducedRef.current || document.hidden) { actor.gotoAndStop(0); app?.render(); }
-          else actor.gotoAndPlay(0);
+          actor.onComplete = () => {
+            if (cancelled || activePose !== pose) return;
+            // 受控服务动作停在末帧，由父场景衔接；旧令牌不能推进新的服务步骤。
+            if (controlled) {
+              if (actionRef.current?.token === controlled.token && actionRef.current.pose === controlled.pose) completeRef.current?.(controlled);
+            } else play("idle");
+          };
+          actor.gotoAndPlay(0);
+          if (reducedRef.current || document.hidden) app?.render();
         }
 
-        /** 对齐页面可见性与静态偏好；停止 ticker 后手动渲染一帧，保证静态画面可见。 */
+        /** 隐藏时只冻结 ticker，保留动作帧和进度；减少动态效果展示首帧，恢复偏好后重播当前动作。 */
+        let wasReduced = false;
         function syncPlayback() {
           if (!app || !actor || cancelled) return;
-          if (document.hidden || reducedRef.current) { app.stop(); actor.gotoAndStop(0); app.render(); }
-          else { play(actionRef.current?.pose ?? "idle"); app.start(); }
+          if (reducedRef.current) { wasReduced = true; app.stop(); actor.gotoAndStop(0); app.render(); }
+          else {
+            if (wasReduced) { wasReduced = false; play(actionRef.current?.pose ?? "idle"); }
+            if (document.hidden) app.stop(); else app.start();
+          }
         }
         let idleElapsed = 0, nextLeisure = 9000 + Math.random() * 9000;
         app.ticker.add(ticker => {
           actor?.update(ticker);
+          if (app && actor) app.canvas.dataset.frame = String(actor.currentFrame);
           if (activePose !== "idle" || actionRef.current || reducedRef.current) { idleElapsed = 0; return; }
           idleElapsed += ticker.deltaMS;
           if (idleElapsed >= nextLeisure) {
@@ -169,16 +189,17 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
         document.addEventListener("visibilitychange", syncPlayback);
         unsubscribe = () => { observer.disconnect(); document.removeEventListener("visibilitychange", syncPlayback); app?.canvas.removeEventListener("webglcontextlost", onContextLost); };
         /** 图形上下文丢失时显示已有 HTML 降级入口，并允许用户重新初始化。 */
-        function onContextLost(event: Event) { event.preventDefault(); app?.stop(); setFailed(true); setReady(false); }
+        function onContextLost(event: Event) { event.preventDefault(); app?.stop(); setFailed(true); setReady(false); errorRef.current?.(); }
         hostRef.current?.appendChild(app.canvas);
         controllerRef.current = { play, setReduced: syncPlayback };
-        syncPlayback();
+        play("idle");
         if (celebrateRef.current) play("success");
         if (actionRef.current) play(actionRef.current.pose);
+        syncPlayback();
         setReady(true);
       } catch {
         dispose();
-        if (!cancelled) { setFailed(true); setReady(false); }
+        if (!cancelled) { setFailed(true); setReady(false); errorRef.current?.(); }
       }
     }
     void initialize();

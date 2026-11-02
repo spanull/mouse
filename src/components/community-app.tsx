@@ -115,29 +115,53 @@ const MOLE_CHAT = [
   { pose: "polish", lines: ["擦亮杯子，也给心情留一点光。", "这只杯子留给你，边缘不会碰疼小爪子。", "我慢慢擦，你慢慢想。今晚不赶时间。"] },
   { pose: "comfort", lines: ["今天做到这里，就已经很好了。", "不用每次都坚强。累了也可以靠一会儿。", "你的心事在这里有一个小小的位置。"] },
 ] as const;
-/** 酒吧的手动互动与送酒步骤分别驱动独立动作；切换或离开时清理计时器，不改变消费次数。 */
+/** 酒吧通过实际动作完成事件衔接送酒；素材加载与后台暂停不会跳过步骤，不改变消费次数。 */
 function BarScene({ served, onFinish }: { served?: number; onFinish?: () => void }) {
   const { state, reducedMotion } = useDemo();
   const [offset, setOffset] = useState(0);
   const [chat, setChat] = useState<{ text: string; pose: MousePose; token: number } | null>(null);
   const [step, setStep] = useState(0);
+  const [systemReduced, setSystemReduced] = useState(false);
+  const [playbackFailed, setPlaybackFailed] = useState(false);
+  const [pageHidden, setPageHidden] = useState(false);
   const counts = useRef([0, 0, 0, 0]);
   const whispers = state.entries.filter(entry => entry.kind === "whisper" && isPublic(entry));
   useEffect(() => {
-    if (reducedMotion || matchMedia("(prefers-reduced-motion: reduce)").matches || whispers.length < 2) return;
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    /** 动态监听系统偏好，服务进行中也能立即切换成静态送达，恢复后不重复点酒。 */
+    function syncPreference() { setSystemReduced(media.matches); }
+    /** 同步文档可见性，让递出的饮品与角色一起暂停，不在后台提前飘到终点。 */
+    function syncVisibility() { setPageHidden(document.hidden); }
+    syncPreference(); media.addEventListener("change", syncPreference);
+    syncVisibility(); document.addEventListener("visibilitychange", syncVisibility);
+    return () => { media.removeEventListener("change", syncPreference); document.removeEventListener("visibilitychange", syncVisibility); };
+  }, []);
+  useEffect(() => {
+    if (reducedMotion || systemReduced || whispers.length < 2) return;
     const timer = setInterval(() => { if (!document.hidden) setOffset(value => value + 1); }, 7000);
     return () => clearInterval(timer);
-  }, [reducedMotion, whispers.length]);
+  }, [reducedMotion, systemReduced, whispers.length]);
   useEffect(() => {
     if (served === undefined) return;
-    if (reducedMotion || matchMedia("(prefers-reduced-motion: reduce)").matches) { setStep(3); return; }
-    const timers = [2200, 4400, 6600].map((delay, index) => setTimeout(() => setStep(index + 1), delay));
-    return () => timers.forEach(clearTimeout);
-  }, [served, reducedMotion]);
+    if (reducedMotion || systemReduced || playbackFailed) setStep(3);
+  }, [served, reducedMotion, systemReduced, playbackFailed]);
   useEffect(() => {
     if (!chat) return;
-    const timer = setTimeout(() => setChat(null), 9000);
-    return () => clearTimeout(timer);
+    let remaining = 9000, started = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    /** 对白只累计前台阅读时间；切后台保留剩余时长，恢复后不会立刻收起。 */
+    function syncChatClock() {
+      if (timer !== undefined) {
+        clearTimeout(timer); timer = undefined;
+        remaining = Math.max(0, remaining - (performance.now() - started));
+      }
+      if (!document.hidden) {
+        started = performance.now();
+        timer = setTimeout(() => setChat(null), remaining);
+      }
+    }
+    syncChatClock(); document.addEventListener("visibilitychange", syncChatClock);
+    return () => { clearTimeout(timer); document.removeEventListener("visibilitychange", syncChatClock); };
   }, [chat]);
   /** 按所选互动轮换不同文案和动作；连续点击同一项也会更新令牌重新播放。 */
   function interact(index: number) {
@@ -147,8 +171,13 @@ function BarScene({ served, onFinish }: { served?: number; onFinish?: () => void
   }
   const servicePoses: MousePose[] = ["shake", "pour", "serve", "comfort"];
   const serviceLines = ["加一点月光，再摇掉今天的烦恼。", "慢慢倒，给心事留一点呼吸的地方。", "你的这杯好了，小心接住。", served === undefined ? "" : DRINKS[served].comfort];
-  const action = served !== undefined ? { pose: servicePoses[step], token: step + 1 } : chat ? { pose: chat.pose, token: chat.token } : undefined;
-  return <section className={`bar-content ${served !== undefined ? "has-served" : ""}`} aria-label="树洞酒吧场景"><div className="bar-stage scene-art"><SceneBackdrop scene="bar" alt="灯火温暖的树洞吧台" /><AmbientLife scene="bar" /><img className="empty-bar-stool" src="/assets/natural/empty-stool.png" alt="留给你的空座位" /><div className="bartender"><MouseActor character="mole" action={action} label="和调酒鼹鼠打招呼" onGreet={() => { if (served === undefined) interact(counts.current.reduce((sum, value) => sum + value, 0) % 4); }} /></div>{(chat || served !== undefined) && <div className="bartender-bubble" role="status">{served !== undefined ? serviceLines[step] : chat?.text}</div>}<Link prefetch={false} href="/bar/wall" className="scene-object wall-object" aria-label="打开心声墙"><img src="/assets/ui/entrance-wall.png" alt="" /></Link><Link prefetch={false} href="/bar/drinks" onClick={onFinish} className="scene-object drinks-object" aria-label="打开酒单，来一杯"><img src="/assets/world/cocktail-purple.png" alt="" /></Link>{[0, 1].map(n => { const entry = whispers[(offset + n) % Math.max(whispers.length, 1)]; return <div className={`seated-mouse seated-${n}`} key={n}><MouseActor character={n ? "patron-hamster" : "patron-dormouse"} decorative />{entry && <Link className="seat-bubble" href={entryUrl(entry)} aria-label="阅读这只鼠的心声">{entry.body}</Link>}</div>; })}{served === undefined && <div className="mole-tools" aria-label="与鼹鼠互动">{["打个招呼", "听我说说", "看看擦杯", "给我一点鼓励"].map((label, index) => <button key={label} aria-label={label} aria-pressed={chat?.pose === MOLE_CHAT[index].pose} onClick={() => interact(index)}><img src={`/assets/ui/${["sparkle", "speech", "drink", "heart"][index]}.png`} alt="" /></button>)}</div>}{served !== undefined && step >= 2 && <div className={`served-glass ${DRINKS[served].color}`} aria-label="鼹鼠送来的饮品"><Cocktail color={DRINKS[served].color} /></div>}{served !== undefined && step === 3 && <Link className="serve-back round-control" href="/bar" onClick={onFinish} aria-label="收好饮品，回到吧台"><img src="/assets/ui/check.png" alt="" /></Link>}</div></section>;
+  /** 仅接受当前步骤对应的完成令牌；旧回调、连续点击和静态降级均不能重复推进。 */
+  function finishAction(completed: { pose: MousePose; token: number }) {
+    if (served === undefined) return;
+    setStep(current => completed.token === current + 1 && completed.pose === servicePoses[current] ? Math.min(current + 1, 3) : current);
+  }
+  const action = served !== undefined ? { pose: servicePoses[step], token: step + 1, once: true } : chat ? { pose: chat.pose, token: chat.token } : undefined;
+  return <section className={`bar-content ${served !== undefined ? "has-served" : ""}`} aria-label="树洞酒吧场景"><div className="bar-stage scene-art"><SceneBackdrop scene="bar" alt="灯火温暖的树洞吧台" /><AmbientLife scene="bar" /><img className="empty-bar-stool" src="/assets/natural/empty-stool.png" alt="留给你的空座位" /><div className="bartender"><MouseActor character="mole" action={action} onActionComplete={finishAction} onPlaybackError={() => setPlaybackFailed(true)} label="和调酒鼹鼠打招呼" onGreet={() => { if (served === undefined) interact(counts.current.reduce((sum, value) => sum + value, 0) % 4); }} /></div>{(chat || served !== undefined) && <div className="bartender-bubble" role="status">{served !== undefined ? `${playbackFailed ? "动画暂时不可用，饮品已送达。" : ""}${serviceLines[step]}` : chat?.text}</div>}<Link prefetch={false} href="/bar/wall" className="scene-object wall-object" aria-label="打开心声墙"><img src="/assets/ui/entrance-wall.png" alt="" /></Link><Link prefetch={false} href="/bar/drinks" onClick={onFinish} className="scene-object drinks-object" aria-label="打开酒单，来一杯"><img src="/assets/world/cocktail-purple.png" alt="" /></Link>{[0, 1].map(n => { const entry = whispers[(offset + n) % Math.max(whispers.length, 1)]; return <div className={`seated-mouse seated-${n}`} key={n}><MouseActor character={n ? "patron-hamster" : "patron-dormouse"} decorative />{entry && <Link className="seat-bubble" href={entryUrl(entry)} aria-label="阅读这只鼠的心声">{entry.body}</Link>}</div>; })}{served === undefined && <div className="mole-tools" aria-label="与鼹鼠互动">{["打个招呼", "听我说说", "看看擦杯", "给我一点鼓励"].map((label, index) => <button key={label} aria-label={label} aria-pressed={chat?.pose === MOLE_CHAT[index].pose} onClick={() => interact(index)}><img src={`/assets/ui/${["sparkle", "speech", "drink", "heart"][index]}.png`} alt="" /></button>)}</div>}{served !== undefined && step >= 2 && <div className={`served-glass ${DRINKS[served].color}`} style={{ animationPlayState: pageHidden ? "paused" : "running" }} aria-label="鼹鼠送来的饮品"><Cocktail color={DRINKS[served].color} /></div>}{served !== undefined && step === 3 && <Link className="serve-back round-control" href="/bar" onClick={onFinish} aria-label="收好饮品，回到吧台"><img src="/assets/ui/check.png" alt="" /></Link>}</div></section>;
 }
 /** 使用经去背景与验收的 AI 饮品素材；颜色标识只映射已有酒单，不表达审核状态，未知值回退到莓莓。 */
 function Cocktail({ color }: { color: string }) { const asset = ["pink", "mint", "orange", "purple"].includes(color) ? color : "pink"; return <img className={`cocktail ${asset}`} src={`/assets/world/cocktail-${asset}.png`} alt="" aria-hidden="true" />; }
