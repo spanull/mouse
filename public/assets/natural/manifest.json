@@ -650,28 +650,57 @@
       "fallback": "/assets/natural/squirrel-static-home-v3.png",
       "poses": {
         "idle": {
-          "file": "/assets/natural/squirrel-idle-home-v3.png",
-          "frameCount": 16,
+          "file": "/assets/natural/squirrel-visit-v5.png",
+          "frameCount": 23,
           "durations": [
-            3500,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            130,
-            22000
+            16000,
+            320,
+            320,
+            320,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200,
+            3000,
+            200,
+            900,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200,
+            200
           ],
           "loop": true
         }
+      },
+      "visit": {
+        "phases": {
+          "hidden": [
+            0,
+            0
+          ],
+          "enter": [
+            1,
+            10
+          ],
+          "settled": [
+            11,
+            13
+          ],
+          "exit": [
+            14,
+            22
+          ]
+        },
+        "initialTime": 13000,
+        "reviewStatus": "frames-and-browser-cycle-reviewed"
       }
     }
   },
@@ -1114,20 +1143,20 @@
       "bytes": 483565
     },
     {
-      "file": "/assets/natural/squirrel-idle-home-v3.png",
-      "source": "art-source/generated/squirrel-home-v4.png",
-      "promptFile": "art-source/generated/squirrel-home-v4.json",
-      "width": 4096,
-      "height": 256,
-      "bytes": 729107
-    },
-    {
       "file": "/assets/natural/squirrel-static-home-v3.png",
       "source": "art-source/generated/squirrel-home-v4.png",
       "promptFile": "art-source/generated/squirrel-home-v4.json",
       "width": 256,
       "height": 256,
       "bytes": 47186
+    },
+    {
+      "file": "/assets/natural/squirrel-visit-v5.png",
+      "source": "art-source/generated/squirrel-cycle-v1.png",
+      "promptFile": "art-source/generated/squirrel-cycle-v1.json",
+      "width": 5888,
+      "height": 256,
+      "bytes": 1193974
     }
   ],
   "reviewRecord": "docs/10-游戏UI与自适应验收.md",

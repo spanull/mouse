@@ -26,12 +26,17 @@ export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" })
       try {
         const response = await fetch("/assets/natural/manifest.json");
         if (!response.ok) return;
-        const manifest = await response.json() as { actors: Record<string, { poses: { idle: AmbientPose } }> };
+        const manifest = await response.json() as { actors: Record<string, { poses: { idle: AmbientPose }; visit?: { initialTime: number } }> };
         if (cancelled) return;
         for (const element of ref.current?.querySelectorAll<HTMLElement>("[data-ambient]") ?? []) {
           const key = element.dataset.ambient!;
           const spec = manifest.actors[key]?.poses.idle;
           if (!spec) continue;
+          // 先解码整张序列图再显示首姿，避免图片加载途中先闪出错误姿势。
+          const picture = new Image();
+          picture.src = spec.file;
+          await picture.decode();
+          if (cancelled) return;
           element.style.backgroundImage = `url('${spec.file}')`;
           element.style.backgroundSize = `${spec.frameCount * 100}% 100%`;
           // 每轮在自然首姿停留，叶片等风、灯火与蒸汽短歇；只调整播放节奏，不复制图片凑帧。
@@ -46,7 +51,7 @@ export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" })
           });
           frames.push({ backgroundPosition: "100% 0", offset: 1 });
           const animation = element.animate(frames, { duration, iterations: Infinity });
-          animation.currentTime = key === "squirrel" ? 0 : Math.random() * duration;
+          animation.currentTime = key === "squirrel" ? manifest.actors[key].visit?.initialTime ?? 0 : Math.random() * duration;
           animations.push(animation);
         }
         sync();

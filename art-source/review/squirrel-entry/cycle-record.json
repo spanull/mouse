@@ -1,0 +1,48 @@
+{
+  "source": "art-source/generated/squirrel-cycle-v1.png",
+  "scale": 1,
+  "target": {
+    "left": 14,
+    "right": 243,
+    "bottom": 208
+  },
+  "sourceAnchor": {
+    "left": 14,
+    "right": 243,
+    "bottom": 208
+  },
+  "frameCount": 23,
+  "durations": [
+    16000,
+    320,
+    320,
+    320,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    3000,
+    200,
+    900,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "uniquePoses": 23,
+  "method": "同图23个唯一姿势组成隐藏、入场、停留与离场；省略重复隐藏末帧，无倒放、淡入或位移补帧。",
+  "status": "frames-and-browser-cycle-reviewed",
+  "attempts": 3,
+  "errors": [
+    "curl: (56) schannel: server closed abruptly (missing close_notify)",
+    "Expecting value: line 1 column 1 (char 0)"
+  ]
+}

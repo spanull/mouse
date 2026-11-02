@@ -88,22 +88,35 @@ test("调酒中切换系统静态偏好不倒退，素材失败仍可收好饮�
   await expect(page.locator(".record")).toHaveCount(2);
 });
 
-test("环境序列帧变化、松鼠离场及减少动态效果保持静态", async ({ page }) => {
+test("首页松鼠完整入场循环与酒吧环境减少动态效果", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(page.locator('[data-ambient="leaves"], [data-ambient="lantern"]')).toHaveCount(0);
   const squirrel = page.locator('[data-ambient="squirrel"]');
   await expect.poll(() => squirrel.evaluate(el => el.getAnimations().length)).toBe(1);
-  const seated = await squirrel.screenshot();
-  await squirrel.evaluate(el => { const animation = el.getAnimations()[0]; animation.pause(); animation.currentTime = 6000; });
-  expect(await squirrel.screenshot()).not.toEqual(seated);
-  await page.goto("/restaurant");
+  const manifest = await (await page.request.get("/assets/natural/manifest.json")).json();
+  const spec = manifest.actors.squirrel.poses.idle;
+  const visit = manifest.actors.squirrel.visit;
+  expect(visit.phases.hidden[0]).toBe(0);
+  const total = spec.durations.reduce((sum: number, time: number) => sum + time, 0);
+  await squirrel.evaluate(el => { const animation = el.getAnimations()[0]; animation.pause(); animation.currentTime = 0; });
+  const hidden = await squirrel.screenshot();
+  const settledTime = spec.durations.slice(0, visit.phases.settled[0]).reduce((sum: number, time: number) => sum + time, 0) + 10;
+  await squirrel.evaluate((el, time) => { el.getAnimations()[0].currentTime = time; }, settledTime);
+  expect(await squirrel.screenshot()).not.toEqual(hidden);
+  await squirrel.evaluate((el, time) => { el.getAnimations()[0].currentTime = time; }, total + 10);
+  expect(await squirrel.screenshot()).toEqual(hidden);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect.poll(() => squirrel.evaluate(el => el.getAnimations()[0]?.currentTime)).toBe(0);
+  expect(await squirrel.screenshot()).toEqual(hidden);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/bar");
   const lamp = page.locator('[data-ambient="lantern"]');
   const frame = await lamp.evaluate(el => getComputedStyle(el).backgroundPosition);
   await expect.poll(() => lamp.evaluate(el => getComputedStyle(el).backgroundPosition)).not.toBe(frame);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect.poll(() => page.locator(".ambient-sprite").evaluateAll(elements => elements.every(el => el.getAnimations().every(a => a.playState === "paused" && a.currentTime === 0)))).toBe(true);
-  for (const path of ["/restaurant", "/bar"]) {
+  for (const path of ["/bar"]) {
     await page.goto(path);
     await expect.poll(() => page.locator(".ambient-sprite").first().evaluate(el => el.getAnimations().length)).toBe(1);
     expect(await page.locator(".ambient-sprite").evaluateAll(elements => elements.every(el => el.getAnimations().every(a => a.playState === "paused")))).toBe(true);
