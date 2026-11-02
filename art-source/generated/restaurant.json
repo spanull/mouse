@@ -1,0 +1,16 @@
+{
+  "asset": "restaurant",
+  "file": "art-source/generated/restaurant.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T05:57:27.483946+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nOne full-bleed square interior background of a tiny woodland mouse restaurant.\nWarm cream and blush plaster walls, shelves of ceramic jars, hanging copper pots, herbs,\nrustic timber cabinets. Straight-on view, upper half contains decor, center remains calm.\nA horizontal wooden serving counter runs across image at y=43%, front apron ends at 57%.\nLeave x=36% to 64%, y=20% to 48% empty for a separate chef sprite.\nSmall dishes on far left and right of counter, center clear. Lower half is wooden plank floor.\nWarm morning light. No people, rodents, characters, chef hats, labels or lettering.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 2156380,
+  "attempts": 1
+}

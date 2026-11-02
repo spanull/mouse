@@ -1,0 +1,17 @@
+{
+  "asset": "chef-taste",
+  "file": "art-source/generated/chef-taste.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T10:02:36.575264+00:00",
+  "prompt": "Original cozy woodland pixel art matching reference image 1, warm dark brown outlines, soft cream and moss greens. No lettering, numbers or watermark. EXACTLY FOUR columns THREE rows, TWELVE equal cells in row-major order. One consecutive animation frame per cell, fixed camera and scale, identical baseline and framing, generous margins. Each frame must show a real small intermediate change in the action. No whole object bobbing, no left-right jumping, no zoom or squash. Pure solid magenta #FF00FF background, no drawn grid. Image 2 fixes the exact chef AND cooking table AND pot ensemble. Preserve complete workstation in EVERY cell, table and legs and pot absolutely static. Rat wears cream chef hat and sage apron. Twelve-frame action: lifting a wooden spoon from the pot, bringing it carefully to mouth, tasting, smiling, then lowering spoon back. Show gradual intermediate arm and wrist movement, hands above tabletop. No clipping body through table, no moving table, no missing table legs. Keep full object within each cell.",
+  "requestedSize": "2048x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/chef-workstation.png"
+  ],
+  "bytes": 1501207,
+  "attempts": 6
+}

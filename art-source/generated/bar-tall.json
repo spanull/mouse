@@ -1,0 +1,17 @@
+{
+  "asset": "bar-tall",
+  "file": "art-source/generated/bar-tall.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:35:56.992573+00:00",
+  "prompt": "Create a complete PORTRAIT full-bleed 2:3 tree-hollow bar pixel game background, matching reference image 2 and prototype. Dense moss canopy and leafy branches at top, golden fairy lights, rustic tree shelves filled with colored bottles on left and right. Small empty central alcove for separate mole bartender centered x50 percent y40 percent. Wooden counter TOP at EXACTLY 52 percent image height, front ends at 62 percent. EXACTLY THREE empty wooden stools with seats at 73 percent image height, x25%,50%,75%. Lower quarter complete sandy meadow foreground, daisies and soft pink flowers along sides, inviting warm gold and sage palette. No characters or animals, no text or menu boards, no UI, no signs. No vast black empty region, no missing edges. Intricate cozy pixel art and dark brown outlines, not stretched.",
+  "requestedSize": "1024x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/bar.png"
+  ],
+  "bytes": 3131012,
+  "attempts": 1
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ui-entrances",
+  "file": "art-source/generated/ui-entrances.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:33:21.748065+00:00",
+  "prompt": "Create a woodland pixel game object atlas, exactly TWO columns and TWO rows, one isolated game interaction object per equal cell. Wide empty margins, solid pure magenta #FF00FF background, NO text letters numbers or grid. Top left: gorgeous rustic restaurant entrance hanging sign with carved wooden frame, moss and small daisies, center has LARGE raised illustrated steaming ceramic plate plus spoon and fork, dusty pink accent. Top right: matching tree-hollow bar hanging sign with lavender accent, large raised jewel-colored cocktail glass and golden moon. Bottom left: a charming large closed cream recipe book with leather straps, green cover and a carved plate emblem, for opening a restaurant menu. Bottom right: an adorable wooden bulletin board with several small BLANK parchment notes pinned to it and leaves at corners, for a heart wall. These are finely illustrated pixel objects, not modern flat rectangles. Match reference honey-brown outlines, sage moss and cream highlights.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 2270342,
+  "attempts": 1
+}

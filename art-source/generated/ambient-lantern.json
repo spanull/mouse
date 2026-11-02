@@ -1,0 +1,16 @@
+{
+  "asset": "ambient-lantern",
+  "file": "art-source/generated/ambient-lantern.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T10:06:15.188564+00:00",
+  "prompt": "Original cozy woodland pixel art matching reference image 1, warm dark brown outlines, soft cream and moss greens. No lettering, numbers or watermark. EXACTLY FOUR columns THREE rows, TWELVE equal cells in row-major order. One consecutive animation frame per cell, fixed camera and scale, identical baseline and framing, generous margins. Each frame must show a real small intermediate change in the action. No whole object bobbing, no left-right jumping, no zoom or squash. Pure solid magenta #FF00FF background, no drawn grid. One small hanging honey-wood and brass lantern with glass panels and a tiny golden candle flame. Lantern cage and hanging loop perfectly stationary across all 12 frames. Only flame shape changes subtly and warm luminous glass softly brightens and dims. No large halo, no shaking or moving lantern. Isolated lantern on magenta, no scenery.",
+  "requestedSize": "2048x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 790846,
+  "attempts": 2
+}

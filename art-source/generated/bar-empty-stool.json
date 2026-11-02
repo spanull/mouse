@@ -1,0 +1,17 @@
+{
+  "asset": "bar-empty-stool",
+  "file": "art-source/generated/bar-empty-stool.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:38:20.919177+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. One isolated small rustic round honey-wood bar stool matching the stools in image 2. Entire round seat and all legs clearly visible. Straight-on slight elevated camera matching reference. Centered with wide magenta margins, no character, no other furniture, pure solid magenta #FF00FF background. This is the empty third guest seat.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/bar-tall.png"
+  ],
+  "bytes": 357765,
+  "attempts": 1
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ui-ratings",
+  "file": "art-source/generated/ui-ratings.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:39:31.654650+00:00",
+  "prompt": "A cute woodland pixel game reaction atlas, precisely THREE columns TWO rows six equal cells. One independent adorable round mouse face badge in each cell, same taupe mouse character with pink ears. Row-major expressions: 1 amazed delighted with sparkling eyes, 2 extremely happy eyes closed, 3 content smiling, 4 neutral, 5 displeased but cute, 6 small cream chef hat alone as a wearable accessory, NOT on a head. All isolated on pure magenta #FF00FF, generous margins, no words letters labels grid or shadow. Detailed pixel clusters and warm brown outlines matching reference.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1348944,
+  "attempts": 4
+}

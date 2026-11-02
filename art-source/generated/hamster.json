@@ -1,0 +1,16 @@
+{
+  "asset": "hamster",
+  "file": "art-source/generated/hamster.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T05:57:36.253366+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nProduce a precise animation reference sheet: EXACTLY 3 equal columns and\n2 equal rows, six cells, NO drawn grid lines. Each cell contains ONE full-body rendition\nof the SAME character, same costume, body proportions, camera, scale and face.\na chubby golden Syrian hamster, creamy white cheeks and belly, tiny round ears, dusty-rose apron, tiny tail.\nAll six characters front-facing with a slight three-quarter turn, centered in their cell,\nears and tail fully visible, generous margins, feet on same baseline (85% of cell height).\nRead cells left to right, top row then bottom row:\n1. relaxed standing, open gentle eyes, paws at sides.\n2. identical relaxed standing with eyes gently CLOSED for a blink.\n3. crouching slightly in anticipation of a tiny hop, paws bent.\n4. tiny happy hop, both feet raised slightly, paws out to the sides.\n5. smiling with both paws raised in celebration.\n6. smiling and waving one paw.\nStrictly a 3 by 2 sheet, all six figures completely isolated. FLAT SOLID PURE MAGENTA\nBACKGROUND #FF00FF in every cell and every gap, no gradients, no texture, no ground,\nno shadows, no props, no colored sparkles. Magenta is only a removable key background;\nthe character must use natural browns, greens, cream and pink, NEVER magenta clothing.\nDo not include elements from the attached UI overview other than its art style.\n",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1597621,
+  "attempts": 1
+}

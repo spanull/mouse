@@ -1,0 +1,17 @@
+{
+  "asset": "mole-delivery",
+  "file": "art-source/generated/mole-delivery.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:41:07.434537+00:00",
+  "prompt": "Create a cozy pixel game animation sheet of exactly the mole bartender in reference image 2, same fur, tapered pink muzzle, small bead eyes, no visible ears or tail, olive waistcoat, cream sleeves and bowtie. EXACTLY 2 columns 2 rows, equal cells, full body at identical scale, generous margins. Row-major: 1 holding a tray with a pink cocktail close to chest, 2 extending the same tray toward viewer with a warm smile, 3 gently resting one paw over heart with reassuring smile and no props, 4 smiling in a small bow with eyes closed and paws together. Precisely four isolated poses, pure magenta #FF00FF background, no text, no grid, no counter. Detailed warm brown pixel outlines matching prototype. No extra arms, no changing clothing.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/mole.png"
+  ],
+  "bytes": 1828406,
+  "attempts": 2
+}

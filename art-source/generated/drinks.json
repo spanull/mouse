@@ -1,0 +1,16 @@
+{
+  "asset": "drinks",
+  "file": "art-source/generated/drinks.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T06:00:59.263446+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nA game item sheet with EXACTLY 2 columns and 2 rows of equally sized cells,\nfour completely isolated elegant fantasy cocktails, one per cell, full glass visible.\nTop left: pink strawberry drink in a coupe with berry and tiny mint leaf.\nTop right: pale mint-green drink in a stemmed glass with lime slice and mint sprig.\nBottom left: sunset-orange drink in a rounded goblet with orange slice.\nBottom right: lavender-purple drink in a coupe with blueberry and a tiny gold star garnish.\nWarm cream glass highlights, brown pixel outlines, delicate glass stems, cute intricate pixels.\nSame visual scale, centered in cells with large margins, no hands or characters.\nFlat solid pure magenta #FF00FF background, no shadows, no text or grid lines.\n",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 925063,
+  "attempts": 1
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "home-wide",
+  "file": "art-source/generated/home-wide.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:59:08.763393+00:00",
+  "prompt": "Create a complete LANDSCAPE full-bleed 3:2 woodland pixel game scene matching reference image 2 and the prototype. Extend the scene naturally horizontally, NO stretching, no blank missing regions. Beautiful moss-roof round mouse cottage with arched wooden door and cream windows centered in upper 48 percent, pink blossom tree left, lush foliage right. Cottage should feel substantial, occupying 40 percent width. A small stone path leads into a central sandy clearing for a separate mouse sprite at 55 percent height. Lower third contains a winding path with detailed daisies, clover and small mushrooms framing both sides, unobstructed space for two separate game entrance signs at 75 percent height. Tiny warm lanterns. No characters, no text, no signs, no UI, no buttons. Intricate crisp pixel clusters, brown outlines, sage green, cream and dusty pink. Fill every edge with coherent scene. Compose for landscape desktop viewport, extending foliage or interior detail naturally to both sides. Keep key interactive objects in central 60 percent width and central 70 percent height for safe cover cropping. No typography or interface.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/home.png"
+  ],
+  "bytes": 3578053,
+  "attempts": 1
+}

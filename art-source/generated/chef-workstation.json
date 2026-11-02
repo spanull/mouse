@@ -1,0 +1,17 @@
+{
+  "asset": "chef-workstation",
+  "file": "art-source/generated/chef-workstation.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:38:51.962477+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 is the exact character identity reference, preserve face, fur, outfit, proportions and lighting. Production sprite animation sheet, EXACTLY FOUR columns and THREE rows, TWELVE equal cells. Read row-major left to right. Each cell is one consecutive animation frame, not a different illustration. Fixed camera, fixed character size, identical framing, feet at the SAME horizontal baseline in each cell. All 12 cells fully occupied, wide magenta spacing. Flat solid pure magenta #FF00FF background. NO artificial whole-body bouncing, horizontal translation, zoom, squash or shaking. Feet and hips remain planted; only anatomy required by the action moves. Smooth closely spaced intermediate poses with natural timing. No duplicated limbs, no morphing costume, no motion trails, no letters or numbers. Subject: cute taupe rat chef with pink ears, cream chef hat and sage apron, full body standing naturally BEHIND its own SMALL rustic wooden cooking station. Character AND station AND cooking pot are one complete inseparable asset, same position across all frames. Entire table top, table legs, mouse head, upper body, arms and visible feet shown. Tabletop around mouse waist level, not at neck or chest. Forearms and paws ABOVE tabletop, holding a wooden spoon in ONE soup pot, no body intersecting wood. A round pot on tabletop, no other furniture. 12 frame slow smooth stirring loop: right paw and spoon move in 12 successive circular positions through soup, left paw rests on rim, chef glances toward soup. The table and pot positions are EXACTLY identical in all 12 frames; only wrist, spoon and small eyelid changes. Feet stationary, no body bobbing, no counter across entire image. Whole station generously fits each cell, no crop. The first and last frame connect smoothly.",
+  "requestedSize": "2048x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "public/assets/world/rat-static.png"
+  ],
+  "bytes": 1472270,
+  "attempts": 1
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-wide",
+  "file": "art-source/generated/restaurant-wide.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:59:30.834957+00:00",
+  "prompt": "Create a complete LANDSCAPE full-bleed 3:2 cozy woodland mouse restaurant pixel game background. Match reference image 2 and prototype warm cream, pink and honey wood. Ceiling beams and shelves with herbs and copper pots fill upper 35 percent, a calm empty central alcove at 35 to 48 percent for a separate chef mouse. A polished wooden counter top spans horizontally at EXACTLY 50 percent image height; counter front ends at 62 percent. Bottom 38 percent is warm wooden floor with rustic details and small plants at corners, open center. Upper left small glowing arched window, upper right shelves. Enough charming complete decor, no giant empty wall, no blank missing regions. No characters, no UI, no text, no signs, no hats. Fine detailed pixel art, full composition, no stretching. Compose for landscape desktop viewport, extending foliage or interior detail naturally to both sides. Keep key interactive objects in central 60 percent width and central 70 percent height for safe cover cropping. No typography or interface.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/restaurant.png"
+  ],
+  "bytes": 2524845,
+  "attempts": 1
+}

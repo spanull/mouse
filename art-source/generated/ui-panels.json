@@ -1,0 +1,16 @@
+{
+  "asset": "ui-panels",
+  "file": "art-source/generated/ui-panels.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:33:15.129965+00:00",
+  "prompt": "Create a cozy woodland pixel art UI skin atlas, exactly TWO columns and TWO rows of equal cells. Four separate objects, centered with wide magenta margins. Upper left: large nearly square antique cream parchment panel in an ornate dark honey wood frame, delicate moss at outer corners, LARGE completely EMPTY pale cream center occupying 80 percent of panel. Upper right: square padded parchment card with thin carved wood border and tiny leaf corners, EMPTY light cream center. Lower left: broad cream parchment speech balloon with brown pixel border, curled corners and a small downward tail, EMPTY center. Lower right: wide horizontal wooden game button, beautifully carved beveled honey wood, dark brown outline and blank cream inset. Solid pure magenta #FF00FF background; no grid, NO text, letters, marks, icons or UI content. Match reference game pixel texture, suitable as scalable panel skins.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1390422,
+  "attempts": 1
+}

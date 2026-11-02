@@ -1,0 +1,2041 @@
+{
+  "version": 1,
+  "source": "旧版 placeholder 保留为历史；现行运行素材及来源见 worldV2",
+  "sourceFile": "scripts/create-placeholder-assets.mjs",
+  "approvalStatus": "prototype-only",
+  "scene": "/assets/placeholder/courtyard.png",
+  "fallback": "/assets/placeholder/hero-static.png",
+  "world": {
+    "ground": "/assets/placeholder/grass.png",
+    "tree": "/assets/placeholder/tree.png",
+    "pond": "/assets/placeholder/pond.png"
+  },
+  "animations": {
+    "idle": {
+      "file": "/assets/placeholder/hero-idle.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frameCount": 4,
+      "fps": 4,
+      "loop": true,
+      "anchorX": 32,
+      "anchorY": 56
+    },
+    "pressed": {
+      "file": "/assets/placeholder/hero-pressed.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frameCount": 4,
+      "fps": 10,
+      "loop": false,
+      "anchorX": 32,
+      "anchorY": 56
+    },
+    "success": {
+      "file": "/assets/placeholder/hero-success.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frameCount": 6,
+      "fps": 8,
+      "loop": false,
+      "anchorX": 32,
+      "anchorY": 56
+    }
+  },
+  "worldV2": {
+    "source": "AI Coding Gateway / gpt-image-2.5 参考用户原型生成，色键去背景、裁切、统一锚点并导出动作图",
+    "sourceFile": "scripts/prepare-gateway-assets.mjs",
+    "scenes": [
+      "home",
+      "restaurant",
+      "bar"
+    ],
+    "characters": [
+      {
+        "key": "rat",
+        "name": "花枝鼠"
+      },
+      {
+        "key": "hamster",
+        "name": "仓鼠"
+      },
+      {
+        "key": "field",
+        "name": "田鼠"
+      },
+      {
+        "key": "chinchilla",
+        "name": "龙猫"
+      },
+      {
+        "key": "dormouse",
+        "name": "睡鼠"
+      },
+      {
+        "key": "mole",
+        "name": "调酒鼹鼠"
+      }
+    ],
+    "frameWidth": 192,
+    "frameHeight": 192,
+    "anchorX": 96,
+    "anchorY": 172,
+    "base": "/assets/world/",
+    "generation": {
+      "provider": "AI Coding Gateway",
+      "model": "gpt-image-2.5",
+      "channel": "https://aicoding.aideb.me/v1/images/generations",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png"
+      ],
+      "promptDirectory": "art-source/generated/",
+      "postProcessing": [
+        "品红色键背景去除或保留原有 Alpha",
+        "网格切分及透明边界检查",
+        "同角色统一缩放与脚底线",
+        "4/4/6 帧横排输出",
+        "192 色 PNG 无抖动压缩"
+      ],
+      "license": "服务商适用条款及参考图使用范围待上线前核对"
+    },
+    "approvalStatus": "visual-and-browser-reviewed",
+    "assets": [
+      {
+        "assetId": "home",
+        "file": "/assets/world/home.png",
+        "width": 768,
+        "height": 768,
+        "bytes": 398997,
+        "sourceFile": "art-source/generated/home.png",
+        "promptFile": "art-source/generated/home.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "restaurant",
+        "file": "/assets/world/restaurant.png",
+        "width": 768,
+        "height": 768,
+        "bytes": 291811,
+        "sourceFile": "art-source/generated/restaurant.png",
+        "promptFile": "art-source/generated/restaurant.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "bar",
+        "file": "/assets/world/bar.png",
+        "width": 768,
+        "height": 768,
+        "bytes": 346978,
+        "sourceFile": "art-source/generated/bar.png",
+        "promptFile": "art-source/generated/bar.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "rat-static",
+        "file": "/assets/world/rat-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 12513,
+        "sourceFile": "art-source/generated/rat.png",
+        "promptFile": "art-source/generated/rat.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "rat-idle",
+        "file": "/assets/world/rat-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 24696,
+        "sourceFile": "art-source/generated/rat.png",
+        "promptFile": "art-source/generated/rat.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "rat-pressed",
+        "file": "/assets/world/rat-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 34203,
+        "sourceFile": "art-source/generated/rat.png",
+        "promptFile": "art-source/generated/rat.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "rat-success",
+        "file": "/assets/world/rat-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 37257,
+        "sourceFile": "art-source/generated/rat.png",
+        "promptFile": "art-source/generated/rat.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "hamster-static",
+        "file": "/assets/world/hamster-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 12830,
+        "sourceFile": "art-source/generated/hamster.png",
+        "promptFile": "art-source/generated/hamster.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "hamster-idle",
+        "file": "/assets/world/hamster-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 25609,
+        "sourceFile": "art-source/generated/hamster.png",
+        "promptFile": "art-source/generated/hamster.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "hamster-pressed",
+        "file": "/assets/world/hamster-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 35731,
+        "sourceFile": "art-source/generated/hamster.png",
+        "promptFile": "art-source/generated/hamster.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "hamster-success",
+        "file": "/assets/world/hamster-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 38977,
+        "sourceFile": "art-source/generated/hamster.png",
+        "promptFile": "art-source/generated/hamster.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "field-static",
+        "file": "/assets/world/field-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 13747,
+        "sourceFile": "art-source/generated/field.png",
+        "promptFile": "art-source/generated/field.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "field-idle",
+        "file": "/assets/world/field-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 26900,
+        "sourceFile": "art-source/generated/field.png",
+        "promptFile": "art-source/generated/field.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "field-pressed",
+        "file": "/assets/world/field-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 37062,
+        "sourceFile": "art-source/generated/field.png",
+        "promptFile": "art-source/generated/field.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "field-success",
+        "file": "/assets/world/field-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 39929,
+        "sourceFile": "art-source/generated/field.png",
+        "promptFile": "art-source/generated/field.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "chinchilla-static",
+        "file": "/assets/world/chinchilla-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 15036,
+        "sourceFile": "art-source/generated/chinchilla.png",
+        "promptFile": "art-source/generated/chinchilla.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "chinchilla-idle",
+        "file": "/assets/world/chinchilla-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 29438,
+        "sourceFile": "art-source/generated/chinchilla.png",
+        "promptFile": "art-source/generated/chinchilla.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "chinchilla-pressed",
+        "file": "/assets/world/chinchilla-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 39234,
+        "sourceFile": "art-source/generated/chinchilla.png",
+        "promptFile": "art-source/generated/chinchilla.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "chinchilla-success",
+        "file": "/assets/world/chinchilla-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 42823,
+        "sourceFile": "art-source/generated/chinchilla.png",
+        "promptFile": "art-source/generated/chinchilla.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dormouse-static",
+        "file": "/assets/world/dormouse-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 13127,
+        "sourceFile": "art-source/generated/dormouse.png",
+        "promptFile": "art-source/generated/dormouse.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dormouse-idle",
+        "file": "/assets/world/dormouse-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 25840,
+        "sourceFile": "art-source/generated/dormouse.png",
+        "promptFile": "art-source/generated/dormouse.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dormouse-pressed",
+        "file": "/assets/world/dormouse-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 36062,
+        "sourceFile": "art-source/generated/dormouse.png",
+        "promptFile": "art-source/generated/dormouse.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dormouse-success",
+        "file": "/assets/world/dormouse-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 39499,
+        "sourceFile": "art-source/generated/dormouse.png",
+        "promptFile": "art-source/generated/dormouse.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "mole-static",
+        "file": "/assets/world/mole-static.png",
+        "width": 192,
+        "height": 192,
+        "bytes": 12321,
+        "sourceFile": "art-source/generated/mole.png",
+        "promptFile": "art-source/generated/mole.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "mole-idle",
+        "file": "/assets/world/mole-idle.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 24397,
+        "sourceFile": "art-source/generated/mole.png",
+        "promptFile": "art-source/generated/mole.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "mole-pressed",
+        "file": "/assets/world/mole-pressed.png",
+        "width": 768,
+        "height": 192,
+        "bytes": 34281,
+        "sourceFile": "art-source/generated/mole.png",
+        "promptFile": "art-source/generated/mole.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "mole-success",
+        "file": "/assets/world/mole-success.png",
+        "width": 1152,
+        "height": 192,
+        "bytes": 38389,
+        "sourceFile": "art-source/generated/mole.png",
+        "promptFile": "art-source/generated/mole.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-0",
+        "file": "/assets/world/dish-0.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6897,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-1",
+        "file": "/assets/world/dish-1.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6850,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-2",
+        "file": "/assets/world/dish-2.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6806,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-3",
+        "file": "/assets/world/dish-3.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6805,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-4",
+        "file": "/assets/world/dish-4.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6779,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "dish-5",
+        "file": "/assets/world/dish-5.png",
+        "width": 128,
+        "height": 88,
+        "bytes": 6606,
+        "sourceFile": "art-source/generated/dishes.png",
+        "promptFile": "art-source/generated/dishes.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "cocktail-pink",
+        "file": "/assets/world/cocktail-pink.png",
+        "width": 128,
+        "height": 160,
+        "bytes": 9105,
+        "sourceFile": "art-source/generated/drinks.png",
+        "promptFile": "art-source/generated/drinks.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "cocktail-mint",
+        "file": "/assets/world/cocktail-mint.png",
+        "width": 128,
+        "height": 160,
+        "bytes": 8758,
+        "sourceFile": "art-source/generated/drinks.png",
+        "promptFile": "art-source/generated/drinks.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "cocktail-orange",
+        "file": "/assets/world/cocktail-orange.png",
+        "width": 128,
+        "height": 160,
+        "bytes": 11380,
+        "sourceFile": "art-source/generated/drinks.png",
+        "promptFile": "art-source/generated/drinks.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "assetId": "cocktail-purple",
+        "file": "/assets/world/cocktail-purple.png",
+        "width": 128,
+        "height": 160,
+        "bytes": 7064,
+        "sourceFile": "art-source/generated/drinks.png",
+        "promptFile": "art-source/generated/drinks.json",
+        "approvalStatus": "visual-and-browser-reviewed"
+      }
+    ],
+    "reviewRecord": "docs/09-AI素材替换与验收.md"
+  },
+  "gameUI": {
+    "provider": "AI Coding Gateway",
+    "model": "gpt-image-2.5",
+    "reference": "art-source/reference/user-prototype.png",
+    "approvalStatus": "reviewed-with-superseded-assets",
+    "sourceFile": "scripts/prepare-game-ui.mjs",
+    "assets": [
+      {
+        "file": "/assets/ui/back.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 125,
+        "height": 128,
+        "bytes": 10751,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/settings.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 126,
+        "height": 128,
+        "bytes": 11259,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/close.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 125,
+        "height": 128,
+        "bytes": 11105,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/next.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 125,
+        "height": 128,
+        "bytes": 10626,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/heart.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 123,
+        "height": 128,
+        "bytes": 10234,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/book.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 123,
+        "height": 128,
+        "bytes": 10334,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/chef.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 124,
+        "height": 128,
+        "bytes": 10427,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/drink.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 122,
+        "height": 128,
+        "bytes": 10648,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/speech.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 121,
+        "height": 128,
+        "bytes": 10312,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/sparkle.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 123,
+        "height": 128,
+        "bytes": 10887,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/coin.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 123,
+        "height": 128,
+        "bytes": 10686,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/ticket.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 128,
+        "height": 128,
+        "bytes": 10533,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/check.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 121,
+        "height": 128,
+        "bytes": 10692,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/flag.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 123,
+        "height": 128,
+        "bytes": 10389,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/retry.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 121,
+        "height": 128,
+        "bytes": 10841,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/home.png",
+        "source": "art-source/generated/ui-icons.png",
+        "promptFile": "art-source/generated/ui-icons.json",
+        "width": 122,
+        "height": 128,
+        "bytes": 11249,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/panel.png",
+        "source": "art-source/generated/ui-panels.png",
+        "promptFile": "art-source/generated/ui-panels.json",
+        "width": 512,
+        "height": 495,
+        "bytes": 112949,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/card.png",
+        "source": "art-source/generated/ui-panels.png",
+        "promptFile": "art-source/generated/ui-panels.json",
+        "width": 512,
+        "height": 496,
+        "bytes": 90229,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/bubble.png",
+        "source": "art-source/generated/ui-panels.png",
+        "promptFile": "art-source/generated/ui-panels.json",
+        "width": 512,
+        "height": 345,
+        "bytes": 74393,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/button.png",
+        "source": "art-source/generated/ui-panels.png",
+        "promptFile": "art-source/generated/ui-panels.json",
+        "width": 512,
+        "height": 157,
+        "bytes": 37348,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/entrance-restaurant.png",
+        "source": "art-source/generated/ui-entrances.png",
+        "promptFile": "art-source/generated/ui-entrances.json",
+        "width": 319,
+        "height": 320,
+        "bytes": 57097,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/entrance-bar.png",
+        "source": "art-source/generated/ui-entrances.png",
+        "promptFile": "art-source/generated/ui-entrances.json",
+        "width": 306,
+        "height": 320,
+        "bytes": 54606,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/entrance-menu.png",
+        "source": "art-source/generated/ui-entrances.png",
+        "promptFile": "art-source/generated/ui-entrances.json",
+        "width": 266,
+        "height": 320,
+        "bytes": 57290,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/entrance-wall.png",
+        "source": "art-source/generated/ui-entrances.png",
+        "promptFile": "art-source/generated/ui-entrances.json",
+        "width": 291,
+        "height": 320,
+        "bytes": 56415,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/rating-0.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 101,
+        "bytes": 9386,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/rating-1.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 101,
+        "bytes": 9220,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/rating-2.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 102,
+        "bytes": 9103,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/rating-3.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 102,
+        "bytes": 9043,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/rating-4.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 102,
+        "bytes": 9115,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/ui/chef-hat.png",
+        "source": "art-source/generated/ui-ratings.png",
+        "promptFile": "art-source/generated/ui-ratings.json",
+        "width": 128,
+        "height": 97,
+        "bytes": 8105,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/world/home-tall.png",
+        "source": "art-source/generated/home-tall.png",
+        "promptFile": "art-source/generated/home-tall.json",
+        "width": 768,
+        "height": 1152,
+        "bytes": 609751,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/world/restaurant-tall.png",
+        "source": "art-source/generated/restaurant-tall.png",
+        "promptFile": "art-source/generated/restaurant-tall.json",
+        "width": 768,
+        "height": 1152,
+        "bytes": 455449,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/bar-tall.png",
+        "source": "art-source/generated/bar-tall.png",
+        "promptFile": "art-source/generated/bar-tall.json",
+        "width": 768,
+        "height": 1152,
+        "bytes": 585033,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/home-wide.png",
+        "source": "art-source/generated/home-wide.png",
+        "promptFile": "art-source/generated/home-wide.json",
+        "width": 1152,
+        "height": 768,
+        "bytes": 622127,
+        "approvalStatus": "visual-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/world/restaurant-wide.png",
+        "source": "art-source/generated/restaurant-wide.png",
+        "promptFile": "art-source/generated/restaurant-wide.json",
+        "width": 1152,
+        "height": 768,
+        "bytes": 468715,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/bar-wide.png",
+        "source": "art-source/generated/bar-wide.png",
+        "promptFile": "art-source/generated/bar-wide.json",
+        "width": 1152,
+        "height": 768,
+        "bytes": 577362,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-welcome.png",
+        "source": "art-source/generated/mole-service.png",
+        "promptFile": "art-source/generated/mole-service.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 24942,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-listen.png",
+        "source": "art-source/generated/mole-service.png",
+        "promptFile": "art-source/generated/mole-service.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 13082,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-polish.png",
+        "source": "art-source/generated/mole-service.png",
+        "promptFile": "art-source/generated/mole-service.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 13298,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-shake.png",
+        "source": "art-source/generated/mole-service.png",
+        "promptFile": "art-source/generated/mole-service.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 24431,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-pour.png",
+        "source": "art-source/generated/mole-service.png",
+        "promptFile": "art-source/generated/mole-service.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 13884,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-serve.png",
+        "source": "art-source/generated/mole-delivery.png",
+        "promptFile": "art-source/generated/mole-delivery.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 38984,
+        "approvalStatus": "superseded-by-naturalLife"
+      },
+      {
+        "file": "/assets/world/mole-comfort.png",
+        "source": "art-source/generated/mole-delivery.png",
+        "promptFile": "art-source/generated/mole-delivery.json",
+        "width": 768,
+        "height": 192,
+        "bytes": 27481,
+        "approvalStatus": "superseded-by-naturalLife"
+      }
+    ],
+    "reviewRecord": "docs/10-游戏UI与自适应验收.md"
+  },
+  "naturalLife": {
+    "version": 1,
+    "approvalStatus": "visual-frames-and-browser-reviewed",
+    "actors": {
+      "rat": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/rat-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/rat-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "pressed": {
+            "file": "/assets/natural/rat-pressed.png",
+            "frameCount": 8,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          },
+          "leisure": {
+            "file": "/assets/natural/rat-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          }
+        }
+      },
+      "hamster": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/hamster-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/hamster-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "pressed": {
+            "file": "/assets/natural/hamster-pressed.png",
+            "frameCount": 8,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          },
+          "leisure": {
+            "file": "/assets/natural/hamster-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          }
+        }
+      },
+      "field": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/field-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/field-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "pressed": {
+            "file": "/assets/natural/field-pressed.png",
+            "frameCount": 8,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          },
+          "leisure": {
+            "file": "/assets/natural/field-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          }
+        }
+      },
+      "chinchilla": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/chinchilla-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/chinchilla-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "pressed": {
+            "file": "/assets/natural/chinchilla-pressed.png",
+            "frameCount": 8,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          },
+          "leisure": {
+            "file": "/assets/natural/chinchilla-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          }
+        }
+      },
+      "dormouse": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/dormouse-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/dormouse-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "pressed": {
+            "file": "/assets/natural/dormouse-pressed.png",
+            "frameCount": 8,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          },
+          "leisure": {
+            "file": "/assets/natural/dormouse-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125,
+              125
+            ],
+            "loop": false
+          }
+        }
+      },
+      "mole": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/mole-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/mole-idle.png",
+            "frameCount": 12,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "welcome": {
+            "file": "/assets/natural/mole-welcome.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "listen": {
+            "file": "/assets/natural/mole-listen.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "polish": {
+            "file": "/assets/natural/mole-polish.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "shake": {
+            "file": "/assets/natural/mole-shake.png",
+            "frameCount": 12,
+            "durations": [
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110,
+              110
+            ],
+            "loop": true
+          },
+          "pour": {
+            "file": "/assets/natural/mole-pour.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "serve": {
+            "file": "/assets/natural/mole-serve.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "comfort": {
+            "file": "/assets/natural/mole-comfort.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          }
+        }
+      },
+      "chef": {
+        "frameSize": 256,
+        "fallback": "/assets/natural/chef-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/chef-idle.png",
+            "frameCount": 12,
+            "durations": [
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160
+            ],
+            "loop": true
+          },
+          "leisure": {
+            "file": "/assets/natural/chef-leisure.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          },
+          "pressed": {
+            "file": "/assets/natural/chef-pressed.png",
+            "frameCount": 12,
+            "durations": [
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150,
+              150
+            ],
+            "loop": false
+          }
+        }
+      },
+      "patron-dormouse": {
+        "frameSize": 256,
+        "fallback": "/assets/natural/patron-dormouse-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/patron-dormouse-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "leisure": {
+            "file": "/assets/natural/patron-dormouse-leisure.png",
+            "frameCount": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": false
+          }
+        }
+      },
+      "patron-hamster": {
+        "frameSize": 256,
+        "fallback": "/assets/natural/patron-hamster-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/patron-hamster-idle.png",
+            "frameCount": 8,
+            "durations": [
+              3400,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85,
+              85
+            ],
+            "loop": true
+          },
+          "leisure": {
+            "file": "/assets/natural/patron-hamster-leisure.png",
+            "frameCount": 8,
+            "durations": [
+              180,
+              180,
+              180,
+              180,
+              180,
+              180,
+              180,
+              180
+            ],
+            "loop": false
+          }
+        }
+      },
+      "leaves": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/leaves-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/leaves-idle.png",
+            "frameCount": 12,
+            "durations": [
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160
+            ],
+            "loop": true
+          }
+        }
+      },
+      "lantern": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/lantern-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/lantern-idle.png",
+            "frameCount": 12,
+            "durations": [
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160
+            ],
+            "loop": true
+          }
+        }
+      },
+      "steam": {
+        "frameSize": 192,
+        "fallback": "/assets/natural/steam-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/steam-idle.png",
+            "frameCount": 12,
+            "durations": [
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160,
+              160
+            ],
+            "loop": true
+          }
+        }
+      },
+      "squirrel": {
+        "frameSize": 256,
+        "fallback": "/assets/natural/squirrel-static.png",
+        "poses": {
+          "idle": {
+            "file": "/assets/natural/squirrel-idle.png",
+            "frameCount": 16,
+            "durations": [
+              3500,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              22000
+            ],
+            "loop": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "bar-tall": "/assets/natural/bar-tall.png",
+      "restaurant-tall": "/assets/natural/restaurant-tall.png",
+      "bar-wide": "/assets/natural/bar-wide.png",
+      "restaurant-wide": "/assets/natural/restaurant-wide.png",
+      "stool": "/assets/natural/empty-stool.png"
+    },
+    "assets": [
+      {
+        "file": "/assets/natural/bar-tall.png",
+        "source": "art-source/generated/bar-clear-tall.png",
+        "promptFile": "art-source/generated/bar-clear-tall.json",
+        "width": 768,
+        "height": 1152,
+        "bytes": 575010,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/restaurant-tall.png",
+        "source": "art-source/generated/restaurant-clear-tall.png",
+        "promptFile": "art-source/generated/restaurant-clear-tall.json",
+        "width": 768,
+        "height": 1152,
+        "bytes": 450337,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/bar-wide.png",
+        "source": "art-source/generated/bar-clear-wide.png",
+        "promptFile": "art-source/generated/bar-clear-wide.json",
+        "width": 1152,
+        "height": 768,
+        "bytes": 567084,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/restaurant-wide.png",
+        "source": "art-source/generated/restaurant-clear-wide.png",
+        "promptFile": "art-source/generated/restaurant-clear-wide.json",
+        "width": 1152,
+        "height": 768,
+        "bytes": 466198,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/empty-stool.png",
+        "source": "art-source/generated/bar-empty-stool.png",
+        "promptFile": "art-source/generated/bar-empty-stool.json",
+        "width": 151,
+        "height": 180,
+        "bytes": 18530,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/rat-idle.png",
+        "source": "art-source/generated/rat-natural.png",
+        "promptFile": "art-source/generated/rat-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 90114,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/rat-static.png",
+        "source": "art-source/generated/rat-natural.png",
+        "promptFile": "art-source/generated/rat-natural.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 13302,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/rat-pressed.png",
+        "source": "art-source/generated/rat-natural.png",
+        "promptFile": "art-source/generated/rat-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 92465,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/rat-leisure.png",
+        "source": "art-source/generated/rat-leisure.png",
+        "promptFile": "art-source/generated/rat-leisure.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 146592,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/hamster-idle.png",
+        "source": "art-source/generated/hamster-natural.png",
+        "promptFile": "art-source/generated/hamster-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 116371,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/hamster-static.png",
+        "source": "art-source/generated/hamster-natural.png",
+        "promptFile": "art-source/generated/hamster-natural.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 16797,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/hamster-pressed.png",
+        "source": "art-source/generated/hamster-natural.png",
+        "promptFile": "art-source/generated/hamster-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 117109,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/hamster-leisure.png",
+        "source": "art-source/generated/hamster-leisure.png",
+        "promptFile": "art-source/generated/hamster-leisure.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 169070,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/field-idle.png",
+        "source": "art-source/generated/field-natural.png",
+        "promptFile": "art-source/generated/field-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 103482,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/field-static.png",
+        "source": "art-source/generated/field-natural.png",
+        "promptFile": "art-source/generated/field-natural.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 15560,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/field-pressed.png",
+        "source": "art-source/generated/field-natural.png",
+        "promptFile": "art-source/generated/field-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 106796,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/field-leisure.png",
+        "source": "art-source/generated/field-leisure.png",
+        "promptFile": "art-source/generated/field-leisure.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 156138,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chinchilla-idle.png",
+        "source": "art-source/generated/chinchilla-natural.png",
+        "promptFile": "art-source/generated/chinchilla-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 117505,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chinchilla-static.png",
+        "source": "art-source/generated/chinchilla-natural.png",
+        "promptFile": "art-source/generated/chinchilla-natural.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 16892,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chinchilla-pressed.png",
+        "source": "art-source/generated/chinchilla-natural.png",
+        "promptFile": "art-source/generated/chinchilla-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 119943,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chinchilla-leisure.png",
+        "source": "art-source/generated/chinchilla-leisure.png",
+        "promptFile": "art-source/generated/chinchilla-leisure.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 185623,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/dormouse-idle.png",
+        "source": "art-source/generated/dormouse-natural.png",
+        "promptFile": "art-source/generated/dormouse-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 109819,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/dormouse-static.png",
+        "source": "art-source/generated/dormouse-natural.png",
+        "promptFile": "art-source/generated/dormouse-natural.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 16132,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/dormouse-pressed.png",
+        "source": "art-source/generated/dormouse-natural.png",
+        "promptFile": "art-source/generated/dormouse-natural.json",
+        "width": 1536,
+        "height": 192,
+        "bytes": 112949,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/dormouse-leisure.png",
+        "source": "art-source/generated/dormouse-leisure.png",
+        "promptFile": "art-source/generated/dormouse-leisure.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 169511,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-idle.png",
+        "source": "art-source/generated/mole-natural-idle.png",
+        "promptFile": "art-source/generated/mole-natural-idle.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 180072,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-static.png",
+        "source": "art-source/generated/mole-natural-idle.png",
+        "promptFile": "art-source/generated/mole-natural-idle.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 18047,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-welcome.png",
+        "source": "art-source/generated/mole-natural-welcome.png",
+        "promptFile": "art-source/generated/mole-natural-welcome.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 151314,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-listen.png",
+        "source": "art-source/generated/mole-natural-listen.png",
+        "promptFile": "art-source/generated/mole-natural-listen.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 119837,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-polish.png",
+        "source": "art-source/generated/mole-natural-polish.png",
+        "promptFile": "art-source/generated/mole-natural-polish.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 141299,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-shake.png",
+        "source": "art-source/generated/mole-natural-shake.png",
+        "promptFile": "art-source/generated/mole-natural-shake.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 151967,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-pour.png",
+        "source": "art-source/generated/mole-natural-pour.png",
+        "promptFile": "art-source/generated/mole-natural-pour.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 138627,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-serve.png",
+        "source": "art-source/generated/mole-natural-serve.png",
+        "promptFile": "art-source/generated/mole-natural-serve.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 147766,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/mole-comfort.png",
+        "source": "art-source/generated/mole-natural-comfort.png",
+        "promptFile": "art-source/generated/mole-natural-comfort.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 128745,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chef-idle.png",
+        "source": "art-source/generated/chef-workstation.png",
+        "promptFile": "art-source/generated/chef-workstation.json",
+        "width": 3072,
+        "height": 256,
+        "bytes": 133681,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chef-static.png",
+        "source": "art-source/generated/chef-workstation.png",
+        "promptFile": "art-source/generated/chef-workstation.json",
+        "width": 256,
+        "height": 256,
+        "bytes": 18756,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chef-leisure.png",
+        "source": "art-source/generated/chef-taste.png",
+        "promptFile": "art-source/generated/chef-taste.json",
+        "width": 3072,
+        "height": 256,
+        "bytes": 137711,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/chef-pressed.png",
+        "source": "art-source/generated/chef-greet.png",
+        "promptFile": "art-source/generated/chef-greet.json",
+        "width": 3072,
+        "height": 256,
+        "bytes": 143124,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-dormouse-idle.png",
+        "source": "art-source/generated/patron-dormouse-actions.png",
+        "promptFile": "art-source/generated/patron-dormouse-actions.json",
+        "width": 2048,
+        "height": 256,
+        "bytes": 104458,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-dormouse-static.png",
+        "source": "art-source/generated/patron-dormouse-actions.png",
+        "promptFile": "art-source/generated/patron-dormouse-actions.json",
+        "width": 256,
+        "height": 256,
+        "bytes": 20575,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-dormouse-leisure.png",
+        "source": "art-source/generated/patron-dormouse-actions.png",
+        "promptFile": "art-source/generated/patron-dormouse-actions.json",
+        "width": 2048,
+        "height": 256,
+        "bytes": 105505,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-hamster-idle.png",
+        "source": "art-source/generated/patron-hamster-actions.png",
+        "promptFile": "art-source/generated/patron-hamster-actions.json",
+        "width": 2048,
+        "height": 256,
+        "bytes": 99594,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-hamster-static.png",
+        "source": "art-source/generated/patron-hamster-actions.png",
+        "promptFile": "art-source/generated/patron-hamster-actions.json",
+        "width": 256,
+        "height": 256,
+        "bytes": 20961,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/patron-hamster-leisure.png",
+        "source": "art-source/generated/patron-hamster-actions.png",
+        "promptFile": "art-source/generated/patron-hamster-actions.json",
+        "width": 2048,
+        "height": 256,
+        "bytes": 100714,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/leaves-idle.png",
+        "source": "art-source/generated/ambient-leaves.png",
+        "promptFile": "art-source/generated/ambient-leaves.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 89108,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/leaves-static.png",
+        "source": "art-source/generated/ambient-leaves.png",
+        "promptFile": "art-source/generated/ambient-leaves.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 8258,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/lantern-idle.png",
+        "source": "art-source/generated/ambient-lantern.png",
+        "promptFile": "art-source/generated/ambient-lantern.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 115121,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/lantern-static.png",
+        "source": "art-source/generated/ambient-lantern.png",
+        "promptFile": "art-source/generated/ambient-lantern.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 11575,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/steam-idle.png",
+        "source": "art-source/generated/ambient-steam-v2.png",
+        "promptFile": "art-source/generated/ambient-steam-v2.json",
+        "width": 2304,
+        "height": 192,
+        "bytes": 4309,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/steam-static.png",
+        "source": "art-source/generated/ambient-steam-v2.png",
+        "promptFile": "art-source/generated/ambient-steam-v2.json",
+        "width": 192,
+        "height": 192,
+        "bytes": 620,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/squirrel-idle.png",
+        "source": "art-source/generated/squirrel-visit.png",
+        "promptFile": "art-source/generated/squirrel-visit.json",
+        "width": 4096,
+        "height": 256,
+        "bytes": 257382,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      },
+      {
+        "file": "/assets/natural/squirrel-static.png",
+        "source": "art-source/generated/squirrel-visit.png",
+        "promptFile": "art-source/generated/squirrel-visit.json",
+        "width": 256,
+        "height": 256,
+        "bytes": 19518,
+        "approvalStatus": "visual-frames-and-browser-reviewed"
+      }
+    ],
+    "reviewRecord": "docs/10-游戏UI与自适应验收.md",
+    "postProcessing": [
+      "透明间隔切帧",
+      "来源网格尺度归一",
+      "共同角色比例和落地基准",
+      "厨师和坐姿客鼠固定家具下部复用生成首帧",
+      "蒸汽保留格内上升位置",
+      "无整图位移补帧"
+    ],
+    "runtimeManifest": "public/assets/natural/manifest.json",
+    "provider": "AI Coding Gateway",
+    "model": "gpt-image-2.5",
+    "exportScript": "scripts/prepare-natural-assets.mjs"
+  }
+}

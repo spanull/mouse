@@ -1,0 +1,17 @@
+{
+  "asset": "hamster-leisure",
+  "file": "art-source/generated/hamster-leisure.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:56:49.018748+00:00",
+  "prompt": "Original cozy woodland pixel art matching reference image 1, warm dark brown outlines, soft cream and moss greens. No lettering, numbers or watermark. EXACTLY FOUR columns THREE rows, TWELVE equal cells in row-major order. One consecutive animation frame per cell, fixed camera and scale, identical baseline and framing, generous margins. Each frame must show a real small intermediate change in the action. No whole object bobbing, no left-right jumping, no zoom or squash. Pure solid magenta #FF00FF background, no drawn grid. Image 2 fixes character identity; same fur, face and outfit in every cell. Full-body character, feet always at same position. Twelve-frame action: holding a small sunflower seed with both paws and gently nibbling, cheeks naturally chewing, feet stationary. Begin and end neutral, gradual anatomically connected hand poses. No furniture.",
+  "requestedSize": "2048x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/hamster.png"
+  ],
+  "bytes": 1719497,
+  "attempts": 4
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ambient-steam-v2",
+  "file": "art-source/generated/ambient-steam-v2.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T10:34:23.970808+00:00",
+  "prompt": "Original delicate pixel art soup steam animation sheet. Exactly FOUR columns and THREE rows, twelve equal square cells, no grid lines. Consecutive 12 frame animation: small warm WHITE and IVORY steam wisp appears near bottom of cell, rises and curls gently, gets thinner, disappears near top. Only neutral warm white steam pixels with translucent edges. NO pink, no red, no magenta, no purple in steam. The background must be FLAT PURE GREEN #00FF00 for color-key removal, no gradients or shadows. Thin and airy, not fire, not smoke cloud. Consistent scale, centered within every cell with generous space, fixed coordinate system: steam genuinely rises in sequence, do not resize and recenter each frame. No pot, no character, no UI, no letters, no numbers.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1223907,
+  "attempts": 1
+}

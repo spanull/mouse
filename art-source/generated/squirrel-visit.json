@@ -1,0 +1,16 @@
+{
+  "asset": "squirrel-visit",
+  "file": "art-source/generated/squirrel-visit.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T10:07:35.173737+00:00",
+  "prompt": "Original cozy woodland pixel art matching reference image 1, warm dark brown outlines, soft cream and moss greens. No lettering, numbers or watermark. Create exactly FOUR columns FOUR rows, sixteen equal animation cells. One complete small curved tree branch with a short vertical tree trunk on the right in each cell, SAME tree shape and fixed location in all cells. A tiny original reddish squirrel appears as a friendly woodland visitor. Frames 1-4 squirrel perched upright on branch, looking around, ears attentive, paws holding acorn. Frames 5-8 turns toward right-side tree trunk and reaches out with forepaws. Frames 9-12 climbs up trunk using alternating paws and hind feet, body bends naturally, bushy tail follows. Frames 13-16 squirrel climbs around the FAR SIDE of trunk, progressively occluded by the trunk until it is fully hidden. All frames contain full tree branch and trunk with generous margins. Natural continuous small movement steps, no teleporting. Tree totally stationary. Pure solid magenta #FF00FF, no ground or other scenery, no text, no drawn grid. Designed to play once, pause upright at frame 1 and pause hidden at frame16.",
+  "requestedSize": "2048x2048",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1314569,
+  "attempts": 1
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "home",
+  "file": "art-source/generated/home.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T05:55:53.126177+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nOne full-bleed square background of a mouse's woodland home. A charming moss-roofed\nround cottage with an arched wooden door centered at x=50%, y=32%, tiny glowing windows,\npink flowering tree on left and leafy tree on right. Cottage occupies the upper 45%.\nA pale sandy winding path opens into a quiet central clearing across the lower 55%,\nwith daisies, clover, mushrooms and grasses framing the left and right edges.\nCenter x=50%, y=55% must be empty to overlay a separate mouse sprite.\nLower left and lower right have unobstructed ground for overlay signs.\nSoft blue sky and clouds at the top. No characters, animals, signs or furniture in the clearing.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 3113280,
+  "attempts": 1
+}

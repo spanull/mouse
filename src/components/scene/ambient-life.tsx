@@ -1,0 +1,63 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { useDemo } from "@/components/demo-provider";
+
+type AmbientPose = { file: string; frameCount: number; durations: number[] };
+
+/** 仅播放接口生成的环境序列帧；各物件独立计时，背景本身不平移、不缩放，不绘制替代美术。 */
+export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { reducedMotion } = useDemo();
+  useEffect(() => {
+    let cancelled = false;
+    const animations: Animation[] = [];
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    /** 隐藏页面时冻结环境，减少动态效果时回到静态首帧；恢复后继续各自节奏。 */
+    function sync() {
+      for (const animation of animations) {
+        if (reducedMotion || media.matches) { animation.pause(); animation.currentTime = 0; }
+        else if (document.hidden) animation.pause();
+        else animation.play();
+      }
+    }
+    /** 使用 Web Animations 的离散关键帧播放实际姿势，停留时间来自资源清单，避免手写逐帧定时器。 */
+    async function initialize() {
+      try {
+        const response = await fetch("/assets/natural/manifest.json");
+        if (!response.ok) return;
+        const manifest = await response.json() as { actors: Record<string, { poses: { idle: AmbientPose } }> };
+        if (cancelled) return;
+        for (const element of ref.current?.querySelectorAll<HTMLElement>("[data-ambient]") ?? []) {
+          const key = element.dataset.ambient!;
+          const spec = manifest.actors[key]?.poses.idle;
+          if (!spec) continue;
+          element.style.backgroundImage = `url('${spec.file}')`;
+          element.style.backgroundSize = `${spec.frameCount * 100}% 100%`;
+          const duration = spec.durations.reduce((sum, value) => sum + value, 0);
+          let elapsed = 0;
+          const frames: Keyframe[] = spec.durations.map((time, i) => {
+            const frame = { backgroundPosition: `${i / (spec.frameCount - 1) * 100}% 0`, offset: elapsed / duration, easing: "steps(1, end)" };
+            elapsed += time;
+            return frame;
+          });
+          frames.push({ backgroundPosition: "100% 0", offset: 1 });
+          const animation = element.animate(frames, { duration, iterations: Infinity });
+          animation.currentTime = key === "squirrel" ? 0 : Math.random() * duration;
+          animations.push(animation);
+        }
+        sync();
+      } catch { /* 环境装饰失败不阻断场景入口，主体功能仍保持可用。 */ }
+    }
+    void initialize();
+    document.addEventListener("visibilitychange", sync);
+    media.addEventListener("change", sync);
+    return () => { cancelled = true; animations.forEach(animation => animation.cancel()); document.removeEventListener("visibilitychange", sync); media.removeEventListener("change", sync); };
+  }, [scene, reducedMotion]);
+  return <div ref={ref} className={`ambient-life ambient-${scene}`} aria-hidden="true">
+    <div className="ambient-sprite ambient-foliage" data-ambient="leaves" />
+    <div className="ambient-sprite ambient-light" data-ambient="lantern" />
+    {scene === "home" && <div className="ambient-sprite ambient-visitor" data-ambient="squirrel" />}
+    {scene === "restaurant" && <div className="ambient-sprite ambient-steam" data-ambient="steam" />}
+  </div>;
+}

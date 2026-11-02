@@ -1,0 +1,16 @@
+{
+  "asset": "dishes",
+  "file": "art-source/generated/dishes.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T05:59:42.347713+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nA game item sheet with EXACTLY 3 columns and 2 rows of equally sized cells,\nsix completely isolated different dishes, one per cell, centered with wide empty margins.\nRead left to right, top to bottom: 1 mushroom rice with green herbs, 2 spicy tomato pasta,\n3 colorful vegetable stir fry, 4 golden cheese gratin, 5 braised mushroom stew,\n6 berry tart with cream. Each dish on its own cream ceramic plate with brown rim.\nCozy appetizing pixel food illustration viewed slightly from above, consistent plate scale.\nFlat solid pure magenta #FF00FF background, no shadows outside plates, no text or grid lines.\n",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 2161880,
+  "attempts": 1
+}

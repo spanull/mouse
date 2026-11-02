@@ -1,0 +1,17 @@
+{
+  "asset": "patron-dormouse",
+  "file": "art-source/generated/patron-dormouse.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:38:10.847198+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 is the exact character identity reference. One single isolated complete game object: sleepy brown dormouse in a teal apron naturally SITTING on a rustic round wooden bar stool. The mouse and stool are ONE inseparable complete object. Bottom rests on seat, bent legs and paws naturally placed, body facing viewer with slight turn toward bar. Stool seat and all stool legs visible, entire tail visible. Preserve fur, clothing, body identity. Character and stool correctly proportioned, no standing or floating. Center complete object, generous margins. Flat solid pure magenta #FF00FF background, no floor, no cast shadow outside object, no other furniture.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "public/assets/world/dormouse-static.png"
+  ],
+  "bytes": 652770,
+  "attempts": 1
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "mole-natural-serve",
+  "file": "art-source/generated/mole-natural-serve.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:42:00.133877+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 is the exact character identity reference, preserve face, fur, outfit, proportions and lighting. Production sprite animation sheet, EXACTLY FOUR columns and THREE rows, TWELVE equal cells. Read row-major left to right. Each cell is one consecutive animation frame, not a different illustration. Fixed camera, fixed character size, identical framing, feet at the SAME horizontal baseline in each cell. All 12 cells fully occupied, wide magenta spacing. Flat solid pure magenta #FF00FF background. NO artificial whole-body bouncing, horizontal translation, zoom, squash or shaking. Feet and hips remain planted; only anatomy required by the action moves. Smooth closely spaced intermediate poses with natural timing. No duplicated limbs, no morphing costume, no motion trails, no letters or numbers. Subject: kindly mole bartender, NO external ears or visible tail, olive waistcoat and cream sleeves. NO furniture, no counter in sprite. Action: 12 frame serving: both paws hold ONE small tray with one cream glass near chest; elbows slowly extend tray forward toward viewer, hold gently for two frames, then draw arms back. Tray stays horizontal, same cup throughout, feet stationary. No full-body jumping.",
+  "requestedSize": "2048x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/mole.png"
+  ],
+  "bytes": 1717556,
+  "attempts": 1
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-clear-wide",
+  "file": "art-source/generated/restaurant-clear-wide.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:37:04.175071+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 is the edit target. Preserve ceiling, walls, shelves, pots, plants, perspective, warm light and scene edges. REMOVE THE ENTIRE LARGE HORIZONTAL COUNTER across the center and its cupboard front. Reconstruct the rear wall above and continuous wooden floor below. The center and lower two thirds must be a clear usable restaurant floor for a separate full-body chef with its own small cooking workstation. No central tables or counters, no chairs, no characters. No missing or blank regions. Full bleed landscape or portrait matching image 2.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/restaurant-wide.png"
+  ],
+  "bytes": 2408872,
+  "attempts": 1
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ui-icons",
+  "file": "art-source/generated/ui-icons.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:33:23.104519+00:00",
+  "prompt": "Create a cozy woodland PIXEL ART game UI icon atlas, exactly FOUR columns and FOUR rows, 16 equal cells. Each icon is an independent beautifully detailed small carved honey-wood medallion with moss, cream inlay and soft dark brown pixel outlines. Plain vivid pure magenta #FF00FF background, large empty spacing, NO letters or words, no drawn grid. Order row-major: 1 left arrow, 2 gear settings, 3 X close, 4 right arrow; 5 heart, 6 open book, 7 chef hat, 8 cocktail glass; 9 speech bubble, 10 gold four-point sparkle, 11 gold coin, 12 meal ticket; 13 check mark, 14 flag, 15 circular retry arrow, 16 cottage home. Exactly one icon per cell, consistent size and perspective. Original raster pixel UI matching reference colors and cozy woodland craft.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 1699590,
+  "attempts": 1
+}

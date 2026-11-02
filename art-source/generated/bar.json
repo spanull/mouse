@@ -1,0 +1,16 @@
+{
+  "asset": "bar",
+  "file": "art-source/generated/bar.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T05:58:21.110899+00:00",
+  "prompt": "Match the attached user's game prototype closely in ART STYLE, not its UI layout:\nintricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,\nsoft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,\nsoft warm lighting, adorable round woodland rodents, handcrafted miniature world.\nNot vector art, not geometric placeholders, not smooth 3D, not realistic photography.\nNo text, letters, numbers, watermarks, UI panels, buttons, borders, or labels.\nCreate an original game asset inspired by the reference, not a screenshot or phone mockup.\nOne full-bleed square background of a welcoming woodland tree-hollow bar at dusk.\nDense moss and leafy canopy frame top and sides, tiny amber fairy lights, carved tree interior,\ncolorful small bottles on shelves at y=18%-32%. Cozy dim golden light inside, soft sage meadow outside.\nHorizontal wood bar counter top exactly at y=47%, front ends at y=59%.\nLeave the center above counter, x=38%-62%, y=25%-46%, empty for a separate mole bartender.\nEXACTLY THREE empty round wooden bar stools at x=27%,50%,73%, seats at y=70%.\nLower quarter is sandy ground with white daisies and pale pink flowers along edges.\nNo characters, no customers, no animals, no posters, no menu boards, no text.",
+  "requestedSize": "1024x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png"
+  ],
+  "bytes": 2464479,
+  "attempts": 1
+}

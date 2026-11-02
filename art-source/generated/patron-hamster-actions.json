@@ -1,0 +1,17 @@
+{
+  "asset": "patron-hamster-actions",
+  "file": "art-source/generated/patron-hamster-actions.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T10:04:11.826880+00:00",
+  "prompt": "Original cozy woodland pixel art matching reference image 1, warm dark brown outlines, soft cream and moss greens. No lettering, numbers or watermark. Image 2 is exact seated mouse WITH stool identity. Create FOUR columns FOUR rows, 16 equal cells. Full complete seated mouse and its stool in every cell. Keep the stool, feet, hips and scale absolutely stationary, fixed camera. Frames 1-8: gradual blink open to closed to open, paws resting on lap. Frames 9-16: lifting a small glass from lap to mouth, taking a quiet sip, then returning glass to lap. One consecutive anatomical pose per cell. No body translation, bouncing, jumping, zoom, furniture morphing or missing legs. Generous margins, pure solid magenta #FF00FF background, no text or grid.",
+  "requestedSize": "2048x2048",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/patron-hamster.png"
+  ],
+  "bytes": 1611282,
+  "attempts": 1
+}

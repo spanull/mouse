@@ -1,0 +1,17 @@
+{
+  "asset": "mole-service",
+  "file": "art-source/generated/mole-service.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T08:41:04.634475+00:00",
+  "prompt": "Create a game animation sheet of EXACTLY the mole bartender from reference image 2, preserving charcoal-brown fur, tapered pink muzzle, tiny bead eyes, NO external ears, NO visible tail, olive waistcoat, cream sleeves and green bow tie. Precisely THREE columns TWO rows, six equal cells, character full body centered at same scale in every cell, large empty margins. Row-major: 1 welcoming smile with one paw waving, 2 quietly listening with head slightly tilted and paws folded, 3 carefully polishing a small clear glass with cream cloth, 4 shaking a silver cocktail shaker held to the left of chest, 5 shaking SAME shaker to the right of chest, 6 pouring a small pitcher into a cocktail glass held in the other paw. Distinct clear poses with identical costume and body proportions. Solid pure magenta #FF00FF background, no grid, no lettering, no foreground counter. Detailed cozy pixel art matching the original prototype. No extra arms, no duplication of props.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/mole.png"
+  ],
+  "bytes": 1921120,
+  "attempts": 4
+}

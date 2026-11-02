@@ -1,0 +1,17 @@
+{
+  "asset": "chinchilla-natural",
+  "file": "art-source/generated/chinchilla-natural.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:52:28.702770+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 gives exact character identity. Make EXACTLY FOUR columns FOUR rows, SIXTEEN equal cells, one full body character in every cell. Ordered row-major. Fixed size, fixed camera, feet fixed to same baseline; generous magenta margins in each cell. Frames 1-8: a natural slow blink cycle, eyelids open, quarter closed, half closed, closed, closed, half open, three-quarter open, open; paws at sides. Frames 9-16: a gentle greeting wave, arm at rest, elbow bends, paw rises, wrist tilts, wrist returns, paw lowers, elbow straightens, arm at rest. Torso, head position and feet completely fixed, no bouncing or translation. Natural intermediate arm joints, no duplicated limbs. Pure solid magenta #FF00FF background, no ground, shadow, props, text or drawn grid. Match same clothes and body across all frames. Each cell has a real anatomical change, not a translated duplicate.",
+  "requestedSize": "2048x2048",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/chinchilla.png"
+  ],
+  "bytes": 2120498,
+  "attempts": 13
+}

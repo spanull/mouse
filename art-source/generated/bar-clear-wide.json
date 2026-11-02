@@ -1,0 +1,17 @@
+{
+  "asset": "bar-clear-wide",
+  "file": "art-source/generated/bar-clear-wide.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-10-30T09:36:53.679071+00:00",
+  "prompt": "Use case: illustration-story. Original cozy woodland PIXEL ART game asset. Match image 1 style: warm brown outlines, cream, moss green, dusty pink, tiny crisp pixel clusters. No text, labels, grid lines, watermark or interface. Image 2 is the edit target. Preserve camera, tree hollow, bottle shelves, lights, counter position, counter shape, ground and composition EXACTLY. REMOVE ALL THREE STOOLS completely. Reconstruct the bare sandy ground where stools used to be. No stools, no seats, no furniture below the bar counter, no characters or animals. Full bleed complete scene. Keep the bar top at the same image height as in image 2. Do NOT add any new furniture.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/bar-wide.png"
+  ],
+  "bytes": 2882452,
+  "attempts": 1
+}
