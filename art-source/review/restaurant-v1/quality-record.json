@@ -1,0 +1,237 @@
+{
+  "date": "2026-11-02",
+  "status": "visual-frames-transitions-and-browser-reviewed",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generationRuns": [
+    {
+      "asset": "restaurant-board-v1",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-board-v1.png",
+      "promptFile": "art-source/generated/restaurant-board-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/restaurant-wide.png"
+      ]
+    },
+    {
+      "asset": "restaurant-board-v2",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-board-v2.png",
+      "promptFile": "art-source/generated/restaurant-board-v2.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-board-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-idle-v1",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-chef-idle-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-idle-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-master-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-master-v1",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-chef-master-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-master-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/chef-static.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-point-v1",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-chef-point-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-point-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-master-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-point-v2",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-chef-point-v2.png",
+      "promptFile": "art-source/generated/restaurant-chef-point-v2.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-idle-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-point-v3",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-chef-point-v3.png",
+      "promptFile": "art-source/generated/restaurant-chef-point-v3.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-point-v2.png"
+      ]
+    },
+    {
+      "asset": "restaurant-kitchen-entry-v1",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-kitchen-entry-v1.png",
+      "promptFile": "art-source/generated/restaurant-kitchen-entry-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/restaurant-wide.png"
+      ]
+    },
+    {
+      "asset": "restaurant-room-tall-v1",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-room-tall-v1.png",
+      "promptFile": "art-source/generated/restaurant-room-tall-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/restaurant-tall.png"
+      ]
+    },
+    {
+      "asset": "restaurant-room-wide-v1",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-room-wide-v1.png",
+      "promptFile": "art-source/generated/restaurant-room-wide-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/restaurant-wide.png"
+      ]
+    },
+    {
+      "asset": "restaurant-table-v1",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-table-v1.png",
+      "promptFile": "art-source/generated/restaurant-table-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "public/assets/natural/restaurant-wide.png"
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "asset": "restaurant-board-v1",
+      "reason": "板外及脚间有棕黑色光晕，不可直接透明去底",
+      "replacement": "restaurant-board-v2"
+    },
+    {
+      "asset": "restaurant-chef-point-v1",
+      "reason": "跨动作身高不一致、头部倾斜、第三行留白不足",
+      "replacement": "restaurant-chef-point-v2"
+    },
+    {
+      "asset": "restaurant-chef-point-v2",
+      "reason": "第3帧抬起了另一侧手，无法连续衔接第2与第4帧",
+      "replacement": "restaurant-chef-point-v3"
+    }
+  ],
+  "failures": [
+    {
+      "assets": [
+        "restaurant-table-v1",
+        "restaurant-kitchen-entry-v1"
+      ],
+      "attempt": 1,
+      "errors": [
+        "curl: (56) schannel: server closed abruptly (missing close_notify)",
+        "Expecting value: line 1 column 1 (char 0)"
+      ]
+    },
+    {
+      "assets": [
+        "restaurant-board-v2"
+      ],
+      "attempt": 1,
+      "errors": [
+        "curl: (28) Failed to connect to aicoding.aideb.me:443 after 21028 ms: Could not connect to server",
+        "Expecting value: line 1 column 1 (char 0)"
+      ]
+    },
+    {
+      "assets": [
+        "restaurant-chef-point-v1"
+      ],
+      "attempt": 1,
+      "errors": [
+        "curl: (28) Operation timed out after 300011 milliseconds with 49904 bytes received",
+        "Unterminated string starting at: line 1 column 43 (char 42)"
+      ]
+    },
+    {
+      "assets": [
+        "restaurant-chef-idle-v1"
+      ],
+      "attempt": 1,
+      "errors": [
+        "curl: (28) Operation timed out after 300015 milliseconds with 49904 bytes received",
+        "Unterminated string starting at: line 1 column 43 (char 42)"
+      ]
+    }
+  ],
+  "validation": {
+    "runtimeImages": 8,
+    "allDecoded": true,
+    "magentaResidualPixels": 0,
+    "frameSize": 320,
+    "idleFrames": 12,
+    "welcomeFrames": 12,
+    "actualAlphaBodyHeights": [
+      267,
+      271
+    ],
+    "actualFootBaseline": 300,
+    "actualFootMidpointRange": [
+      159.5,
+      160.5
+    ],
+    "normalization": "所有动作共同等比缩放一次，用脚掌中点与脚底对齐；未逐帧缩放，未复制或移动帧制造动作",
+    "viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        430,
+        932
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "browserTests": "18 passed (3.4m)",
+    "typecheck": "passed",
+    "lint": "not run",
+    "realDevice": "not checked"
+  },
+  "visualReview": "逐帧检查原图和奶油底接触表；浏览器实际迎客、回待机、再次点击、后台冻结、静态偏好、重试及横竖场景检查。v3第3帧已修正为同一手臂。最终alpha身高差4px，不以相同画布尺寸替代身体像素检查。",
+  "chefVisualApprovalRevoked": {
+    "date": "2026-11-02",
+    "reason": "用户指出point-v3描边更黑且毛色不同，撤销旧厨师颜色与描边通过结论；其他场景素材不受影响",
+    "supersededBy": "art-source/review/chef-color/quality-record.json"
+  }
+}

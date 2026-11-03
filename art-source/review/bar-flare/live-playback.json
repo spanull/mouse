@@ -1,0 +1,16 @@
+{
+  "results": [
+    "welcome->idle",
+    "listen->idle",
+    "polish->idle",
+    "comfort->idle",
+    "shake",
+    "pour",
+    "serve",
+    "comfort"
+  ],
+  "viewport": [
+    390,
+    844
+  ]
+}

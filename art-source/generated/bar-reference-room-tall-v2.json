@@ -1,0 +1,20 @@
+{
+  "asset": "bar-reference-room-tall-v2",
+  "file": "art-source/generated/bar-reference-room-tall-v2.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:25:38.428858+00:00",
+  "prompt": "以图一为要修改的背景，仅清除所有植物和树枝，保留图一尺寸比例、台面位置、酒瓶、酒架、树洞主干、墙面、地板、光照和原有精细像素纹理。去掉顶部叶片与枝条，替换为自然弯曲的实体木质洞顶；去掉左边酒架上的叶片与细藤，右侧盆栽替换为一只无植物的陶罐；去掉地面和墙脚的所有小草叶片。树洞右侧粗大竖向实体树干作为墙面保留，但其上部细枝不能保留，改成实体木墙。图二只参考原美术细节，绝不复制其中植物与灯具。不能增加灯、文字、角色、凳子或装饰，不允许改变构图，不允许把背景简化或换成对称拱门。完整背景画到四边。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1152x2048",
+  "aspect": "9:16",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/generated/bar-reference-room-tall-v1.png",
+    "art-source/reference/bar-style-detail-user.png"
+  ],
+  "bytes": 4279610,
+  "attempts": 1,
+  "errors": []
+}

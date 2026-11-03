@@ -1,0 +1,48 @@
+{
+  "actors": {
+    "restaurant-chef": {
+      "frameSize": 320,
+      "fallback": "/assets/restaurant/chef-static.png",
+      "poses": {
+        "idle": {
+          "file": "art-source/review/chef-color/unified-preview/chef-idle.png",
+          "frameCount": 12,
+          "durations": [
+            3100,
+            180,
+            100,
+            85,
+            85,
+            100,
+            100,
+            85,
+            85,
+            100,
+            150,
+            800
+          ],
+          "loop": true
+        },
+        "welcome": {
+          "file": "art-source/review/chef-color/unified-preview/chef-welcome.png",
+          "frameCount": 12,
+          "durations": [
+            300,
+            150,
+            150,
+            150,
+            150,
+            160,
+            180,
+            1000,
+            300,
+            180,
+            180,
+            300
+          ],
+          "loop": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "bar-mole-care-v3",
+  "file": "art-source/generated/bar-mole-care-v3.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T07:25:09.457221+00:00",
+  "prompt": "Precise ONE CELL edit. Image2 is a24frame4column6row sprite sheet. Preserve ALL image2 pixels EXCEPT frame13 = ROW4 COLUMN1. In this ONE cell, the viewerRIGHT arm is incorrectly raised. Put BOTH paws in neutral at belly, EXACTLY copy arms/body posture of frame1 (row1column1). Same mole/head/face/body/feet/clothes/scale/palette/lineweight. No raised paw in frame13. Do NOT change any of other23frames, especially first12neutral listening and frames14..24 comfort with only viewerLEFTpaw gradually rising to chest then lowering. Keep1024x1536,4x6equal256cells; footY246,headY20,bodyheight226,skullwidth110,feetcenterX128; fixed frontal smallrightturn andupperleftlight; tiny1..2pxpixels/thinwarmbrownoutline. Fullbody complete with gutters, puremagentaFF00FFbackground, no extra objects/shadows/grid/text. Runtimeframe320square340..480CSSpx,common scale andfootbaseline,NOtightcrop. Edit ONLY row4col1 to exact neutral of row1col1; keep everything else identical.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1024x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/bar-mole-care-v2.png"
+  ],
+  "bytes": 2649147,
+  "attempts": 1
+}

@@ -1,0 +1,18 @@
+{
+  "asset": "restaurant-chef-unified-v3",
+  "file": "art-source/generated/restaurant-chef-unified-v3.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T05:32:33.736445+00:00",
+  "prompt": "精确修图。图2是本次唯一颜色、线条、脸、身体、比例、网格母版，颜色和细棕描边已经合格，不能重新设计。图3只用于说明正确的手臂动作，不得采用图3的深色、黑描边或画风。\n图2为4列6行共24格。前3行是待机；后3行是指菜单。只修正图2第4行的第3格、第4格：现在错误地举起了画面左边的手。请把这两格画面左边的手放下，姿势与第4行第1格一致；举起画面右边、靠近尾巴的那只手，手肘弯曲，前爪抬在身体右侧。第4行第3格右爪位于肚子右侧，第4格右爪位于胸口右侧。观众看到的右边是有尾巴的一边，是必须动作的同一条手臂。不能把两只手搞反。参考图3第一行第3、4格，那两格正确地举起了观众右侧手；仅借鉴这两个关节姿态，不借鉴其颜色。图2其他22格保持不变，尤其第4行第2格不要改变。整只鼠不可镜像。\n同一套浅灰褐毛色、奶油帽衫、鼠尾草绿围裙、轻柔棕色细轮廓，所有24格严格一致；没有突然变粗的黑边、没有红棕色调、没有模糊胡须。画布1024x1536，4列6行，每格256x256；身体高约222像素、脚底Y244、脚中点X125、头骨宽约100像素不含耳朵，具体以图2像素为准，不改变母版的实际大小、脚底或位置。正面固定镜头，左上光照，小像素密度保持一致。每格四周保留完整空隙，耳朵尾巴手脚不裁切。场景显示尺寸220至380CSS像素，共同缩放一次，动作不得各自放大。透明底或纯品红FF00FF，无投影、无地面、无字体和格线。只修正图2第4行第3、4格的两条手臂，其他像素、姿势和配色保持图2不变。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1024x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/restaurant-chef-unified-v1.png",
+    "art-source/generated/restaurant-chef-point-v3.png"
+  ],
+  "bytes": 2373695,
+  "attempts": 1
+}

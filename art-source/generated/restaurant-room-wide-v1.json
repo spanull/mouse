@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-room-wide-v1",
+  "file": "art-source/generated/restaurant-room-wide-v1.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T03:48:28.261830+00:00",
+  "prompt": "Use case: illustration-story. Original full-bleed cozy tiny mouse RESTAURANT INTERIOR game background, not a website. Canvas 1536x1024, one landscape scene, no grid. Image1 is palette/mood reference; image2 supplies fine pixel density and warm upper-left daylight, but REPLACE its room composition. Cream plaster, honey oak beams, sage ceramic bowls and plates stacked on shelves, hanging copper pans, ladles, small cooking range at back left, dish cabinet at back right. A welcoming dining room, charming detailed crisp tiny 2-3px pixel clusters, selective brown outlines 2-3px, soft cream/moss/rose accents. Eye-level camera with mild view down onto floor, horizon Y=430, floor seam Y=570. Natural window illumination only: NO hanging lamps, NO lanterns, NO branches, NO foliage, NO vines, NO decorative plants. Upper corners can hold kitchen shelves, center back wall calm. Leave central floor/room X=520..930 Y=320..790 free for a separately generated full-body chef. Keep right X=960..1290 Y=300..780 quiet for a separate upright menu board. Lower center X=350..1180 Y=700..1000 reserved for separate dining table and stools. Do NOT draw any chef, mouse, furniture table, stools, menu board, food plate in foreground, UI, signs, labels or text. All four edges fully painted. Display via proportion-preserving cover at 844x390 to1920x1080; central 60% safe area, peripheral shelves may crop; no critical objects near edges. Same camera/light/pixel texture as portrait variant. Original generated art, not a crop of reference.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "public/assets/natural/restaurant-wide.png"
+  ],
+  "bytes": 2284726,
+  "attempts": 1
+}

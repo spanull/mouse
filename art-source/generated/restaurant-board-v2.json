@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-board-v2",
+  "file": "art-source/generated/restaurant-board-v2.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T04:03:53.704044+00:00",
+  "prompt": "Precise object edit: IMAGE2 is the approved wooden standing chalkboard design, preserve its complete wood frame, sage board face and two feet exactly. REJECT its dark brown glowing background. Replace ALL background OUTSIDE the board including the gap BELOW the lower horizontal beam BETWEEN feet with FLAT SOLID PURE MAGENTA #FF00FF, exactly RGB255,0,255. NO glow, vignette, room, floor, shadows, gradients or dark surround. This must be an extractable game sprite. Canvas1024x1536 single1x1object, fully within X140..884 Y130..1390. Keep blank sage board face opaque, no writing or symbols. Maintain straight-on perspective, upper-left warm light, fine2pxpixel texture, frame40px thickness. Display height230..380px,2:3aspect ratio, safe margins>=100px, no tight framing. No new objects.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1024x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/restaurant-board-v1.png"
+  ],
+  "bytes": 1386979,
+  "attempts": 2
+}

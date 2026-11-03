@@ -1,0 +1,19 @@
+{
+  "asset": "bar-reference-mole-serve-v3",
+  "file": "art-source/generated/bar-reference-mole-serve-v3.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:52:46.712024+00:00",
+  "prompt": "编辑上传的4列3行12帧递杯动作表，画布2048x1536、每格512。仅修正前面几格的杯子：所有12格都使用第5格同样尺寸的同一只装浅紫酒的高脚杯，杯口宽60px、杯高75px，不能从小杯变大杯。双爪与杯底真实接触，12格手臂由腹前向前递出：杯中心逐渐从Y280到Y305，杯X256不变，不变杯大小。真实肩肘腕连续变化，身体、头、脚都固定，脚底Y445脚掌中点X256身体高370，同一毛色衣服细腻像素、同一镜头光照。不要改变角色、不放大头部、不复制整体移动帧。保持原图画风，纯品红背景和所有空隙，无文字、地面或家具。必须输出12格动作表，不返回单个大人物。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/generated/bar-reference-mole-serve-v2.png"
+  ],
+  "bytes": 3936329,
+  "attempts": 1,
+  "errors": []
+}

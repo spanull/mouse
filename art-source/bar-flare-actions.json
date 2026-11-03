@@ -1,0 +1,137 @@
+{
+  "bar-flare-mole-idle-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：双爪一直放在腹前不动，只做连续自然双眼眨眼：1睁眼，2眼睑下降一点，3半闭，4快闭，5全闭，6放松闭眼，7开始睁开，8半睁，9快睁开，10睁眼，11放松，12与1相同。"
+  },
+  "bar-flare-mole-welcome-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：同一只画面左手连续挥手，另手不动：1腹前中立，2肘弯，3爪上抬腹部，4胸前，5脸旁，6手腕向外轻挥，7轻挥回来，8向外轻挥，9手腕放松，10降胸前，11降腹前，12中立。"
+  },
+  "bar-flare-mole-listen-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：同一只画面左手在腹前慢慢摊开邀请倾诉，另一手不动：1中立，2肘弯5度，3弯10度，4弯15度掌心向上，5弯20度，6掌向外一点，7倾听微笑，8回20度，9回15度，10回10度，11回5度，12中立。"
+  },
+  "bar-flare-mole-comfort-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：同一只画面右爪轻放胸口安慰：1中立，2肘弯，3右爪抬胸前，4轻贴领结下方，5微笑，6双眼半闭，7双眼闭合微笑，8开始睁开，9睁眼，10右爪离胸，11降回腹前，12中立。另爪不动。"
+  },
+  "bar-flare-mole-polish-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：画面右爪始终握同一空玻璃高脚杯梗，杯中心X345、杯口Y230、杯底Y345、杯口宽70。左肩的一条完整连续奶油袖横在胸腹前，连到拿布左爪，布一直接触玻璃杯左侧。12姿势只沿杯左壁擦一个小弧度：1布接左壁Y275，2到Y267，3到Y259，4到杯口Y250，5左杯口，6左杯口擦拭，7回Y255，8回Y260，9回Y265，10回Y270，11回Y273，12回起点。只有两条袖子两只爪，不能腹前还有一只手而布在空气飞。空杯不画饮料，保留透明玻璃轮廓。"
+  },
+  "bar-flare-mole-shake-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：双爪全程一直握同一个封闭银色调酒壶，壶高95宽44，中心X260Y285；两手与壶始终接触，壶盖形状每帧一样不能消失变形。1直立握壶，2左倾15度，3左倾30，4左倾15，5直立，6右倾15，7右倾30，8右倾15，9直立，10左倾15，11左倾5，12直立。只是肘腕转动，身体不跟着摇，不画杯子。"
+  },
+  "bar-flare-mole-pour-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：画面右爪握同一高脚杯梗，杯口X350Y300杯底Y365。画面左爪举一只短银色调酒壶，壶高85宽40。壶的开口到X350Y287，正好在杯口上方13px；壶身在画面右侧X395Y270，脸鼻在X256Y220。1竖握壶，2微抬，3靠近杯口，4倾45度，5..8仅从银壶真实开口Y287一条13px浅紫短竖线进入杯口Y300，9停流，10回30度，11竖直，12回起点。液流不能长弧线、不能从嘴或鼻发出、不能来自空气，杯子固定不变大小，不能洒到杯外，两手不换道具。"
+  },
+  "bar-flare-mole-serve-v1": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "必须输出4列3行横版2048x1536动作表，12个小人物，不是单人物母版。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：两爪扶同一只杯子的底部，杯中浅紫酒。12格每格杯宽60高85，绝不随帧变大。杯子中心X260，杯底从第1格Y325到第12格Y358，每格只低3px。真实肩肘腕逐渐向前递出，头和身体完全不动，两爪一直扶杯底，不换手不松开。"
+  },
+  "bar-flare-mole-polish-v2": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "输出2048x1536横版动作精灵表，严格4列3行12格，每格512方，纯品红FF00FF背景无影子无文字无格线。图一是用户的画风，图二是唯一人物母版，保持图二所有毛色、黑马甲、领结、脸部和身体比例。细腻手工像素，非平滑插画。每格全身高370，头宽245，头顶75脚底445脚中点256。身体不动不缩放，只有双臂和道具作真实连续关节动作。保持完整全身，安全区35..477，不紧裁，场景内以320方画布显示280CSSpx，正面镜头与左上光。动作是擦玻璃杯。仅两只手。画面右手固定握着空高脚杯的杯梗，杯子在身体右前侧，杯口在胸口高度，杯底在腹部高度。另一只手的奶油袖从左肩连续延伸到拿布的爪，白布紧贴杯口右边缘，小范围来回擦。12姿势：1布贴杯口，2上擦一点，3再上一点，4向右轻擦，5下擦一点，6继续下擦，7向左擦，8上擦，9再上一点，10回中间，11轻擦，12起点。布始终接触玻璃杯，不能擦鼻子嘴脸，不能离杯子20像素以上。全程杯子固定宽70高115，人物和杯子不变化大小。"
+  },
+  "bar-flare-mole-pour-v2": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/reference/bar-mole-detail-user.png",
+    "references": [
+      "art-source/generated/bar-flare-mole-master-v1.png"
+    ],
+    "prompt": "输出2048x1536横版动作精灵表，严格4列3行12格，每格512方，纯品红FF00FF背景无影子无文字无格线。图一是用户的画风，图二是唯一人物母版，保持图二所有毛色、黑马甲、领结、脸部和身体比例。细腻手工像素，非平滑插画。每格全身高370，头宽245，头顶75脚底445脚中点256。身体不动不缩放，只有双臂和道具作真实连续关节动作。保持完整全身，安全区35..477，不紧裁，场景内以320方画布显示280CSSpx，正面镜头与左上光。动作是把银色调酒壶里的酒准确倒进一只杯子。画面右侧的右手举着银壶，画面左侧的左手握高脚杯梗。左手把杯子举到人物胸前正中央X256，杯口Y270，杯底Y360，杯宽80高90，固定12格相同。银壶从右肩前伸向中央，壶嘴正好贴近中央玻璃杯的上沿！倾倒期间壶嘴X270Y260，杯口X256Y270，两者仅相距17像素；极短浅紫色液体从壶嘴往左下进入杯内。不能把杯子留在身体左边而对着胸口倒酒！1双手握道具准备，2举壶，3壶嘴靠近中央杯口，4壶倾斜，5开始短流，6连续短流入杯，7连续短流，8停流，9壶抬直，10退一点，11回准备，12回准备。只有一只杯，没有悬空的杯底或第二根杯梗；不能液流从鼻发出或倒到马甲。"
+  },
+  "bar-flare-mole-polish-v3": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/generated/bar-flare-mole-polish-v1.png",
+    "references": [
+      "art-source/reference/bar-mole-detail-user.png"
+    ],
+    "prompt": "图一是待修改的完整动作表，图二仅为用户画风参考。保留图一4列3行12格2048x1536布局、人物所有头身大小、颜色、脚底和服装，纯品红背景。只修正擦杯动作：第一行四格的布在玻璃杯左壁上，这种接触关系正确，后两行也必须是拿白布的左手伸到玻璃杯左壁擦拭，布不能移到鼻子或身体左侧！第5..12格把白布和对应的左前臂一同向画面右方移动，直到布真实贴住玻璃杯左壁；左肩连续一条袖子连到拿布爪，不能多一只手。12格杯子和右手保持原位置原大小。每格左手沿杯左壁从下到上再回下部，幅度小而连续。不要重新设计人物，不改变杯子，不画喝水，不能布悬空擦脸，不要沿用原错误帧。每格512方，人物头顶75脚底445脚中点256，身体高370头宽245，共同正面镜头左上光。运行320方画布等比显示280CSSpx，安全区35..477，不紧裁。"
+  },
+  "bar-flare-mole-pour-v3": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/generated/bar-flare-mole-pour-v2.png",
+    "references": [
+      "art-source/reference/bar-mole-detail-user.png"
+    ],
+    "prompt": "图一是待修改的4列3行动作表，图二为用户风格参考。完整保留图一12格2048x1536布局、鼹鼠脸、毛色、黑马甲、所有身体尺寸、脚底和壶的位置轨迹。倾倒的短液流正好进入中央杯子，这个物理关系保留！只修两点：1每一格画面左手必须清楚用拇指和其他指头握住中央高脚杯的杯梗，不要在身体左边握拳、杯子在中央悬空；可以让左前臂真实向中央弯曲，使手爪接触杯梗。2杯内酒量合理连续：第1格空、第2格空、第3格1/5、第4格1/3、第5格一半、第6格2/3、第7格3/4、第8到12格始终3/4满浅紫酒，停止倒酒后不能又变空。杯子12格固定同样大小，右手全程握银色调酒壶不能出现第三只手，倒入液流必须从银壶嘴进入杯口。不要改成茶壶，不要重新设计人物。纯品红背景和空隙，每格512方，头顶75脚底445脚中点256，人物身体高370头宽245，正面镜头与左上光，运行320方画布等比280CSSpx，安全区35..477不紧裁。"
+  },
+  "bar-flare-mole-polish-v4": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/generated/bar-flare-mole-master-v1.png",
+    "references": [
+      "art-source/reference/bar-mole-detail-user.png"
+    ],
+    "prompt": "Create a FULL BODY animation sprite sheet, exactly FOUR COLUMNS by THREE ROWS = TWELVE complete full-body moles. Canvas 2048x1536, each cell512x512, solid pure #FF00FF background everywhere. Image1 is the canonical whole character: KEEP EXACT identity, furry brown-gray mole, cream shirt, charcoal vest, black bowtie, short brown trousers AND TWO COMPLETE FEET. Image2 is the user style reference only. Each cell shows the WHOLE figure from top of head Y75 down to soles Y445. Head width245, body height370, foot centerX256. Same camera/front, light top left, identical body scale and palette in all12cells. No cropped waist-up portraits. No zoom. No body sway, no ground/shadow/text/grid lines. Fine small pixel clusters matching Image1. Intended scene 280CSSpx in320 square runtime canvas, all content within35..477. Animate wiping ONE small wineglass. Character right paw grips its stem at belly center. Left paw holds a cream cloth touching the SAME glass bowl; left sleeve visibly connects shoulder to paw. Both hands are together at center in front of chest. Never move cloth to the nose or away from the glass! In12frames left elbow and wrist gently trace the rim upward, clockwise a little, then back down. Cloth stays in physical CONTACT with the rim in ALL12frames. Glass remains upright, same small size and same position, head and feet fixed. Show complete legs and feet."
+  },
+  "bar-flare-mole-pour-v4": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/generated/bar-flare-mole-master-v1.png",
+    "references": [
+      "art-source/reference/bar-mole-detail-user.png"
+    ],
+    "prompt": "Create a FULL BODY animation sprite sheet, exactly FOUR COLUMNS by THREE ROWS = TWELVE complete full-body moles. Canvas 2048x1536, each cell512x512, solid pure #FF00FF background everywhere. Image1 is the canonical whole character: KEEP EXACT identity, furry brown-gray mole, cream shirt, charcoal vest, black bowtie, short brown trousers AND TWO COMPLETE FEET. Image2 is the user style reference only. Each cell shows the WHOLE figure from top of head Y75 down to soles Y445. Head width245, body height370, foot centerX256. Same camera/front, light top left, identical body scale and palette in all12cells. No cropped waist-up portraits. No zoom. No body sway, no ground/shadow/text/grid lines. Fine small pixel clusters matching Image1. Intended scene 280CSSpx in320 square runtime canvas, all content within35..477. Animate pouring a small silver cocktail shaker into ONE small wineglass. Left paw firmly GRIPS glass stem in front of belly centerX256Y325, glass rimY275. Right paw holds silver shaker next to glass, its opening directly above glass rim, only10px gap. Across12frames right wrist slowly tilts shaker20degrees, pours a short lavender stream INTO THE GLASS, then returns upright. Stream from shaker mouth only, never from face. Both hands visibly touch their props, no extra hands. Wine fills the glass in first8frames and stays filled in last4frames. Glass and shaker never change size. Show complete legs and feet."
+  },
+  "bar-flare-mole-pour-v5": {
+    "size": "2048x1536",
+    "aspect": "4:3",
+    "styleReference": "art-source/generated/bar-flare-mole-master-v1.png",
+    "references": [
+      "art-source/reference/bar-mole-detail-user.png"
+    ],
+    "prompt": "Create FULL BODY sprite animation sheet,2048x1536,4columns by3rows=12complete characters,each512square,pure solid FF00FF background. Image1 is the canonical character;Image2 user style only. Keep original gray brown mole,head proportions,cream shirt,charcoal vest,bowtie,short trousers,TWO COMPLETE FEET. All12frames head top75,foot baseline445,foot midpoint256,body height370,head width245. Same body scale and camera throughout,no cropped torso,no zoom,no sway,no text or shadow. Fine pixel texture top-left light. Action: pouring a silver shaker into a wineglass. Glass is at chest center, firmly gripped by left paw on its stem. Glass already contains lavender wine at3/4full and stays3/4full EVERY frame. Right paw holds a silver shaker at the side of the glass. Shaker mouth is INSERTED into and TOUCHES the glass rim, so poured liquid is occluded by the rim and shaker. NO VISIBLE LIQUID STREAM,NO LINE from face. Do not draw ANY long liquid line.12poses:1both props upright,2right elbow lifts,3shaker mouth touches glass rim,4shaker tilted20degrees,5tilted30,6tilted40,7tilted45,8tilted40,9tilted30,10tilted20,11mouth lifted off rim,12upright. True elbow wrist motion only,the rest stays still. Glass same size and same position all12frames,remaining3/4full. BOTH paws visibly contact their props. All content35..477,320square runtime280CSSpx. Keep full body legs and feet."
+  }
+}

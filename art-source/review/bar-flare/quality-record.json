@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-02",
+  "status": "visual-frames-transitions-and-browser-reviewed",
+  "userRequestedModel": "gpt-image-2.5-flare",
+  "providers": [
+    {
+      "baseUrl": "https://image.luna.it.com",
+      "model": "gpt-image-2.5-flare",
+      "usage": "本轮横竖背景、入口、鼹鼠母版和八类动作"
+    },
+    {
+      "baseUrl": "https://aicoding.aideb.me",
+      "model": "gpt-image-2.5",
+      "usage": "复用两客鼠连凳与空凳，来源未改标"
+    }
+  ],
+  "taskFiles": [
+    "art-source/bar-flare-tasks.json",
+    "art-source/bar-flare-actions.json"
+  ],
+  "reference": "art-source/reference/bar-composition-user.png",
+  "referenceUsage": "用户局部参考仅上传到制作接口，页面运行全部使用新生成图；未裁片冒充素材。",
+  "runtimeManifest": "public/assets/bar/manifest.json",
+  "runtimeAssetCount": 20,
+  "acceptedSources": [
+    "bar-empty-stool-v2",
+    "bar-flare-drinks-entry-v1",
+    "bar-flare-mole-comfort-v1",
+    "bar-flare-mole-idle-v1",
+    "bar-flare-mole-listen-v1",
+    "bar-flare-mole-polish-v4",
+    "bar-flare-mole-pour-v5",
+    "bar-flare-mole-serve-v1",
+    "bar-flare-mole-shake-v1",
+    "bar-flare-mole-welcome-v1",
+    "bar-flare-room-tall-v1",
+    "bar-flare-room-wide-v1",
+    "bar-flare-wall-entry-v1",
+    "bar-patron-dormouse-v1",
+    "bar-patron-hamster-v1",
+    "bar-flare-mole-master-v1"
+  ],
+  "rejected": [
+    {
+      "asset": "bar-flare-mole-polish-v1",
+      "reason": "中段白布离开杯壁靠近脸部"
+    },
+    {
+      "asset": "bar-flare-mole-polish-v2",
+      "reason": "布与杯壁仍有间隔且人物身份出现细节偏移"
+    },
+    {
+      "asset": "bar-flare-mole-polish-v3",
+      "reason": "错误返回半身近景且杯形失真"
+    },
+    {
+      "asset": "bar-flare-mole-pour-v1",
+      "reason": "流向错误、杯外出现悬空杯梗"
+    },
+    {
+      "asset": "bar-flare-mole-pour-v2",
+      "reason": "杯梗未被明确握持，停流后酒量倒退"
+    },
+    {
+      "asset": "bar-flare-mole-pour-v3",
+      "reason": "错误返回半身且背景偏色"
+    },
+    {
+      "asset": "bar-flare-mole-pour-v4",
+      "reason": "液流从嘴部附近落下，末帧酒量减少"
+    }
+  ],
+  "previousRejectedDirection": [
+    "bar-cozy",
+    "bar-reference（sunburst，用户已要求切换flare重做）"
+  ],
+  "generationErrors": [],
+  "exportReview": {
+    "script": "node scripts/prepare-bar-assets.mjs --flare",
+    "frameSize": 320,
+    "baseline": 300,
+    "moleHeightRange": [
+      238,
+      241
+    ],
+    "alignment": "每张动作表按首帧做一次整组规格归一，逐帧仅对齐真实脚底；无逐帧缩放或复制姿势。",
+    "keying": "外部连通品红背景与混色边缘清理；保留玻璃轮廓内紫色酒液。无紫色道具的动作同时清除指间品红。",
+    "geometry": "art-source/review/bar-flare/geometry.json",
+    "staticFallback": "各角色待机首帧像素一致",
+    "checks": [
+      "八类12姿势原图和导出接触表",
+      "两客鼠待机／闲暇及连凳完整性",
+      "跨动作实际播放回待机",
+      "桌面手机平板七尺寸组合",
+      "吧台遮挡、手部与道具、凳脚及入口落地",
+      "真实摇壶→倒酒→递杯→安慰"
+    ]
+  },
+  "browserValidation": {
+    "fullRun": {
+      "passed": 14,
+      "failed": 1,
+      "total": 15,
+      "duration": "2.5分钟",
+      "failure": "色键残留；已修正导出并调整检测范围为外缘，保留杯中真实紫色。"
+    },
+    "finalTargetedRun": {
+      "passed": 3,
+      "failed": 0,
+      "duration": "25.1秒",
+      "file": "tests/e2e/bar-room.spec.ts"
+    },
+    "unchangedRegression": "完整调酒、后台冻结恢复、静态切换、只计一次、首页餐厅回归在完整运行中通过。最终仅改色键导出、客鼠对白位置和相应色键检查。",
+    "viewports": [
+      "320x568",
+      "390x844",
+      "430x932",
+      "844x390",
+      "768x1024",
+      "1440x900",
+      "1920x1080"
+    ],
+    "livePlaybackRecord": "art-source/review/bar-flare/live-playback.json",
+    "typecheck": "通过",
+    "pythonCompile": "通过",
+    "diffCheck": "通过",
+    "lint": "未运行"
+  },
+  "limitations": [
+    "未验证移动真机及其后台回收",
+    "不同动作表仍有轻微手工像素与表情差异，未用逐帧缩放掩盖",
+    "倒酒最终版采用壶口贴近杯口的短流，避免此前从脸部发出长液流的问题",
+    "用户最终审美评价尚未获得，不将技术复查标为用户已认可"
+  ]
+}

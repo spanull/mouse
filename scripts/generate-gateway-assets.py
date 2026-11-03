@@ -4,14 +4,40 @@ import argparse
 import base64
 import datetime
 import json
+import math
 import os
 import pathlib
 import subprocess
+import time
+import urllib.error
+import urllib.request
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "art-source/generated"
 REFERENCE = ROOT / "art-source/reference/user-prototype.png"
+TASK_FILE = ROOT / "art-source/ui-tasks.json"
+# 两套服务都保留在同一个入口中，运行时通过 --api-style 切换。
+SERVICE_PROFILES = {
+    "gateway": {
+        "base_url": "https://aicoding.aideb.me",
+        "endpoint": "/v1/images/generations",
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+    },
+    "luna": {
+        "base_url": "https://image.luna.it.com",
+        "endpoint": "/v1/images/b64/edits",
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+    },
+}
+API_STYLE = "gateway"
+API_BASE = SERVICE_PROFILES[API_STYLE]["base_url"]
+API_URL = API_BASE + SERVICE_PROFILES[API_STYLE]["endpoint"]
+API_MODEL = SERVICE_PROFILES[API_STYLE]["model"]
+API_PROVIDER = SERVICE_PROFILES[API_STYLE]["provider"]
 STYLE = """Match the attached user's game prototype closely in ART STYLE, not its UI layout:
 intricate cozy storybook PIXEL ART, crisp tiny square pixel clusters, warm dark-brown outlines,
 soft sage and moss greens, cream parchment, dusty rose, honey wood, muted lavender,
@@ -57,7 +83,7 @@ No characters, no customers, no animals, no posters, no menu boards, no text."""
 
 def task_prompt(asset):
     """按资源标识生成可追溯的英文提示词；固定网格和留白供后续切帧及透明处理使用。"""
-    ui_tasks = json.loads((ROOT / "art-source/ui-tasks.json").read_text(encoding="utf-8"))
+    ui_tasks = json.loads(TASK_FILE.read_text(encoding="utf-8"))
     if asset in ui_tasks:
         return ui_tasks[asset]["prompt"], ui_tasks[asset]["size"]
     if asset in SCENES:
@@ -105,6 +131,68 @@ Flat solid pure magenta #FF00FF background, no shadows, no text or grid lines.
     raise ValueError("未知素材：" + asset)
 
 
+def generate_luna(asset, key, prompt, size, references):
+    """按新服务文档上传参考图和比例，密钥仅在请求头内存中使用。
+
+    multipart 图片和响应均只在内存处理；成功后保存原图、完整提示词、参考来源与请求清单。
+    仅对 502／503 重试两次且间隔五秒，其他错误保存原文后立即结束，避免额度错误无限请求。
+    """
+    task = json.loads(TASK_FILE.read_text(encoding="utf-8")).get(asset, {})
+    # 优先采用任务指定比例；旧任务仅有像素尺寸时推导比例，避免切换服务后构图改变。
+    aspect = task.get("aspect")
+    if not aspect:
+        try:
+            width, height = map(int, size.split("x"))
+            if width <= 0 or height <= 0:
+                raise ValueError
+        except (ValueError, AttributeError):
+            raise ValueError("Luna 需要任务提供 aspect 比例或有效的像素 size") from None
+        divisor = math.gcd(width, height)
+        aspect = f"{width // divisor}:{height // divisor}"
+    fields = {"model": API_MODEL, "prompt": prompt, "size": aspect, "resolution": "2k", "n": "1"}
+    boundary = "MouseAsset" + uuid.uuid4().hex
+    chunks = []
+    for name, value in fields.items():
+        chunks.append((f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n\r\n{value}\r\n').encode("utf-8"))
+    for reference in references:
+        path = ROOT / reference
+        chunks.append((f'--{boundary}\r\nContent-Disposition: form-data; name="image[]"; filename="{path.name}"\r\nContent-Type: image/png\r\n\r\n').encode("utf-8") + path.read_bytes() + b"\r\n")
+    chunks.append(f"--{boundary}--\r\n".encode("ascii"))
+    body = b"".join(chunks)
+    if len(body) > 64 * 1024 * 1024:
+        raise ValueError("参考图请求超过新服务64MB上限")
+    errors = []
+    for attempt in range(1, 4):
+        print(f"START {asset} attempt={attempt} provider=Luna", flush=True)
+        request = urllib.request.Request(API_URL, data=body, headers={"Authorization": "Bearer " + key, "Content-Type": "multipart/form-data; boundary=" + boundary}, method="POST")
+        try:
+            with urllib.request.urlopen(request, timeout=300) as response:
+                result = json.load(response)
+        except urllib.error.HTTPError as error:
+            raw_error = error.read().decode("utf-8", errors="replace")
+            errors.append({"attempt": attempt, "status": error.code, "error": raw_error})
+            print(f"FAIL {asset} HTTP={error.code}: {raw_error}", flush=True)
+            (OUTPUT / (asset + ".errors.json")).write_text(json.dumps(errors, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            if error.code in (502, 503) and attempt < 3:
+                time.sleep(5)
+                continue
+            raise RuntimeError(f"{asset} 制作失败，HTTP={error.code}") from None
+        except (urllib.error.URLError, TimeoutError, ConnectionError, json.JSONDecodeError) as error:
+            errors.append({"attempt": attempt, "error": str(error)})
+            (OUTPUT / (asset + ".errors.json")).write_text(json.dumps(errors, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"FAIL {asset}: {error}", flush=True)
+            raise RuntimeError(f"{asset} 网络或响应错误，未继续重试") from None
+        raw = base64.b64decode(result["data"][0]["b64_json"], validate=True)
+        if not raw.startswith(b"\x89PNG"):
+            raise ValueError("新服务返回内容不是PNG图片")
+        output = OUTPUT / (asset + ".png")
+        output.write_bytes(raw)
+        record = {"asset": asset, "file": output.relative_to(ROOT).as_posix(), "provider": API_PROVIDER, "baseUrl": API_BASE, "model": fields["model"], "endpoint": SERVICE_PROFILES[API_STYLE]["endpoint"], "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(), "prompt": prompt, "requestedSize": size, "aspect": fields["size"], "resolution": fields["resolution"], "referenceFiles": references, "bytes": len(raw), "attempts": attempt, "errors": errors}
+        (OUTPUT / (asset + ".json")).write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"SAVED {asset}: {output} ({len(raw)} bytes)", flush=True)
+        return
+
+
 def generate(asset, key):
     """独立生成单项资源；响应从 curl 管道解码落盘，成功即停止，失败原文反馈后立即重试。
 
@@ -122,22 +210,27 @@ def generate(asset, key):
     contract_path = ROOT / "art-source/generation-constraints.json"
     contract = json.loads(contract_path.read_text(encoding="utf-8"))
     prompt += "\n\n" + contract["prompt"]
-    reference_data = base64.b64encode(REFERENCE.read_bytes()).decode("ascii")
-    payload = {"model": "gpt-image-2.5", "prompt": prompt, "image": ["data:image/png;base64," + reference_data], "size": size, "quality": "medium", "n": 1, "output_format": "png"}
-    reference_files = [REFERENCE.relative_to(ROOT).as_posix()]
-    ui_tasks = json.loads((ROOT / "art-source/ui-tasks.json").read_text(encoding="utf-8"))
-    extra_reference = ui_tasks.get(asset, {}).get("reference")
-    if extra_reference:
+    ui_tasks = json.loads(TASK_FILE.read_text(encoding="utf-8"))
+    task = ui_tasks.get(asset, {})
+    # 显式参考图优先，避免新一轮风格修正仍混入旧原型；只上传参考，不把参考切片当作运行素材。
+    style_reference = ROOT / task["styleReference"] if task.get("styleReference") else REFERENCE
+    reference_data = base64.b64encode(style_reference.read_bytes()).decode("ascii")
+    payload = {"model": API_MODEL, "prompt": prompt, "image": ["data:image/png;base64," + reference_data], "size": size, "quality": "medium", "n": 1, "output_format": "png"}
+    reference_files = [style_reference.relative_to(ROOT).as_posix()]
+    extra_references = ([task["reference"]] if task.get("reference") else []) + task.get("references", [])
+    for extra_reference in extra_references:
         payload["image"].append("data:image/png;base64," + base64.b64encode((ROOT / extra_reference).read_bytes()).decode("ascii"))
         reference_files.append(extra_reference)
     if asset in CHARACTERS and asset not in ("rat", "mole") and (OUTPUT / "rat.png").exists():
         payload["image"].append("data:image/png;base64," + base64.b64encode((OUTPUT / "rat.png").read_bytes()).decode("ascii"))
         payload["prompt"] += " Image 2 is the approved main rat sheet: match its rendering, body scale and pixel density, but retain this requested species and clothing."
         reference_files.append("art-source/generated/rat.png")
+    if API_STYLE == "luna":
+        return generate_luna(asset, key, payload["prompt"], size, reference_files)
     body = json.dumps(payload, ensure_ascii=False)
     if len(body.encode("utf-8")) > 10 * 1024 * 1024:
         raise ValueError("请求体超过网关 10 MB 上限")
-    config = "\n".join(['url = "https://aicoding.aideb.me/v1/images/generations"', 'request = "POST"', 'header = "Content-Type: application/json"', 'header = "Authorization: Bearer ' + key + '"', 'data = ' + json.dumps(body, ensure_ascii=False)])
+    config = "\n".join(['url = "' + API_URL + '"', 'request = "POST"', 'header = "Content-Type: application/json"', 'header = "Authorization: Bearer ' + key + '"', 'data = ' + json.dumps(body, ensure_ascii=False)])
     attempt = 0
     while True:
         attempt += 1
@@ -168,7 +261,7 @@ def generate(asset, key):
             continue
         output = OUTPUT / (asset + "." + ext)
         output.write_bytes(raw)
-        record = {"asset": asset, "file": output.relative_to(ROOT).as_posix(), "provider": "AI Coding Gateway", "model": payload["model"], "endpoint": "/v1/images/generations", "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(), "prompt": payload["prompt"], "requestedSize": size, "quality": "medium", "referenceFiles": reference_files, "bytes": len(raw), "attempts": attempt}
+        record = {"asset": asset, "file": output.relative_to(ROOT).as_posix(), "provider": API_PROVIDER, "baseUrl": API_BASE, "model": payload["model"], "endpoint": SERVICE_PROFILES[API_STYLE]["endpoint"], "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(), "prompt": payload["prompt"], "requestedSize": size, "quality": "medium", "referenceFiles": reference_files, "bytes": len(raw), "attempts": attempt}
         record_path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"SAVED {asset}: {output} ({len(raw)} bytes)", flush=True)
         return
@@ -178,7 +271,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("assets", nargs="*", default=["home", "rat", "restaurant", "bar", *[key for key in CHARACTERS if key != "rat"], "dishes", "drinks"])
     parser.add_argument("--workers", type=int, default=4, choices=range(1, 9), help="同时制作的素材数量，默认 4")
+    parser.add_argument("--task-file", default="art-source/ui-tasks.json", help="当前批次的 UTF-8 任务清单；历史任务默认不变")
+    parser.add_argument("--api-style", choices=SERVICE_PROFILES, default="gateway", help="服务选择：gateway 使用 AI Coding Gateway，luna 使用 Luna Image")
+    parser.add_argument("--base-url", default=None, help="可选服务地址；传入主机地址时自动追加所选服务的接口路径")
+    parser.add_argument("--model", default=None, help="可选模型覆盖；不传时使用所选服务的默认模型")
     args = parser.parse_args()
+    TASK_FILE = ROOT / args.task_file
+    API_STYLE = args.api_style
+    profile = SERVICE_PROFILES[API_STYLE]
+    API_MODEL = args.model or profile["model"]
+    API_PROVIDER = profile["provider"]
+    configured_url = (args.base_url or profile["base_url"]).rstrip("/")
+    endpoint = profile["endpoint"]
+    API_URL = configured_url if configured_url.endswith(endpoint) else configured_url + endpoint
+    API_BASE = API_URL.removesuffix(endpoint)
     api_key = os.environ.get("GATEWAY_API_KEY")
     if not api_key:
         raise SystemExit("请在当前进程设置 GATEWAY_API_KEY；不要将真实密钥写进代码或文档。")

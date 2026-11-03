@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-table-v1",
+  "file": "art-source/generated/restaurant-table-v1.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T03:50:08.157667+00:00",
+  "prompt": "Original coherent cozy mouse restaurant foreground furniture asset, intricate fine pixel art matching reference room: ONE low honey-oak dining table with three appetizing dishes resting physically on tabletop (small mushroom soup bowl, golden cheese gratin plate, colorful vegetable plate), plus exactly TWO small round matching stools in front left and front right. All as one complete generated furniture group. No characters. Canvas1536x1024, grid1x1. Entire group X=160..1376 Y=180..860, generous margin>=120px. Slight downward eye-level view showing tabletop, four table legs attach naturally below top, stool legs floor-contact at same perspective plane. Upper-left warm window lighting,2-3px tiny pixel clusters with selective2px brown outlines, cream ceramic/sage accents. Table top Y=260..530; table feet nearY800; stool seatsY650, feetY850; three dishes distinct, fully visible, correctly scaled, no floating utensils. Runtime width300px on390px portrait or600px landscape, height200/400 maintaining3:2ratio. Table should feel low foreground and never obscure chef face or menu above it. Pure flat magenta #FF00FF key background, no external shadow, no room/ground/extra furniture/lights/plants/letters/symbols. No automatic tight crop.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval.",
+  "requestedSize": "1536x1024",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "public/assets/natural/restaurant-wide.png"
+  ],
+  "bytes": 1580535,
+  "attempts": 2
+}

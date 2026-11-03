@@ -1,0 +1,61 @@
+{
+  "approvalStatus": "pending-visual-review",
+  "records": [
+    {
+      "file": "art-source/review/chef-color/candidate-v4/room-wide.png",
+      "source": "art-source/generated/restaurant-room-wide-v1.png",
+      "promptFile": "art-source/generated/restaurant-room-wide-v1.json",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/room-tall.png",
+      "source": "art-source/generated/restaurant-room-tall-v1.png",
+      "promptFile": "art-source/generated/restaurant-room-tall-v1.json",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/recommendations.png",
+      "source": "art-source/generated/restaurant-board-v2.png",
+      "promptFile": "art-source/generated/restaurant-board-v2.json",
+      "width": 480,
+      "height": 770
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/table.png",
+      "source": "art-source/generated/restaurant-table-v1.png",
+      "promptFile": "art-source/generated/restaurant-table-v1.json",
+      "width": 1000,
+      "height": 600
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/kitchen.png",
+      "source": "art-source/generated/restaurant-kitchen-entry-v1.png",
+      "promptFile": "art-source/generated/restaurant-kitchen-entry-v1.json",
+      "width": 360,
+      "height": 446
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/chef-idle.png",
+      "source": "art-source/generated/restaurant-chef-idle-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-idle-v1.json",
+      "width": 3840,
+      "height": 320
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/chef-static.png",
+      "source": "art-source/generated/restaurant-chef-idle-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-idle-v1.json",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "file": "art-source/review/chef-color/candidate-v4/chef-welcome.png",
+      "source": "art-source/generated/restaurant-chef-point-v4.png",
+      "promptFile": "art-source/generated/restaurant-chef-point-v4.json",
+      "width": 3840,
+      "height": 320
+    }
+  ]
+}

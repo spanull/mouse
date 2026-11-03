@@ -58,9 +58,10 @@ test("慢素材不跳过调酒，后台保留动作帧，恢复后按顺序送�
   await page.evaluate(() => { delete (document as unknown as { hidden?: boolean }).hidden; document.dispatchEvent(new Event("visibilitychange")); });
   for (const pose of ["pour", "serve"]) await expect(actor).toHaveAttribute("data-pose", pose);
   await page.evaluate(() => { Object.defineProperty(document, "hidden", { configurable: true, value: true }); document.dispatchEvent(new Event("visibilitychange")); });
-  await expect(page.locator(".served-glass")).toHaveCSS("animation-play-state", "paused");
+  await expect(page.locator(".served-glass")).toHaveCount(0);
   await page.evaluate(() => { delete (document as unknown as { hidden?: boolean }).hidden; document.dispatchEvent(new Event("visibilitychange")); });
   await expect(actor).toHaveAttribute("data-pose", "comfort");
+  await expect(page.locator(".served-glass")).toBeVisible();
   await expect(page.getByRole("link", { name: "收好饮品，回到吧台" })).toBeVisible();
   await page.goto("/home/records");
   await expect(page.locator(".record")).toHaveCount(1);
@@ -88,7 +89,7 @@ test("调酒中切换系统静态偏好不倒退，素材失败仍可收好饮�
   await expect(page.locator(".record")).toHaveCount(2);
 });
 
-test("首页松鼠完整入场循环与酒吧环境减少动态效果", async ({ page }) => {
+test("首页松鼠完整入场循环与酒吧角色减少动态效果", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(page.locator('[data-ambient="leaves"], [data-ambient="lantern"]')).toHaveCount(0);
@@ -111,16 +112,13 @@ test("首页松鼠完整入场循环与酒吧环境减少动态效果", async ({
   expect(await squirrel.screenshot()).toEqual(hidden);
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/bar");
-  const lamp = page.locator('[data-ambient="lantern"]');
-  const frame = await lamp.evaluate(el => getComputedStyle(el).backgroundPosition);
-  await expect.poll(() => lamp.evaluate(el => getComputedStyle(el).backgroundPosition)).not.toBe(frame);
+  await expect(page.locator(".ambient-life, .ambient-foliage, .ambient-light")).toHaveCount(0);
+  const guest = page.locator(".seated-0 canvas");
+  await expect(guest).toBeVisible();
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect.poll(() => page.locator(".ambient-sprite").evaluateAll(elements => elements.every(el => el.getAnimations().every(a => a.playState === "paused" && a.currentTime === 0)))).toBe(true);
-  for (const path of ["/bar"]) {
-    await page.goto(path);
-    await expect.poll(() => page.locator(".ambient-sprite").first().evaluate(el => el.getAnimations().length)).toBe(1);
-    expect(await page.locator(".ambient-sprite").evaluateAll(elements => elements.every(el => el.getAnimations().every(a => a.playState === "paused")))).toBe(true);
-  }
+  const stopped = await guest.screenshot();
+  await page.waitForTimeout(500);
+  expect(await guest.screenshot()).toEqual(stopped);
 });
 
 test("角色独立动作配置与自动闲暇，厨师和座椅整件呈现", async ({ page, request }) => {
@@ -132,8 +130,9 @@ test("角色独立动作配置与自动闲暇，厨师和座椅整件呈现", as
     expect(manifest.actors[key].poses.pressed.frameCount).toBe(8);
     expect(manifest.actors[key].poses.leisure.frameCount).toBe(12);
   }
-  expect(Object.keys(manifest.actors.mole.poses)).toHaveLength(8);
-  expect(Object.values(manifest.actors.mole.poses).every((pose: unknown) => (pose as { frameCount: number }).frameCount === 12)).toBe(true);
+  const bar = await (await request.get("/assets/bar/manifest.json")).json();
+  expect(Object.keys(bar.actors.mole.poses)).toHaveLength(8);
+  expect(Object.values(bar.actors.mole.poses).every((pose: unknown) => (pose as { frameCount: number }).frameCount === 12)).toBe(true);
   await page.goto("/");
   const canvas = page.locator(".home-mouse canvas");
   await expect(canvas).toHaveAttribute("data-frames", "8");
@@ -148,5 +147,5 @@ test("角色独立动作配置与自动闲暇，厨师和座椅整件呈现", as
   await page.goto("/bar");
   await expect(page.locator(".seated-mouse canvas")).toHaveCount(2);
   await expect(page.locator(".empty-bar-stool")).toBeVisible();
-  await expect(page.locator(".backdrop-art")).toHaveAttribute("src", "/assets/natural/bar-tall.png");
+  await expect(page.locator(".backdrop-art")).toHaveAttribute("src", "/assets/bar/room-tall.png");
 });

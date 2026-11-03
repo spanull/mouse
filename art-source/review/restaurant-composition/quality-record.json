@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-02",
+  "status": "layout-and-browser-reviewed",
+  "reference": "art-source/reference/restaurant-composition-user.png",
+  "change": "推荐牌后置、竖屏限制比例、牌脚与桌面位置联动、对白上移",
+  "generatedAssets": 0,
+  "tests": "4 passed (50.9s)",
+  "lint": "not run",
+  "evidence": "current.png 与 scene-*.png",
+  "realDevice": "not checked",
+  "physicalLayoutApprovalRevoked": {
+    "reason": "用户指出立牌悬空；上一轮只消除菜盘遮挡，未满足地面接触关系",
+    "supersededBy": "art-source/review/restaurant-grounding/quality-record.json"
+  }
+}

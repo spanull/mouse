@@ -1,0 +1,20 @@
+{
+  "asset": "bar-flare-mole-pour-v5",
+  "file": "art-source/generated/bar-flare-mole-pour-v5.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T10:46:01.753492+00:00",
+  "prompt": "Create FULL BODY sprite animation sheet,2048x1536,4columns by3rows=12complete characters,each512square,pure solid FF00FF background. Image1 is the canonical character;Image2 user style only. Keep original gray brown mole,head proportions,cream shirt,charcoal vest,bowtie,short trousers,TWO COMPLETE FEET. All12frames head top75,foot baseline445,foot midpoint256,body height370,head width245. Same body scale and camera throughout,no cropped torso,no zoom,no sway,no text or shadow. Fine pixel texture top-left light. Action: pouring a silver shaker into a wineglass. Glass is at chest center, firmly gripped by left paw on its stem. Glass already contains lavender wine at3/4full and stays3/4full EVERY frame. Right paw holds a silver shaker at the side of the glass. Shaker mouth is INSERTED into and TOUCHES the glass rim, so poured liquid is occluded by the rim and shaker. NO VISIBLE LIQUID STREAM,NO LINE from face. Do not draw ANY long liquid line.12poses:1both props upright,2right elbow lifts,3shaker mouth touches glass rim,4shaker tilted20degrees,5tilted30,6tilted40,7tilted45,8tilted40,9tilted30,10tilted20,11mouth lifted off rim,12upright. True elbow wrist motion only,the rest stays still. Glass same size and same position all12frames,remaining3/4full. BOTH paws visibly contact their props. All content35..477,320square runtime280CSSpx. Keep full body legs and feet.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/generated/bar-flare-mole-master-v1.png",
+    "art-source/reference/bar-mole-detail-user.png"
+  ],
+  "bytes": 3800989,
+  "attempts": 1,
+  "errors": []
+}

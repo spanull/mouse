@@ -1,0 +1,22 @@
+{
+  "asset": "bar-cozy-mole-pour-v4",
+  "file": "art-source/generated/bar-cozy-mole-pour-v4.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:11:04.819691+00:00",
+  "prompt": "图三是唯一角色外形和服装母版，图四只参考前12格倒酒的手臂、壶、杯和液流连续动作。忽略图四后12格。把图四的正确动作结构原样转移到图三的新圆鼻小鼹鼠，不能使用图四长鼻旧角色或绿色衣服。优先沿用图四的物理关系，不自行发明手部位置。生成12连续姿势鼹鼠往高脚杯里倒酒。图三唯一身份母版，复制灰褐圆头小短棕鼻奶油脸粉腮红黑眼、黑棕马甲奶油衬衫小黑领结棕短脚，不加耳尾、不变长鼻或换衣。图二仅风格。2048x1536严格4列3行12个512方格，无字格线。每格头顶Y80脚底Y440脚掌中点X256身体高360头骨宽235头高180躯干125腿55，身体头双脚始终不动不缩小。正面左上柔光，母版同色板细棕1..2px边细像素2px。画面右爪一直握住透明浅紫高脚杯梗，杯中心X315，杯口Y272宽68杯底Y342；杯子保持位置和大小。画面左爪握同一银色调酒壶，壶高95宽44，壶口对准杯子。1竖直握壶在胸前X220Y255；2左肘抬起；3壶向右斜30度；4向右斜60度对准杯；5流出细小紫色液体到杯内；6持续细流；7杯中液面稍升；8细流变细；9停止流；10壶稍直起；11壶回30度；12竖直握壶杯中有紫酒。所有格杯底始终Y342不飘移，双手真实握持，不改变壶形，不出现第三道具，不头部漂移缩放或复制位移。全像素X35..477Y40..472，纯品红FF00FF背景所有空隙，无桌子家具地面阴影。运行320方画布显示230..300CSSpx不紧裁。\n特别禁止上一版错误：两手不能在第1到第2格互换道具，不能把酒倒到地上，不能让酒从鼻子流出。第1格到12格都是同侧手持同一个壶、另一手持同一个杯，液流完全连接壶嘴和杯口。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/reference/bar-composition-user.png",
+    "art-source/generated/bar-cozy-mole-master-v1.png",
+    "art-source/generated/bar-mole-delivery-v1.png"
+  ],
+  "bytes": 3455323,
+  "attempts": 1,
+  "errors": []
+}

@@ -1,0 +1,17 @@
+{
+  "asset": "restaurant-board-v1",
+  "file": "art-source/generated/restaurant-board-v1.png",
+  "provider": "AI Coding Gateway",
+  "model": "gpt-image-2.5",
+  "endpoint": "/v1/images/generations",
+  "generatedAt": "2026-11-02T03:49:08.029787+00:00",
+  "prompt": "Original cozy delicate pixel art isolated game prop: one upright rectangular restaurant daily-specials menu board with a slender honey-oak frame, warm dark muted sage chalkboard surface completely BLANK, and two short integrated wooden feet standing on floor. Canvas1024x1536, single object grid1x1. Board occupies X=150..874 Y=130..1370; straight-on, tiny view of top edge, no extreme perspective. Inner writable area X=210..814 Y=220..1200 must be flat low-detail dark sage for runtime Chinese heading and three dish rows; draw NO letters, symbols, food drawings or marks inside. Frame thickness40source pixels, subtle fine2-3px pixel wood grain and2px warm brown contour. Upper-left light. Entire frame and feet uncut, at least100px padding. Match reference restaurant's fine pixel texture, not chunky cartoon icon. Expected in-scene board height230..380CSSpx, preserve2:3canvas ratio; optical board width140..220px. No lantern, leaves, vines, flowers, characters, extra props, UI labels or shadow outside prop. Pure flat magenta #FF00FF background for extraction, no gradients/checkerboard.\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval.",
+  "requestedSize": "1024x1536",
+  "quality": "medium",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "public/assets/natural/restaurant-wide.png"
+  ],
+  "bytes": 1510823,
+  "attempts": 1
+}

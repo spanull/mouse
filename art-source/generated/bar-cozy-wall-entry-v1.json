@@ -1,0 +1,20 @@
+{
+  "asset": "bar-cozy-wall-entry-v1",
+  "file": "art-source/generated/bar-cozy-wall-entry-v1.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T08:45:29.677322+00:00",
+  "prompt": "生成游戏里放在地面的小型立式心声墙招牌，不是网页卡片。1024x1024，纯品红FF00FF背景和所有空隙，无投影无场景。参考图二粉色心声墙入口配色和极精致像素手工感：圆角厚奶油浅木框、低饱和粉色内衬、小小木钉，牌面内有四五张奶油留言纸与一个软粉爱心图案，不要角色。牌框范围X120..904,Y120..780；底下两个短木脚到Y910，落地物件视角正面略俯视，明确支撑。精致且饱满不凌乱，整体像可触碰的游戏道具，不能像app功能卡片或屏幕。无字母、数字、汉字或箭头，所有标签由页面可访问名称承担。场景显示宽110..160CSSpx，主体细节适配，粉底对比足够，2px细像素簇和1..2px柔棕轮廓，不粗黑线。所有像素限制在X80..944,Y80..930，保留空白不能紧裁。没有叶片、枝条、藤蔓、灯。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1024x1024",
+  "aspect": "1:1",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/reference/bar-composition-user.png"
+  ],
+  "bytes": 3555312,
+  "attempts": 1,
+  "errors": []
+}

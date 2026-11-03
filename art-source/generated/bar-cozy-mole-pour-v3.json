@@ -1,0 +1,21 @@
+{
+  "asset": "bar-cozy-mole-pour-v3",
+  "file": "art-source/generated/bar-cozy-mole-pour-v3.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:03:47.765122+00:00",
+  "prompt": "图三是唯一小鼹鼠身份母版，原样复制它的圆灰褐头、小短棕鼻、奶油脸、腮红、黑眼、奶油衬衫黑棕马甲小黑领结棕脚，无耳尾。图二仅像素质感。画布2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y80脚底Y440脚中点X256，身体高360头骨宽235，全程同一身体同一色板同一细棕描边正面镜头左上光，身体头双脚不动不变大缩小。2px细像素簇，全部人物和道具在X45..467Y40..472内。纯品红FF00FF平底和所有间隙，无阴影地面家具，不紧裁；运行320方画布显示230..300CSSpx。唯一动作：把银色壶里的浅紫酒倒进透明杯。液流必须从真实壶口流出，绝不能从鼹鼠鼻子、嘴、脸或空气开始。杯子必须在画面右侧X350，杯口Y292杯底Y350宽55，由画面左爪伸过腹前握住杯梗；这只左手和完整左袖一直连接。画面右爪举壶在身体右侧，壶口X350Y245，位于杯正上方47像素，壶身向右伸到X420，绝不能在鼻子前面。头脸中心X256、鼻X256Y220，壶口和液流距离鼻子至少94像素，绝不能重叠嘴或鼻。银色短壶全长85宽40。12连续帧：1右手握壶在身体右边；2右肘抬壶；3壶嘴移到杯正上方；4向左倾壶口向下；5从银色壶口X350Y245起一条连续细浅紫流到杯口X350Y292；6持续流；7杯液面稍升；8细流；9停流；10壶转回；11壶直立；12壶回到身体右边，杯中紫色酒。左爪和杯固定，身体不动，两只手只有两条连续袖子。液流不能从嘴流出，不能离开壶口浮在空气，无第三手。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/reference/bar-composition-user.png",
+    "art-source/generated/bar-cozy-mole-master-v1.png"
+  ],
+  "bytes": 3280670,
+  "attempts": 1,
+  "errors": []
+}

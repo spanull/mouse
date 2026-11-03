@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createClientId } from "@/lib/client-id";
 import { addEntry, allowance, AVATARS, deleteEntry, IDENTITIES, initialState, isDemoState, moderateEntry, rateDish, refreshDay, reportEntry, tasteDish, type Avatar, type DemoState, type Draft, type Identity, type Rating } from "@/lib/demo";
 
 type DemoContextValue = {
@@ -29,7 +30,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
   function update(next: DemoState) { stateRef.current = next; setState(next); }
   useEffect(() => {
     const time = Date.now();
-    let next = initialState(time, crypto.randomUUID());
+    let next = initialState(time, createClientId());
     try {
       const raw = sessionStorage.getItem(STORAGE_KEY);
       if (raw) { const saved: unknown = JSON.parse(raw); if (!isDemoState(saved)) throw new Error("invalid snapshot"); next = refreshDay(saved, time); }

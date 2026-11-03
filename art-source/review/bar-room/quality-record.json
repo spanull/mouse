@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-02",
+  "status": "visual-frames-transitions-and-browser-reviewed",
+  "runtimeManifest": "public/assets/bar/manifest.json",
+  "taskFile": "art-source/bar-tasks.json",
+  "exportScript": "scripts/prepare-bar-assets.mjs",
+  "providers": [
+    { "baseUrl": "https://aicoding.aideb.me", "model": "gpt-image-2.5", "usage": "已合格背景、空凳、客鼠、鼹鼠母版和其他动作保留" },
+    { "baseUrl": "https://image.luna.it.com", "model": "gpt-image-2.5-sunburst", "endpoint": "/v1/images/b64/edits", "usage": "最终摇壶与擦杯重制，均首请求成功" }
+  ],
+  "accepted": [
+    { "asset": "bar-room-wide-v1", "usage": "横屏室内背景及同坐标吧台前景" },
+    { "asset": "bar-room-tall-v1", "usage": "竖屏室内背景及同坐标吧台前景" },
+    { "asset": "bar-empty-stool-v2", "usage": "独立第三张空凳" },
+    { "asset": "bar-patron-dormouse-v1", "usage": "前8格待机，后12格打哈欠，角色与凳子整件" },
+    { "asset": "bar-patron-hamster-v1", "usage": "前8格待机，后12格喝酒，角色与凳子整件" },
+    { "asset": "bar-mole-master-v1", "usage": "生成母版参考，非运行图" },
+    { "asset": "bar-mole-social-v1", "usage": "前12格待机，后12格欢迎" },
+    { "asset": "bar-mole-care-v2", "usage": "仅前12格倾听；后半段不接入" },
+    { "asset": "bar-mole-care-v1", "usage": "仅后12格安慰；前半段不接入" },
+    { "asset": "bar-mole-delivery-v1", "usage": "前12格倒酒，后12格递杯" },
+    { "asset": "bar-mole-shake-sunburst-v2", "usage": "12格摇壶", "model": "gpt-image-2.5-sunburst" },
+    { "asset": "bar-mole-polish-sunburst-v3", "usage": "12格擦杯", "model": "gpt-image-2.5-sunburst" }
+  ],
+  "rejected": [
+    { "asset": "bar-mole-care-v1", "range": "前12格", "reason": "抬手左右切换，动作不连续" },
+    { "asset": "bar-mole-care-v2", "range": "后12格", "reason": "第13格举错手" },
+    { "asset": "bar-mole-care-v3", "reason": "背景出现棕色光晕" },
+    { "asset": "bar-mole-craft-v1", "reason": "末格脚旁多出空杯，摇壶末四格身体缩小" },
+    { "asset": "bar-mole-craft-v2", "reason": "空杯消除但摇壶身体仍缩小，整表不接入" },
+    { "asset": "bar-mole-shake-luna-v1", "model": "gpt-image-2", "reason": "非用户最终指定模型，不接入" },
+    { "asset": "bar-mole-polish-luna-v1", "model": "gpt-image-2", "reason": "非用户最终指定模型，不接入" },
+    { "asset": "bar-mole-shake-sunburst-v1", "reason": "调酒壶变形或消失" },
+    { "asset": "bar-mole-polish-sunburst-v2", "reason": "首格及末段杯子悬空、握持关系不合理" }
+  ],
+  "errors": [
+    { "service": "旧网关", "message": "curl: (56) schannel: server closed abruptly (missing close_notify)" },
+    { "service": "旧网关", "message": "Expecting value: line 1 column 1 (char 0)" },
+    { "asset": "bar-mole-master-v1", "message": "curl: (28) Operation timed out after 300012 milliseconds with 0 bytes received" },
+    { "assets": ["bar-mole-care-v4", "bar-mole-craft-v3"], "service": "旧网关", "code": "daily_cost_limit_exceeded", "message": "Daily cost limit exceeded: $160.00/day.", "result": "未生成图片，停止旧服务任务" },
+    { "service": "Luna Image", "model": "gpt-image-2.5", "httpStatus": 400, "code": "invalid_model", "message": "模型 gpt-image-2.5 不可用", "records": ["art-source/generated/bar-mole-shake-luna-v1.errors.json", "art-source/generated/bar-mole-polish-luna-v1.errors.json"] },
+    { "asset": "bar-mole-polish-sunburst-v1", "message": "Remote end closed connection without response", "result": "未生成图片，修改任务后另存新版本" }
+  ],
+  "exportReview": {
+    "runtimeAssetCount": 18,
+    "frameSize": 320,
+    "footBaseline": 300,
+    "method": "每张动作表按首姿身体尺度仅做一次整组等比规格归一；逐帧只按脚底对齐，不逐帧缩放",
+    "staticFallback": "与各角色待机首帧像素一致",
+    "geometry": "art-source/review/bar-room/geometry.json",
+    "checks": ["所有运行图解码", "透明边缘和色键残留", "八类鼹鼠动作逐帧", "两客鼠待机与闲暇", "待机与互动返回衔接", "实际服务顺序", "杯子与台面接触", "角色和凳子落地", "横竖背景完整性"]
+  },
+  "browserValidation": {
+    "passed": 15,
+    "duration": "3.4分钟",
+    "testFiles": ["tests/e2e/bar-room.spec.ts", "tests/e2e/game-ui.spec.ts", "tests/e2e/natural-life.spec.ts", "tests/e2e/restaurant-room.spec.ts"],
+    "viewports": ["320x568", "390x844", "430x932", "844x390", "768x1024", "1440x900", "1920x1080"],
+    "checks": ["触摸与键盘入口", "无横向溢出", "对白及互动", "完整调酒只计一次", "慢素材等待", "后台冻结续播", "减少动态效果切换", "加载失败与重试", "首页和餐厅回归"],
+    "typecheck": "通过",
+    "pythonCompile": "通过",
+    "lint": "按要求未运行",
+    "limitations": ["未验证移动真机及其后台回收", "保存了浏览器视频，未逐帧播放审查视频；已审查动作接触表及实际播放关键截图"]
+  },
+  "evidence": {
+    "sceneScreenshots": "art-source/review/bar-room/scene-*.png",
+    "actionContactSheets": "art-source/review/bar-room/mole-*.png、patron-*.png",
+    "liveInteractions": "art-source/review/bar-room/live-*-390.png及live-idle-after-*.png",
+    "liveService": "art-source/review/bar-room/live-service-*.png及live-delivered.png",
+    "recordedVideo": "art-source/review/bar-room/video/"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "status": "visual-color-frames-transitions-and-browser-reviewed",
+  "reportedIssue": "迎客动作产生比待机更粗更黑的轮廓，毛色和围裙颜色不同",
+  "diagnosis": "原始生成图已有差异；CSS无厨师描边滤镜，Pixi纹理使用默认预乘透明配置",
+  "rejected": [
+    {
+      "asset": "restaurant-chef-point-v3",
+      "reason": "用户指出描边和色差，撤销此前视觉通过结论"
+    },
+    {
+      "asset": "restaurant-chef-point-v4",
+      "reason": "首请求成功但仍偏暖，胡须出现模糊黑色块，未接入"
+    },
+    {
+      "asset": "restaurant-chef-unified-v1",
+      "reason": "色板与细棕轮廓合格，但第15、16格抬错手，动作拒收"
+    },
+    {
+      "asset": "restaurant-chef-unified-v2",
+      "reason": "未修正错手，且第14格姿态发生变化，动作拒收"
+    }
+  ],
+  "strategy": "同一张4列6行动作表包含12帧待机和12帧迎客，统一色板、轮廓和身体基准；只在逐帧与场景复核通过后替换",
+  "date": "2026-11-02",
+  "acceptedAsset": "restaurant-chef-unified-v3",
+  "generationRuns": [
+    {
+      "asset": "restaurant-chef-point-v4",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-chef-point-v4.png",
+      "promptFile": "art-source/generated/restaurant-chef-point-v4.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-idle-v1.png",
+        "art-source/generated/restaurant-chef-point-v3.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-unified-v1",
+      "attempts": 5,
+      "file": "art-source/generated/restaurant-chef-unified-v1.png",
+      "promptFile": "art-source/generated/restaurant-chef-unified-v1.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-idle-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-unified-v2",
+      "attempts": 2,
+      "file": "art-source/generated/restaurant-chef-unified-v2.png",
+      "promptFile": "art-source/generated/restaurant-chef-unified-v2.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-unified-v1.png"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-unified-v3",
+      "attempts": 1,
+      "file": "art-source/generated/restaurant-chef-unified-v3.png",
+      "promptFile": "art-source/generated/restaurant-chef-unified-v3.json",
+      "referenceFiles": [
+        "art-source/reference/user-prototype.png",
+        "art-source/generated/restaurant-chef-unified-v1.png",
+        "art-source/generated/restaurant-chef-point-v3.png"
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "asset": "restaurant-chef-unified-v1",
+      "attempts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "errors": [
+        "curl: (56) schannel: server closed abruptly (missing close_notify)",
+        "Expecting value: line 1 column 1 (char 0)"
+      ]
+    },
+    {
+      "asset": "restaurant-chef-unified-v2",
+      "attempts": [
+        1
+      ],
+      "errors": [
+        "curl: (56) schannel: server closed abruptly (missing close_notify)",
+        "Expecting value: line 1 column 1 (char 0)"
+      ]
+    }
+  ],
+  "validation": {
+    "sourceCanvas": [
+      1024,
+      1536
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "frameSize": 320,
+    "idleFrames": 12,
+    "welcomeFrames": 12,
+    "bodyHeightRange": [
+      268,
+      270
+    ],
+    "footBaseline": 300,
+    "footMidpointRange": [
+      160,
+      160.5
+    ],
+    "commonScale": 1.1688311688311688,
+    "staticEqualsIdleFirstFrame": true,
+    "maxRGBChannelDeltaFromIdleFirstFrame": {
+      "fur": 4.209500000000006,
+      "apron": 3.4692000000000007,
+      "hat": 2.1929000000000087
+    },
+    "paletteSampleMethod": "毛色与帽子固定内部区域；围裙取绿色布料像素，排除手爪、纽扣和缝线，详见定向测试",
+    "browserTests": "4 passed (55.8s)",
+    "typecheck": "passed",
+    "lint": "not run",
+    "realDevice": "not checked"
+  },
+  "visualReview": "检查24帧接触表及390×844、1440×900迎客与待机实景；浏览器刷新并点击厨师。当前待机、抬手、指菜单、放手使用一致色板和细棕轮廓，未见切换时新增黑圈或换色。测试覆盖七视口、触摸键盘、图片解码、后台暂停、减少动态效果和失败重试。",
+  "evidence": [
+    "final/chef-idle-contact.png",
+    "final/chef-welcome-contact.png",
+    "final/chef-geometry.json",
+    "final/palette.json",
+    "final/welcome-390.png",
+    "final/idle-390.png",
+    "final/welcome-1440.png",
+    "final/idle-1440.png"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "asset": "bar-flare-mole-pour-v3",
+  "file": "art-source/generated/bar-flare-mole-pour-v3.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T10:30:26.603009+00:00",
+  "prompt": "图一是待修改的4列3行动作表，图二为用户风格参考。完整保留图一12格2048x1536布局、鼹鼠脸、毛色、黑马甲、所有身体尺寸、脚底和壶的位置轨迹。倾倒的短液流正好进入中央杯子，这个物理关系保留！只修两点：1每一格画面左手必须清楚用拇指和其他指头握住中央高脚杯的杯梗，不要在身体左边握拳、杯子在中央悬空；可以让左前臂真实向中央弯曲，使手爪接触杯梗。2杯内酒量合理连续：第1格空、第2格空、第3格1/5、第4格1/3、第5格一半、第6格2/3、第7格3/4、第8到12格始终3/4满浅紫酒，停止倒酒后不能又变空。杯子12格固定同样大小，右手全程握银色调酒壶不能出现第三只手，倒入液流必须从银壶嘴进入杯口。不要改成茶壶，不要重新设计人物。纯品红背景和空隙，每格512方，头顶75脚底445脚中点256，人物身体高370头宽245，正面镜头与左上光，运行320方画布等比280CSSpx，安全区35..477不紧裁。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/generated/bar-flare-mole-pour-v2.png",
+    "art-source/reference/bar-mole-detail-user.png"
+  ],
+  "bytes": 4028929,
+  "attempts": 1,
+  "errors": []
+}

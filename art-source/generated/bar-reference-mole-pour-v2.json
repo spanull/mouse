@@ -1,0 +1,20 @@
+{
+  "asset": "bar-reference-mole-pour-v2",
+  "file": "art-source/generated/bar-reference-mole-pour-v2.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:46:28.931972+00:00",
+  "prompt": "必须输出全新12姿势动作表，不是单个大人物。4列3行，横版2048x1536，一共十二个完整小人物，每格512方形。不能原样返回参考图，不能把一个大人物当作动作表。图一是用户要求的精细像素美术参考，图二是唯一完整身份母版。严格沿用图二深灰褐矮圆头、分得较开的黑小眼、小暖棕鼻、低位置粉腮红、奶油胡须和宽微笑、黑灰马甲黑领结奶油袖、棕短脚；无外耳尾巴。保持原图丰富微像素纹理、毛发、衣褶和细棕轮廓，不要简化为平滑圆球或粗黑描边。2048x1536严格4列3行12个512方格，无字无格线；每格头顶Y75脚底Y445脚掌中点X256，全身高370、头宽245头高185躯干130腿55，所有帧相同体型、色板、正面略左镜头和左上光。身体头部和双脚全程固定，只有真实关节和必要表情动，不整体位移缩放抖动，不复制平移帧。每格所有可见像素X35..477Y35..477，纯品红FF00FF背景所有空隙，不能出现地面阴影台面家具。运行320方画布等比显示250..300CSSpx不紧裁。动作按行顺序：画面左爪一直拿同一个银色壶；画面右爪一直握浅紫高脚杯梗，杯中心X340、杯口Y270、杯底Y345。1壶竖直在胸左X225Y250，2抬壶，3壶倾30，4倾60壶口到X310Y240，5从真实壶口一条细流到杯口X340Y270，6继续流，7液面升，8细流，9停流，10壶转回30，11竖直，12壶落回胸左。液流绝不从嘴或鼻子发出，不能洒地；两手不互换道具。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/bar-mole-detail-user.png",
+    "art-source/generated/bar-reference-mole-master-v1.png"
+  ],
+  "bytes": 3999452,
+  "attempts": 1,
+  "errors": []
+}

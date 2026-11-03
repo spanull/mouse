@@ -6,7 +6,7 @@ import { useDemo } from "@/components/demo-provider";
 type AmbientPose = { file: string; frameCount: number; durations: number[] };
 
 /** 仅播放接口生成的环境序列帧；各物件独立计时，背景本身不平移、不缩放，不绘制替代美术。 */
-export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" }) {
+export function AmbientLife({ scene }: { scene: "home" | "restaurant" }) {
   const ref = useRef<HTMLDivElement>(null);
   const { reducedMotion } = useDemo();
   useEffect(() => {
@@ -63,8 +63,6 @@ export function AmbientLife({ scene }: { scene: "home" | "restaurant" | "bar" })
     return () => { cancelled = true; animations.forEach(animation => animation.cancel()); document.removeEventListener("visibilitychange", sync); media.removeEventListener("change", sync); };
   }, [scene, reducedMotion]);
   return <div ref={ref} className={`ambient-life ambient-${scene}`} aria-hidden="true">
-    {scene !== "home" && <div className="ambient-sprite ambient-foliage" data-ambient="leaves" />}
-    {scene !== "home" && <div className="ambient-sprite ambient-light" data-ambient="lantern" />}
     {scene === "home" && <div className="ambient-sprite ambient-visitor" data-ambient="squirrel" />}
     {scene === "restaurant" && <div className="ambient-sprite ambient-steam" data-ambient="steam" />}
   </div>;

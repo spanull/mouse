@@ -23,11 +23,12 @@ function SceneBackdrop({ scene, alt }: { scene: "home" | "restaurant" | "bar"; a
   useEffect(() => {
     const stage = ref.current?.closest<HTMLElement>(".scene-art");
     if (!stage) return;
+    const image = ref.current?.querySelector("img");
     const media = matchMedia("(min-aspect-ratio: 1/1)");
     /** 采用标准 cover 公式，以同一比例计算背景和场景物件坐标；边缘裁切不会改变角色与柜台的相对位置。 */
     function resize() {
       if (!stage) return;
-      const ratio = media.matches ? 1.5 : 2 / 3;
+      const ratio = scene === "bar" && image?.naturalWidth ? image.naturalWidth / image.naturalHeight : media.matches ? 1.5 : 2 / 3;
       const width = Math.max(stage.clientWidth, stage.clientHeight * ratio), height = width / ratio;
       stage.style.setProperty("--image-width", `${width}px`);
       stage.style.setProperty("--image-height", `${height}px`);
@@ -35,10 +36,11 @@ function SceneBackdrop({ scene, alt }: { scene: "home" | "restaurant" | "bar"; a
       stage.style.setProperty("--image-y", `${(stage.clientHeight - height) / 2}px`);
     }
     const observer = new ResizeObserver(resize);
-    observer.observe(stage); media.addEventListener("change", resize); resize();
-    return () => { observer.disconnect(); media.removeEventListener("change", resize); };
-  }, []);
-  return <picture ref={ref}><source media="(min-aspect-ratio: 1/1)" srcSet={`/assets/${scene === "home" ? "world" : "natural"}/${scene}-wide.png`} /><img className="backdrop-art" src={`/assets/${scene === "home" ? "world" : "natural"}/${scene}-tall.png`} alt={alt} /></picture>;
+    observer.observe(stage); media.addEventListener("change", resize); image?.addEventListener("load", resize); resize();
+    return () => { observer.disconnect(); media.removeEventListener("change", resize); image?.removeEventListener("load", resize); };
+  }, [scene]);
+  const base = scene === "restaurant" ? "/assets/restaurant/room" : scene === "bar" ? "/assets/bar/room" : "/assets/world/home";
+  return <picture ref={ref}><source media="(min-aspect-ratio: 1/1)" srcSet={`${base}-wide.png`} /><img className="backdrop-art" src={`${base}-tall.png`} alt={alt} /></picture>;
 }
 /** 容器只提供场景化工具和返回键；主功能入口均在之家、餐厅或酒吧场景中。 */
 export function CommunityApp({ path }: { path: string }) {
@@ -70,9 +72,24 @@ function WalletStrip() {
 /** 餐厅场景与单页菜单组合；翻页只预览标题简介，点击明确按钮后才扣费打开正文。 */
 function Restaurant({ menuOnly }: { menuOnly: boolean }) {
   const { state } = useDemo();
-  const [greeting, setGreeting] = useState(false);
+  const [greeting, setGreeting] = useState(0);
+  const [animationFailed, setAnimationFailed] = useState(false);
+  const recommendations = state.entries.filter(entry => entry.kind === "dish" && isPublic(entry)).slice(0, 3);
+  // 受控迎客由真实动作完成回调结束；菜单路由与场景共用组件时，返回场景也重新欢迎访客。
+  const [welcoming, setWelcoming] = useState(true);
+  useEffect(() => { if (!menuOnly) { setWelcoming(true); setAnimationFailed(false); setGreeting(value => value + 1); } }, [menuOnly]);
+  /** 重播完整迎客并更新本次令牌；播放期间忽略重复点击，防止指菜单动作被连续点击截断。 */
+  function greet() { if (!welcoming) { setGreeting(value => value + 1); setWelcoming(true); setAnimationFailed(false); } }
   if (menuOnly) return <section className="restaurant-content menu-page"><WalletStrip /><Menu /></section>;
-  return <section className="restaurant-content"><div className="restaurant-stage scene-art"><SceneBackdrop scene="restaurant" alt="鼠鼠餐厅的木柜与厨房" /><AmbientLife scene="restaurant" /><div className="chef-mouse"><MouseActor character="chef" onGreet={() => setGreeting(value => !value)} /></div>{greeting && <div className="restaurant-caption" role="status">故事刚出锅。翻开菜谱，挑一道喜欢的吧。</div>}<Link prefetch={false} href="/restaurant/menu" className="scene-object menu-object" aria-label="打开吃瓜菜单"><img src="/assets/ui/entrance-menu.png" alt="" /></Link><Link prefetch={false} className="scene-object kitchen-object" href="/restaurant/kitchen" aria-label="进入厨房烹饪"><img src="/assets/ui/chef.png" alt="" /></Link></div></section>;
+  return <section className="restaurant-content" aria-label="鼠鼠餐厅的室内迎客场景"><div className="restaurant-stage scene-art">
+    <SceneBackdrop scene="restaurant" alt="阳光照进餐厅，后墙摆着铜锅、碗碟和灶台" />
+    <div className="restaurant-caption" role="status"><p>欢迎光临！今天想吃点什么？</p><p>右边是今日推荐，慢慢挑呀。</p>{animationFailed && <p className="restaurant-animation-feedback">厨师动作暂时不可用，仍可查看菜单。</p>}</div>
+    <div className="chef-mouse"><MouseActor character="restaurant-chef" label="和厨师鼠打招呼" action={welcoming ? { pose: "welcome", token: greeting, once: true } : undefined} onGreet={greet} onActionComplete={action => { if (action.token === greeting) setWelcoming(false); }} onPlaybackError={() => { setAnimationFailed(true); setWelcoming(false); }} onPlaybackReady={() => setAnimationFailed(false)} /></div>
+    <aside className="restaurant-recommendations" aria-label="今日推荐"><img className="recommendation-board-art" src="/assets/restaurant/recommendations.png" alt="" /><div className="recommendation-writing"><h2>今日推荐</h2><div className="recommendation-dishes">{recommendations.map(dish => <Link prefetch={false} href={entryUrl(dish)} key={dish.id} aria-label={`查看推荐：${dish.title}`}><img src={dishImage(dish.id)} alt="" /><span>{dish.title}</span></Link>)}{!recommendations.length && <p className="recommendation-empty">新菜正在准备中</p>}</div></div></aside>
+    <img className="restaurant-dining-table" src="/assets/restaurant/table.png" alt="前面的木餐桌摆着蘑菇汤、奶酪焗菜和蔬菜，桌前有两张凳子" />
+    <Link prefetch={false} href="/restaurant/menu" className="scene-object menu-object" aria-label="打开吃瓜菜单"><img src="/assets/ui/entrance-menu.png" alt="" /></Link>
+    <Link prefetch={false} className="scene-object kitchen-object" href="/restaurant/kitchen" aria-label="进入厨房烹饪"><img src="/assets/restaurant/kitchen.png" alt="" /></Link>
+  </div></section>;
 }
 /** 一页一道菜，支持滑动、左右按钮与方向键；菜单只展示预告，不能绕过首次品尝校验。 */
 function Menu() {
@@ -119,7 +136,7 @@ const MOLE_CHAT = [
 function BarScene({ served, onFinish }: { served?: number; onFinish?: () => void }) {
   const { state, reducedMotion } = useDemo();
   const [offset, setOffset] = useState(0);
-  const [chat, setChat] = useState<{ text: string; pose: MousePose; token: number } | null>(null);
+  const [chat, setChat] = useState<{ text: string; pose: MousePose; token: number } | null>(() => served === undefined ? { text: "欢迎光临，找个舒服的位子坐吧。", pose: "welcome", token: 1 } : null);
   const [step, setStep] = useState(0);
   const [systemReduced, setSystemReduced] = useState(false);
   const [playbackFailed, setPlaybackFailed] = useState(false);
@@ -177,7 +194,7 @@ function BarScene({ served, onFinish }: { served?: number; onFinish?: () => void
     setStep(current => completed.token === current + 1 && completed.pose === servicePoses[current] ? Math.min(current + 1, 3) : current);
   }
   const action = served !== undefined ? { pose: servicePoses[step], token: step + 1, once: true } : chat ? { pose: chat.pose, token: chat.token } : undefined;
-  return <section className={`bar-content ${served !== undefined ? "has-served" : ""}`} aria-label="树洞酒吧场景"><div className="bar-stage scene-art"><SceneBackdrop scene="bar" alt="灯火温暖的树洞吧台" /><AmbientLife scene="bar" /><img className="empty-bar-stool" src="/assets/natural/empty-stool.png" alt="留给你的空座位" /><div className="bartender"><MouseActor character="mole" action={action} onActionComplete={finishAction} onPlaybackError={() => setPlaybackFailed(true)} label="和调酒鼹鼠打招呼" onGreet={() => { if (served === undefined) interact(counts.current.reduce((sum, value) => sum + value, 0) % 4); }} /></div>{(chat || served !== undefined) && <div className="bartender-bubble" role="status">{served !== undefined ? `${playbackFailed ? "动画暂时不可用，饮品已送达。" : ""}${serviceLines[step]}` : chat?.text}</div>}<Link prefetch={false} href="/bar/wall" className="scene-object wall-object" aria-label="打开心声墙"><img src="/assets/ui/entrance-wall.png" alt="" /></Link><Link prefetch={false} href="/bar/drinks" onClick={onFinish} className="scene-object drinks-object" aria-label="打开酒单，来一杯"><img src="/assets/world/cocktail-purple.png" alt="" /></Link>{[0, 1].map(n => { const entry = whispers[(offset + n) % Math.max(whispers.length, 1)]; return <div className={`seated-mouse seated-${n}`} key={n}><MouseActor character={n ? "patron-hamster" : "patron-dormouse"} decorative />{entry && <Link className="seat-bubble" href={entryUrl(entry)} aria-label="阅读这只鼠的心声">{entry.body}</Link>}</div>; })}{served === undefined && <div className="mole-tools" aria-label="与鼹鼠互动">{["打个招呼", "听我说说", "看看擦杯", "给我一点鼓励"].map((label, index) => <button key={label} aria-label={label} aria-pressed={chat?.pose === MOLE_CHAT[index].pose} onClick={() => interact(index)}><img src={`/assets/ui/${["sparkle", "speech", "drink", "heart"][index]}.png`} alt="" /></button>)}</div>}{served !== undefined && step >= 2 && <div className={`served-glass ${DRINKS[served].color}`} style={{ animationPlayState: pageHidden ? "paused" : "running" }} aria-label="鼹鼠送来的饮品"><Cocktail color={DRINKS[served].color} /></div>}{served !== undefined && step === 3 && <Link className="serve-back round-control" href="/bar" onClick={onFinish} aria-label="收好饮品，回到吧台"><img src="/assets/ui/check.png" alt="" /></Link>}</div></section>;
+  return <section className={`bar-content ${served !== undefined ? "has-served" : ""}`} aria-label="树洞酒吧场景"><div className="bar-stage scene-art"><SceneBackdrop scene="bar" alt="温暖的树洞酒吧室内，木墙酒架与吧台前留着三个座位" /><img className="empty-bar-stool" src="/assets/bar/empty-stool.png" alt="留给你的空座位" /><div className="bartender"><MouseActor character="mole" action={action} onActionComplete={finishAction} onPlaybackError={() => setPlaybackFailed(true)} onPlaybackReady={() => setPlaybackFailed(false)} label="和调酒鼹鼠打招呼" onGreet={() => { if (served === undefined) interact(counts.current.reduce((sum, value) => sum + value, 0) % 4); }} /></div>{(chat || served !== undefined || playbackFailed) && <div className="bartender-bubble" role="status">{served !== undefined ? `${playbackFailed ? "动画暂时不可用，饮品已送达。" : ""}${serviceLines[step]}` : `${playbackFailed ? "鼹鼠动作暂时不可用，仍可打开酒单和心声墙。" : ""}${chat?.text ?? ""}`}</div>}<Link prefetch={false} href="/bar/wall" className="scene-object wall-object" aria-label="打开心声墙"><img src="/assets/bar/entrance-wall.png" alt="" /></Link><Link prefetch={false} href="/bar/drinks" onClick={onFinish} className="scene-object drinks-object" aria-label="打开酒单，来一杯"><img src="/assets/bar/entrance-drinks.png" alt="" /></Link>{[0, 1].map(n => { const entry = whispers[(offset + n) % Math.max(whispers.length, 1)]; return <div className={`seated-mouse seated-${n}`} key={n}><MouseActor character={n ? "patron-hamster" : "patron-dormouse"} decorative />{entry && <Link className="seat-bubble" href={entryUrl(entry)} aria-label="阅读这只鼠的心声">{entry.body}</Link>}</div>; })}{served === undefined && <div className="mole-tools" aria-label="与鼹鼠互动">{["打个招呼", "听我说说", "看看擦杯", "给我一点鼓励"].map((label, index) => <button key={label} aria-label={label} aria-pressed={chat?.pose === MOLE_CHAT[index].pose} onClick={() => interact(index)}><img src={`/assets/ui/${["sparkle", "speech", "drink", "heart"][index]}.png`} alt="" /></button>)}</div>}{served !== undefined && step === 3 && <div className={`served-glass ${DRINKS[served].color}`} style={{ animationPlayState: pageHidden ? "paused" : "running" }} aria-label="鼹鼠送来的饮品"><Cocktail color={DRINKS[served].color} /></div>}{served !== undefined && step === 3 && <Link className="serve-back round-control" href="/bar" onClick={onFinish} aria-label="收好饮品，回到吧台"><img src="/assets/ui/check.png" alt="" /></Link>}</div></section>;
 }
 /** 使用经去背景与验收的 AI 饮品素材；颜色标识只映射已有酒单，不表达审核状态，未知值回退到莓莓。 */
 function Cocktail({ color }: { color: string }) { const asset = ["pink", "mint", "orange", "purple"].includes(color) ? color : "pink"; return <img className={`cocktail ${asset}`} src={`/assets/world/cocktail-${asset}.png`} alt="" aria-hidden="true" />; }

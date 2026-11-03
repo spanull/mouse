@@ -2050,5 +2050,358 @@
       "exportScript": "scripts/prepare-home-assets.mjs",
       "report": "art-source/review/home-v3/geometry.json"
     }
+  },
+  "restaurantV1": {
+    "approvalStatus": "visual-color-frames-transitions-and-browser-reviewed",
+    "records": [
+      {
+        "file": "/assets/restaurant/room-wide.png",
+        "source": "art-source/generated/restaurant-room-wide-v1.png",
+        "promptFile": "art-source/generated/restaurant-room-wide-v1.json",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "file": "/assets/restaurant/room-tall.png",
+        "source": "art-source/generated/restaurant-room-tall-v1.png",
+        "promptFile": "art-source/generated/restaurant-room-tall-v1.json",
+        "width": 1024,
+        "height": 1536
+      },
+      {
+        "file": "/assets/restaurant/recommendations.png",
+        "source": "art-source/generated/restaurant-board-v2.png",
+        "promptFile": "art-source/generated/restaurant-board-v2.json",
+        "width": 480,
+        "height": 770
+      },
+      {
+        "file": "/assets/restaurant/table.png",
+        "source": "art-source/generated/restaurant-table-v1.png",
+        "promptFile": "art-source/generated/restaurant-table-v1.json",
+        "width": 1000,
+        "height": 600
+      },
+      {
+        "file": "/assets/restaurant/kitchen.png",
+        "source": "art-source/generated/restaurant-kitchen-entry-v1.png",
+        "promptFile": "art-source/generated/restaurant-kitchen-entry-v1.json",
+        "width": 360,
+        "height": 446
+      },
+      {
+        "file": "/assets/restaurant/chef-idle-color-v2.png",
+        "source": "art-source/generated/restaurant-chef-unified-v3.png",
+        "promptFile": "art-source/generated/restaurant-chef-unified-v3.json",
+        "width": 3840,
+        "height": 320
+      },
+      {
+        "file": "/assets/restaurant/chef-static-color-v2.png",
+        "source": "art-source/generated/restaurant-chef-unified-v3.png",
+        "promptFile": "art-source/generated/restaurant-chef-unified-v3.json",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "file": "/assets/restaurant/chef-welcome-color-v2.png",
+        "source": "art-source/generated/restaurant-chef-unified-v3.png",
+        "promptFile": "art-source/generated/restaurant-chef-unified-v3.json",
+        "width": 3840,
+        "height": 320
+      }
+    ],
+    "reviewRecord": "art-source/review/chef-color/quality-record.json",
+    "provider": "AI Coding Gateway",
+    "model": "gpt-image-2.5",
+    "runtimeManifest": "public/assets/restaurant/manifest.json",
+    "exportScript": "scripts/prepare-restaurant-assets.mjs",
+    "taskFile": "art-source/restaurant-tasks.json"
+  },
+  "barRoom": {
+    "approvalStatus": "visual-frames-transitions-and-browser-reviewed",
+    "batch": "bar-flare",
+    "providers": [
+      {
+        "baseUrl": "https://image.luna.it.com",
+        "model": "gpt-image-2.5-flare",
+        "usage": "本轮横竖背景、入口、鼹鼠母版和八类动作"
+      },
+      {
+        "baseUrl": "https://aicoding.aideb.me",
+        "model": "gpt-image-2.5",
+        "usage": "复用两客鼠连凳与空凳，来源未改标"
+      }
+    ],
+    "runtimeManifest": "public/assets/bar/manifest.json",
+    "exportScript": "scripts/prepare-bar-assets.mjs",
+    "taskFiles": [
+      "art-source/bar-flare-tasks.json",
+      "art-source/bar-flare-actions.json"
+    ],
+    "reviewRecord": "art-source/review/bar-flare/quality-record.json",
+    "previousReviewRecords": [
+      "art-source/review/bar-room/quality-record.json"
+    ],
+    "records": [
+      {
+        "file": "/assets/bar/room-wide.png",
+        "source": "art-source/generated/bar-flare-room-wide-v1.png",
+        "promptFile": "art-source/generated/bar-flare-room-wide-v1.json",
+        "width": 2048,
+        "height": 1153,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-style-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/room-tall.png",
+        "source": "art-source/generated/bar-flare-room-tall-v1.png",
+        "promptFile": "art-source/generated/bar-flare-room-tall-v1.json",
+        "width": 1474,
+        "height": 2048,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-style-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/entrance-wall.png",
+        "source": "art-source/generated/bar-flare-wall-entry-v1.png",
+        "promptFile": "art-source/generated/bar-flare-wall-entry-v1.json",
+        "width": 480,
+        "height": 537,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-style-detail-user.png",
+          "art-source/reference/bar-wall-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/entrance-drinks.png",
+        "source": "art-source/generated/bar-flare-drinks-entry-v1.png",
+        "promptFile": "art-source/generated/bar-flare-drinks-entry-v1.json",
+        "width": 480,
+        "height": 569,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-style-detail-user.png",
+          "art-source/reference/bar-drinks-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/empty-stool.png",
+        "source": "art-source/generated/bar-empty-stool-v2.png",
+        "promptFile": "art-source/generated/bar-empty-stool-v2.json",
+        "width": 320,
+        "height": 238,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "art-source/generated/bar-patron-hamster-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-dormouse-idle.png",
+        "source": "art-source/generated/bar-patron-dormouse-v1.png",
+        "promptFile": "art-source/generated/bar-patron-dormouse-v1.json",
+        "width": 2560,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-dormouse-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-dormouse-static.png",
+        "source": "art-source/generated/bar-patron-dormouse-v1.png",
+        "promptFile": "art-source/generated/bar-patron-dormouse-v1.json",
+        "width": 320,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-dormouse-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-dormouse-leisure.png",
+        "source": "art-source/generated/bar-patron-dormouse-v1.png",
+        "promptFile": "art-source/generated/bar-patron-dormouse-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-dormouse-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-hamster-idle.png",
+        "source": "art-source/generated/bar-patron-hamster-v1.png",
+        "promptFile": "art-source/generated/bar-patron-hamster-v1.json",
+        "width": 2560,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-hamster-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-hamster-static.png",
+        "source": "art-source/generated/bar-patron-hamster-v1.png",
+        "promptFile": "art-source/generated/bar-patron-hamster-v1.json",
+        "width": 320,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-hamster-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/patron-hamster-leisure.png",
+        "source": "art-source/generated/bar-patron-hamster-v1.png",
+        "promptFile": "art-source/generated/bar-patron-hamster-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5",
+        "provider": "AI Coding Gateway",
+        "referenceFiles": [
+          "art-source/reference/user-prototype.png",
+          "public/assets/natural/patron-hamster-static.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-idle.png",
+        "source": "art-source/generated/bar-flare-mole-idle-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-idle-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-static.png",
+        "source": "art-source/generated/bar-flare-mole-idle-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-idle-v1.json",
+        "width": 320,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-welcome.png",
+        "source": "art-source/generated/bar-flare-mole-welcome-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-welcome-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-listen.png",
+        "source": "art-source/generated/bar-flare-mole-listen-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-listen-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-comfort.png",
+        "source": "art-source/generated/bar-flare-mole-comfort-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-comfort-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-polish.png",
+        "source": "art-source/generated/bar-flare-mole-polish-v4.png",
+        "promptFile": "art-source/generated/bar-flare-mole-polish-v4.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/generated/bar-flare-mole-master-v1.png",
+          "art-source/reference/bar-mole-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-shake.png",
+        "source": "art-source/generated/bar-flare-mole-shake-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-shake-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-pour.png",
+        "source": "art-source/generated/bar-flare-mole-pour-v5.png",
+        "promptFile": "art-source/generated/bar-flare-mole-pour-v5.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/generated/bar-flare-mole-master-v1.png",
+          "art-source/reference/bar-mole-detail-user.png"
+        ]
+      },
+      {
+        "file": "/assets/bar/mole-serve.png",
+        "source": "art-source/generated/bar-flare-mole-serve-v1.png",
+        "promptFile": "art-source/generated/bar-flare-mole-serve-v1.json",
+        "width": 3840,
+        "height": 320,
+        "model": "gpt-image-2.5-flare",
+        "provider": "Luna Image",
+        "referenceFiles": [
+          "art-source/reference/bar-mole-detail-user.png",
+          "art-source/generated/bar-flare-mole-master-v1.png"
+        ]
+      }
+    ]
   }
 }

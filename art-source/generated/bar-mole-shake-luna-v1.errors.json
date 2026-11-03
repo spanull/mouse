@@ -1,0 +1,7 @@
+[
+  {
+    "attempt": 1,
+    "status": 400,
+    "error": "{\"error\":{\"message\":\"模型 gpt-image-2.5 不可用\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"invalid_model\"}}\n"
+  }
+]

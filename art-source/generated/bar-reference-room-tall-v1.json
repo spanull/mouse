@@ -1,0 +1,20 @@
+{
+  "asset": "bar-reference-room-tall-v1",
+  "file": "art-source/generated/bar-reference-room-tall-v1.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T09:17:33.455793+00:00",
+  "prompt": "图一是唯一直接画风和场景构图参考，图二只帮助理解图一来自游戏中央场景。重新绘制原创完整竖版树洞酒吧室内背景1152x2048。必须接近图一细腻手工微像素：幽深有空间的暖灰深棕树洞、右侧宽大自然树干曲面、左侧矮木酒架、酒瓶圆润精致且尺寸多变、柔和的酒紫与苔绿，细小亮像素点和丰富克制的暗部色阶。绝不能规整左右对称拱门大厅、空木墙、橙色泛黄、平涂插画或简单方格游戏场景。删除图一的所有灯泡、灯串、灯笼、蜡烛、心形霓虹灯、枝条和叶片，光照来自画外左上窗，自然温柔保留图一温暖氛围。不要任何人物、凳子、招牌、文字、网页卡片、界面、手机边框。酒架和树洞填满上部，中央X400..790Y600..1000是安静后壁供独立小鼹鼠覆盖；吧台像图一是有细节的窄工作台而不是一面巨大木柜：台面后沿Y1050，前沿Y1130，木前挡板只到Y1360。左侧台上摆两只小陶罐和瓶组，中央X400..800空白。下部是图一前景地面的纹理、短距透视木地板与些许旧木结疤，不能空成大厅。中央人物未来只露上身，背景绝不画鼠。手机390x844等比cover，核心安全区X180..970，所有四边完整填充，像素簇1..2px，细柔棕线无粗黑圈。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "1152x2048",
+  "aspect": "9:16",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/bar-style-detail-user.png",
+    "art-source/reference/bar-composition-user.png"
+  ],
+  "bytes": 3345640,
+  "attempts": 1,
+  "errors": []
+}

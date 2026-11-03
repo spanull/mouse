@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useDemo, useWallet } from "@/components/demo-provider";
+import { createClientId } from "@/lib/client-id";
 import { BLANK_DRAFT, CATEGORIES, countText, DRINKS, TRUTHS, validateDraft, type Draft, type Kind } from "@/lib/demo";
 
 type Props = { kind: Kind; drink?: number; onSuccess?: () => void };
@@ -44,7 +45,7 @@ export function ComposeForm({ kind, drink = 0, onSuccess }: Props) {
     event.preventDefault(); if (locked.current) return;
     const issues = validateDraft(draft); setErrors(issues); setFailure("");
     if (Object.keys(issues).length) { formRef.current?.querySelector<HTMLElement>(`[name="${issues.title ? "title" : issues.teaser ? "teaser" : "body"}"]`)?.focus(); return; }
-    locked.current = true; setSending(true); requestRef.current ||= crypto.randomUUID();
+    locked.current = true; setSending(true); requestRef.current ||= createClientId();
     try { await submit(draft, requestRef.current); if (mounted.current) { setDraft({ ...BLANK_DRAFT, kind, drink }); setSuccess(true); requestRef.current = ""; onSuccess?.(); } }
     catch (error) { if (mounted.current) setFailure(error instanceof Error ? error.message : "提交失败，请重试。"); }
     finally { locked.current = false; if (mounted.current) setSending(false); }

@@ -1,0 +1,20 @@
+{
+  "asset": "bar-flare-mole-pour-v2",
+  "file": "art-source/generated/bar-flare-mole-pour-v2.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T10:28:10.468476+00:00",
+  "prompt": "输出2048x1536横版动作精灵表，严格4列3行12格，每格512方，纯品红FF00FF背景无影子无文字无格线。图一是用户的画风，图二是唯一人物母版，保持图二所有毛色、黑马甲、领结、脸部和身体比例。细腻手工像素，非平滑插画。每格全身高370，头宽245，头顶75脚底445脚中点256。身体不动不缩放，只有双臂和道具作真实连续关节动作。保持完整全身，安全区35..477，不紧裁，场景内以320方画布显示280CSSpx，正面镜头与左上光。动作是把银色调酒壶里的酒准确倒进一只杯子。画面右侧的右手举着银壶，画面左侧的左手握高脚杯梗。左手把杯子举到人物胸前正中央X256，杯口Y270，杯底Y360，杯宽80高90，固定12格相同。银壶从右肩前伸向中央，壶嘴正好贴近中央玻璃杯的上沿！倾倒期间壶嘴X270Y260，杯口X256Y270，两者仅相距17像素；极短浅紫色液体从壶嘴往左下进入杯内。不能把杯子留在身体左边而对着胸口倒酒！1双手握道具准备，2举壶，3壶嘴靠近中央杯口，4壶倾斜，5开始短流，6连续短流入杯，7连续短流，8停流，9壶抬直，10退一点，11回准备，12回准备。只有一只杯，没有悬空的杯底或第二根杯梗；不能液流从鼻发出或倒到马甲。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/bar-mole-detail-user.png",
+    "art-source/generated/bar-flare-mole-master-v1.png"
+  ],
+  "bytes": 4003765,
+  "attempts": 1,
+  "errors": []
+}

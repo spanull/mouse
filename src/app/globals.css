@@ -79,3 +79,89 @@
 
 /* 首页小访客遵循背景的世界坐标和像素密度，贴近右侧植被，不再悬浮大块树干。 */
 .ambient-home .ambient-visitor{--visitor-size:clamp(90px,15cqh,150px);width:var(--visitor-size);left:clamp(50px,calc(var(--image-x,0px) + var(--image-width,100cqw)*.8),calc(100% - 55px));right:auto;top:calc(var(--image-y,0px) + var(--image-height,100cqh)*.31 - var(--visitor-size)*.5);transform:translateX(-50%)}
+
+/* 餐厅室内按背景、迎客角色、推荐板和餐桌分层；所有物件保留图片比例，角落入口独立锚定安全区。 */
+.restaurant-world{--scene-bg:url('/assets/restaurant/room-tall.png')}
+.restaurant-stage{--dining-width:min(90cqw,38cqh);--dining-bottom:16cqh}
+.restaurant-stage .chef-mouse{--actor-size:min(58cqw,34cqh);left:36%;top:60%;width:var(--actor-size);height:var(--actor-size);z-index:4}
+.restaurant-stage .restaurant-caption{top:8%;width:min(310px,78cqw);font-size:clamp(12px,1.65cqh,16px);line-height:1.8;padding:10px 12px}
+.restaurant-animation-feedback{font-size:11px}
+/* 落地立牌固定站在地板上；通过限制前景餐桌尺寸留出地面，不以抬高牌脚消除遮挡。 */
+.restaurant-recommendations{position:absolute;right:4%;bottom:40cqh;width:min(39cqw,24cqh);aspect-ratio:480/770;z-index:3}
+.recommendation-board-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.recommendation-writing{position:absolute;inset:7% 12% 19%;color:#fff3d9;display:flex;flex-direction:column;text-align:center;gap:4px}
+.recommendation-writing h2{font-size:clamp(13px,3.7cqw,19px);font-weight:600;white-space:nowrap;letter-spacing:.06em}
+.recommendation-dishes{display:flex;flex-direction:column;flex:1;min-height:0;justify-content:space-around;gap:3px}
+.recommendation-dishes a{display:flex;align-items:center;justify-content:center;gap:4px;text-align:left;min-height:44px;min-width:0;flex:1;line-height:1.4;touch-action:manipulation}
+.recommendation-dishes a img{width:30%;height:clamp(22px,4cqh,42px);object-fit:contain;flex-shrink:0}
+.recommendation-dishes a span{font-size:clamp(10px,2.7cqw,13px);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.recommendation-empty{font-size:12px}
+.restaurant-dining-table{position:absolute;left:50%;bottom:var(--dining-bottom);transform:translateX(-50%);width:var(--dining-width);height:auto;z-index:5;pointer-events:none}
+.restaurant-stage .menu-object,.restaurant-stage .kitchen-object{top:auto;bottom:max(2.5%,env(safe-area-inset-bottom));width:clamp(82px,25cqw,125px);height:auto;aspect-ratio:1;z-index:8}
+.restaurant-stage .menu-object{left:max(5%,env(safe-area-inset-left))}
+.restaurant-stage .kitchen-object{right:max(5%,env(safe-area-inset-right))}
+@media(max-height:650px) and (max-aspect-ratio:1/1){
+ .restaurant-stage .restaurant-caption{font-size:11px;padding:3px 8px}
+ .restaurant-recommendations{width:39cqw}
+ .restaurant-stage{--dining-width:min(80cqw,37cqh);--dining-bottom:16cqh}
+}
+@media(min-aspect-ratio:1/1){
+ .restaurant-world{--scene-bg:url('/assets/restaurant/room-wide.png')}
+ .restaurant-stage .chef-mouse{--actor-size:43cqh;left:43%;top:64%}
+ .restaurant-stage .restaurant-caption{top:12%;left:43%;width:min(350px,42cqw);font-size:clamp(12px,1.8cqh,17px)}
+ .restaurant-recommendations{right:auto;left:61%;bottom:39%;width:auto;height:42cqh}
+ .recommendation-writing h2{font-size:clamp(13px,2.5cqh,22px)}
+ .recommendation-dishes a{flex-direction:row;gap:5px;text-align:left}
+ .recommendation-dishes a img{width:34%;height:5cqh}
+ .recommendation-dishes a span{font-size:clamp(10px,1.55cqh,14px)}
+ .restaurant-dining-table{width:min(48cqw,50cqh);bottom:6%}
+ .restaurant-stage .menu-object,.restaurant-stage .kitchen-object{width:clamp(76px,17cqh,160px);bottom:5%}
+ .restaurant-stage .menu-object{left:9%}.restaurant-stage .kitchen-object{right:9%}
+}
+@media(max-height:500px) and (min-aspect-ratio:1/1){
+ .restaurant-stage .restaurant-caption{top:8%;padding:2px 10px;font-size:11px}
+ .restaurant-recommendations{height:48cqh;bottom:34%}
+ .recommendation-writing{inset:6% 11% 17%;gap:0}
+ .recommendation-dishes{gap:0}.recommendation-dishes a{min-height:36px}
+ .restaurant-stage .chef-mouse{--actor-size:46cqh;top:67%}
+}
+
+/* 酒吧按用户参考图采用紧凑深木色场景；吧台遮挡与背景共用同一等比坐标，人物保持真实身体尺度。 */
+.bar-world{--scene-bg:url('/assets/bar/room-tall.png')}
+.bar-stage{--bar-counter:.645;--bar-glass-surface:.65;--bar-guest-size:min(28cqw,20cqh);--bar-guest-floor:83cqh}
+.bar-stage:after{clip-path:inset(calc(var(--image-y,0px) + var(--image-height,100cqh)*var(--bar-counter)) 0 0 0)}
+.bar-stage .bartender{--actor-size:min(84cqw,36cqh);top:calc(var(--image-y,0px) + var(--image-height,100cqh)*var(--bar-counter) + var(--actor-size)*.15);transform:translate(-50%,-93.75%)}
+.bar-stage .bartender .actor-touch{bottom:38%;height:60%;z-index:4}
+.bar-stage .bartender .actor-retry{top:30%;bottom:auto;right:14%;z-index:5;pointer-events:auto}
+.bar-stage .seated-mouse{pointer-events:none}.bar-stage .seat-bubble,.bar-stage .seated-mouse .actor-retry{pointer-events:auto}
+.bar-stage .bartender-bubble{top:10%;width:min(330px,79cqw);font-size:clamp(11px,1.6cqh,15px);padding:9px 12px}
+.bar-stage .seated-mouse{width:var(--bar-guest-size);height:var(--bar-guest-size);top:var(--bar-guest-floor);transform:translate(-50%,-93.75%)}
+.bar-stage .seated-0{left:29%;right:auto}.bar-stage .seated-1{left:71%;right:auto}
+.bar-stage .empty-bar-stool{width:calc(var(--bar-guest-size)*.44);height:calc(var(--bar-guest-size)*.35);top:var(--bar-guest-floor);transform:translate(-50%,-100%)}
+.bar-stage .seat-bubble{top:auto;bottom:100%;left:50%;right:auto;transform:translateX(-50%);min-height:54px;width:min(32cqw,190px);font-size:clamp(10px,1.3cqh,13px);line-height:1.6;padding:5px 8px}
+.bar-stage .seated-0 .seat-bubble{left:25%}.bar-stage .seated-1 .seat-bubble{left:75%}
+.bar-stage .wall-object,.bar-stage .drinks-object{top:auto;bottom:7%;width:min(27cqw,19cqh);height:14cqh;aspect-ratio:auto;z-index:8}
+.bar-stage .wall-object img,.bar-stage .drinks-object img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.bar-stage .wall-object{left:max(4%,env(safe-area-inset-left))}.bar-stage .drinks-object{right:max(4%,env(safe-area-inset-right))}
+.bar-stage .mole-tools{bottom:max(1.5%,env(safe-area-inset-bottom));gap:6px}.bar-stage .mole-tools button{width:44px;height:44px;min-height:44px}
+.bar-stage .served-glass{left:54%;top:calc(var(--image-y,0px) + var(--image-height,100cqh)*var(--bar-glass-surface));transform:translate(-50%,-100%);animation:none;line-height:0}.bar-stage .served-glass .cocktail{width:clamp(30px,4.5cqh,44px);height:auto;display:block}
+@media(max-height:650px) and (max-aspect-ratio:1/1){.bar-stage{--bar-guest-floor:83cqh;--bar-guest-size:19cqh}.bar-stage .seat-bubble{font-size:10px;padding:3px 7px;min-height:48px}.bar-stage .wall-object,.bar-stage .drinks-object{width:18cqh;bottom:8.5%}}
+@media(min-aspect-ratio:1/1){
+ .bar-world{--scene-bg:url('/assets/bar/room-wide.png')}
+ .bar-stage{--bar-counter:.67;--bar-glass-surface:.675;--bar-guest-size:22cqh;--bar-guest-floor:92cqh}
+ .bar-stage .bartender{--actor-size:36cqh}
+ .bar-stage .bartender-bubble{top:8%;width:min(360px,42cqw)}
+ .bar-stage .seated-0{left:37%}.bar-stage .seated-1{left:63%}
+ .bar-stage .wall-object,.bar-stage .drinks-object{width:clamp(100px,20cqh,190px);height:19cqh;bottom:5%}
+ .bar-stage .wall-object{left:12%}.bar-stage .drinks-object{right:12%}
+ .bar-stage .mole-tools{bottom:3%;gap:10px}.bar-stage .mole-tools button{width:clamp(44px,6cqh,56px);height:clamp(44px,6cqh,56px)}
+ .bar-stage .seat-bubble{width:min(24cqw,190px)}
+ .bar-stage .seated-mouse .seat-bubble{left:50%}
+}
+@media(max-height:500px) and (min-aspect-ratio:1/1){
+ .bar-stage{--bar-guest-size:23cqh;--bar-guest-floor:94cqh}
+ .bar-stage .bartender{--actor-size:38cqh}
+ .bar-stage .bartender-bubble{top:9%;font-size:11px;padding:2px 9px}
+ .bar-stage .seat-bubble{display:none}
+ .bar-stage .wall-object,.bar-stage .drinks-object{width:23cqh;height:23cqh;bottom:6%}
+}

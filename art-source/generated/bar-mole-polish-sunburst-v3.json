@@ -1,0 +1,20 @@
+{
+  "asset": "bar-mole-polish-sunburst-v3",
+  "file": "art-source/generated/bar-mole-polish-sunburst-v3.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T08:14:05.580150+00:00",
+  "prompt": "制作细腻像素游戏鼹鼠擦杯12帧。图一只参考风格，图二第一格是唯一角色母版：同一张脸、头宽、身高、毛色、衣服和轻柔棕色细描边。图二约每格256像素身体高220，新图每格512对应身体高440。画布2048x1536，4列3行，12个512方格，不画格线。每格身体头顶Y36脚底Y476，头骨宽220，头高170躯干180裤腿90；脚中点X256。所有帧头身体双脚不动不缩放，只有肘腕转动。保持2px细像素簇和2px轻柔棕轮廓，浅灰褐毛、奶油衬衫、苔绿马甲、粉褐领结、棕裤；固定朝右略侧正面镜头，左上暖光。图中只有鼹鼠、一只空杯和一块布。\n所有12格，画面右爪一直固定自然握住透明高脚杯的杯梗X330Y290，杯底Y355，杯口Y250、杯口宽80。杯子永远在同一位置、同一大小，右爪全程不放开，杯子不能悬空，不可以居中浮在身前。画面左爪一直拿同一小块奶油擦杯布，只让左爪沿着杯口轻柔擦拭，不放下、不交换手、不出现第二杯。12连续姿势：1左爪拿布接触杯碗左侧X295Y285；2腕转，布沿杯碗向上到Y270；3布擦杯口左侧；4布擦杯口中央；5布擦杯口右侧；6布沿杯碗右缘下移一点；7腕旋回布擦杯碗中部；8布返回杯口右侧；9布擦杯口中央；10布擦杯口左侧；11布沿杯碗左侧下移；12与第1格相同。自然连续肩肘腕结构，头身体双脚、右手杯子都固定。左布应始终接触玻璃，不能穿透。\n纯品红FF00FF背景，无地面、投影、光晕、文字、房间、装饰。每格可见像素在X35..477Y25..485，留白不裁切。运行320方画布等比例显示340..480CSS像素，不按动作变身高。所有帧同一身高头宽，严禁随行数缩小、身体上下左右移或复制平移同一帧。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/generated/bar-mole-social-v1.png"
+  ],
+  "bytes": 4113706,
+  "attempts": 1,
+  "errors": []
+}

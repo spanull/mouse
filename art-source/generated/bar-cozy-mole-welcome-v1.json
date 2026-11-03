@@ -1,0 +1,21 @@
+{
+  "asset": "bar-cozy-mole-welcome-v1",
+  "file": "art-source/generated/bar-cozy-mole-welcome-v1.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T08:53:50.589214+00:00",
+  "prompt": "制作12帧游戏鼹鼠挥手招呼。图三为唯一身份母版：短圆小棕鼻、圆头、灰褐毛、奶油脸、粉腮红、圆黑眼、无外耳无尾、黑棕马甲奶油衬衫小黑领结小棕脚。直接沿用母版，绝不换脸、变色、加粗黑边或长粉鼻。图二只参考细像素质感。2048x1536，严格4列3行12个512方格，无格线无字；每格头顶Y80脚底Y440脚掌中点X256，身体高360头骨宽235头高180躯干125腿55，所有帧不变。镜头正面、左上柔光，同一色板，头躯干脚完全不动。动作按行：1原母版双爪在腹前；2画面左侧肘微弯；3左爪抬腹上；4抬到胸口；5抬至脸旁；6向外轻挥手腕；7腕回内；8向外轻挥并微笑；9手腕放松；10左爪降到胸口；11降腹部；12回第一帧。画面右侧爪始终不动。连续真实肩肘腕转动，不复制平移帧，无整体移动缩放抖动。全像素X40..472Y40..472留安全边，纯品红FF00FF背景含所有格间腿间，无家具地板光晕道具。每格不紧裁。运行320方画布显示230..300CSSpx；像素簇2px、棕轮廓1..2px，母版轻柔细节不能变黑线。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/reference/bar-composition-user.png",
+    "art-source/generated/bar-cozy-mole-master-v1.png"
+  ],
+  "bytes": 3159622,
+  "attempts": 1,
+  "errors": []
+}

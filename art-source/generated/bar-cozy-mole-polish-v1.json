@@ -1,0 +1,21 @@
+{
+  "asset": "bar-cozy-mole-polish-v1",
+  "file": "art-source/generated/bar-cozy-mole-polish-v1.png",
+  "provider": "Luna Image",
+  "baseUrl": "https://image.luna.it.com",
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "/v1/images/b64/edits",
+  "generatedAt": "2026-11-02T08:54:06.617588+00:00",
+  "prompt": "制作12帧鼹鼠擦杯动作，图三唯一母版原样保留：短圆小棕鼻、灰褐圆头奶油脸、粉腮红黑眼、黑棕马甲奶油衬衫黑小领结棕裤脚。没有外耳尾巴，无长鼻、无绿衣。图二只参考细像素风。2048x1536严格4列3行，12个512方格不画网格文字。每格头顶Y80脚底Y440脚掌中点X256身体高360头骨宽235头高180躯干125腿55。全程头躯干脚固定，正面镜头左上柔光，同母版色板细棕边1..2px像素簇2px，无黑圈。画面右爪全12格一直自然捏住同一透明高脚杯的杯梗，杯口Y245、杯底Y330、杯口宽70，杯中心X320，杯子与右手一直固定，有实在接触。画面左爪拿一小块奶油布，沿着杯碗和杯口连续擦拭。1布接触杯碗左缘；2上移擦左杯口；3擦杯口中央；4右杯口；5右杯碗；6杯碗中央；7回右杯口；8中央杯口；9左杯口；10左杯碗；11回起点；12与1同姿。布一直碰杯子不穿过，不放手，不换手，不增多道具，不出现悬空玻璃。不能头身缩放平移抖动或复制移动帧。全像素X35..477Y40..472，纯品红FF00FF背景所有空隙，无阴影地面台面或其他道具。运行320方画布显示230..300CSSpx，不紧裁。\n\nPRODUCTION CONSISTENCY CONTRACT (applies to every asset): Declare exact output canvas dimensions, equal cell dimensions when using a sprite grid, intended in-scene footprint, fixed projection/camera, light direction, pixel-cluster density and outline weight matching the scene reference. For animated subjects, lock the same model sheet across ALL actions: constant skull width, head-to-body ratio, torso length, costume seams, foot spacing and ground-contact baseline. First and last neutral poses must match the canonical idle geometry. Frame bounding boxes may grow only for moving limbs/props, NEVER enlarge or shrink the whole body to fill a cell. Use one common padded canvas; reserve at least 8 percent margins around the widest action, never crop ears/tail/furniture. No per-frame zoom, reframing, translation of a copied pose, squash/stretch, or automatic tight framing. Fixed props and furniture remain the same size and at the same anchors throughout. Define body height, head width, foot-center X and foot baseline Y numerically in each animation task. For scenes/UI/items, explicitly preserve aspect ratio, safe area, optical size, border thickness and reference pixel density across variants. Backgrounds fill all edges; UI nine-slice corners remain fixed; no baked-in labels or text. Inspect transition between idle and interaction, NOT just individual sheets. Size/anchor/style mismatch means reject and regenerate; a successful HTTP response is not visual approval. For visitors entering or leaving a scene, create an explicit approach/peek/emerge/settle sequence and a physically occluded exit. Start and end the complete loop in the SAME hidden state. Specify separate entry and exit directions: never replace entrance with reversed exit, fading, scaling, or a cut from invisible to a fully visible idle character. Validate the loop boundary as carefully as individual frames.",
+  "requestedSize": "2048x1536",
+  "aspect": "4:3",
+  "resolution": "2k",
+  "referenceFiles": [
+    "art-source/reference/user-prototype.png",
+    "art-source/reference/bar-composition-user.png",
+    "art-source/generated/bar-cozy-mole-master-v1.png"
+  ],
+  "bytes": 3307284,
+  "attempts": 1,
+  "errors": []
+}

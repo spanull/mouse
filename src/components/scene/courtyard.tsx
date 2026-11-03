@@ -14,22 +14,25 @@ type NaturalManifest = { actors: Record<string, ActorSpec> };
 type Controller = { play: (pose: Pose) => void; setReduced: (value: boolean) => void };
 
 /** 渲染独立鼠鼠精灵；画布只处理动作，HTML 按钮负责可访问的问候交互。 */
-export function MouseActor({ character = "rat", celebrate = 0, action, decorative = false, label = "和鼠鼠打招呼", onGreet, onActionComplete, onPlaybackError }: { character?: string; celebrate?: number; action?: ActorAction; decorative?: boolean; label?: string; onGreet?: () => void; onActionComplete?: (action: ActorAction) => void; onPlaybackError?: () => void }) {
+export function MouseActor({ character = "rat", celebrate = 0, action, decorative = false, label = "和鼠鼠打招呼", onGreet, onActionComplete, onPlaybackError, onPlaybackReady }: { character?: string; celebrate?: number; action?: ActorAction; decorative?: boolean; label?: string; onGreet?: () => void; onActionComplete?: (action: ActorAction) => void; onPlaybackError?: () => void; onPlaybackReady?: () => void }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const controllerRef = useRef<Controller | null>(null);
   const celebrateRef = useRef(celebrate);
   const actionRef = useRef(action);
   const completeRef = useRef(onActionComplete);
   const errorRef = useRef(onPlaybackError);
+  const readyRef = useRef(onPlaybackReady);
   const reducedRef = useRef(false);
   const { reducedMotion } = useDemo();
   const [systemReduced, setSystemReduced] = useState(false);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
-  const asset = ["rat", "hamster", "field", "chinchilla", "dormouse", "mole", "chef", "patron-dormouse", "patron-hamster"].includes(character) ? character : "rat";
+  const asset = ["rat", "hamster", "field", "chinchilla", "dormouse", "mole", "chef", "restaurant-chef", "patron-dormouse", "patron-hamster"].includes(character) ? character : "rat";
+  const barActor = asset === "mole" || asset.startsWith("patron-");
+  const fallback = asset === "restaurant-chef" ? "/assets/restaurant/chef-static-color-v2.png" : barActor ? `/assets/bar/${asset}-static.png` : `/assets/natural/${asset}-static${["rat", "hamster", "field", "chinchilla", "dormouse"].includes(asset) ? "-home-v3" : ""}.png`;
 
-  useEffect(() => { completeRef.current = onActionComplete; errorRef.current = onPlaybackError; }, [onActionComplete, onPlaybackError]);
+  useEffect(() => { completeRef.current = onActionComplete; errorRef.current = onPlaybackError; readyRef.current = onPlaybackReady; }, [onActionComplete, onPlaybackError, onPlaybackReady]);
 
   useEffect(() => {
     actionRef.current = action;
@@ -102,7 +105,7 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
           return texture;
         }
 
-        const response = await fetch("/assets/natural/manifest.json");
+        const response = await fetch(asset === "restaurant-chef" ? "/assets/restaurant/manifest.json" : barActor ? "/assets/bar/manifest.json" : "/assets/natural/manifest.json");
         if (!response.ok) throw new Error("自然动作清单加载失败");
         const manifest = await response.json() as NaturalManifest;
         const spec = manifest.actors[asset];
@@ -197,6 +200,8 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
         if (actionRef.current) play(actionRef.current.pose);
         syncPlayback();
         setReady(true);
+        // 仅在纹理和播放均已准备好后通知场景，使重试成功能清除过期的失败提示。
+        readyRef.current?.();
       } catch {
         dispose();
         if (!cancelled) { setFailed(true); setReady(false); errorRef.current?.(); }
@@ -204,14 +209,14 @@ export function MouseActor({ character = "rat", celebrate = 0, action, decorativ
     }
     void initialize();
     return () => { cancelled = true; if (initialized) dispose(); };
-  }, [attempt, asset]);
+  }, [attempt, asset, barActor]);
 
   /** 手动点击优先于闲暇动作；服务流程有外部动作时不允许点击打断摇酒或递酒。 */
   function greet() { if (!actionRef.current && !reducedRef.current) controllerRef.current?.play("pressed"); onGreet?.(); }
 
   return <div className="mouse-actor" data-pose={action?.pose ?? "idle"}>
     <div ref={hostRef} className={`pixi-host ${failed ? "is-hidden" : ""}`} />
-    {!ready && <img className="actor-fallback" src={`/assets/natural/${asset}-static${["rat", "hamster", "field", "chinchilla", "dormouse"].includes(asset) ? "-home-v3" : ""}.png`} alt="" />}
+    {!ready && <img className="actor-fallback" src={fallback} alt="" />}
     {!decorative && <button className="actor-touch" onClick={greet} aria-label={label} />}
     {failed && <button className="actor-retry" onClick={() => setAttempt(value => value + 1)} aria-label="重试角色动画"><RefreshCw size={14} /></button>}
   </div>;

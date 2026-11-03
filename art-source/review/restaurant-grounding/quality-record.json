@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-02",
+  "status": "ground-contact-and-adjacent-layout-reviewed",
+  "change": "立牌恢复落地位置，缩小前景餐桌并留出地板间隔",
+  "rules": "AGENTS.md 场景物理关系与一次完整修正",
+  "visualReviewWidths": [
+    390,
+    768,
+    1440
+  ],
+  "browserRegression": "4 passed (1.3m)",
+  "generatedAssets": 0,
+  "lint": "not run",
+  "realDevice": "not checked"
+}
